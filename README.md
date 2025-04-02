@@ -18,12 +18,14 @@
 
 ## 📂 Repository Structure
 
+`````
 searchforest-ai/
 ├── model/            # M3E 모델 로딩 및 추론
 ├── utils/            # 임베딩 계산, 유사도 함수
 ├── test_data/        # 테스트용 키워드 샘플
 ├── scripts/          # 추론 테스트용 스크립트
 └── README.md
+`````
 
 ---
 
@@ -39,11 +41,15 @@ searchforest-ai/
 
 ## 🧑‍💻 팀 숲송 (Team Soopsong)
 
-| 이름 | 역할 | GitHub |
-|------|------|--------|
-| 송정현 | PM / 프론트엔드 | [@katie424](https://github.com/katie424) |
-| 임민혁 | 백엔드 | [@mh991221](https://github.com/mh991221) |
-| 임지민 | AI 모델 / 데이터 | [@hyun-hyang](https://github.com/hyun-hyang) |
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/katie424"><img src="https://avatars.githubusercontent.com/u/80771814?v=4" width="100px" alt=""/><br /><sub><b>Frontend : 송정현</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/mh991221"><img src="https://avatars.githubusercontent.com/u/39687014?v=4" width="100px" alt=""/><br /><sub><b>Backend : 임민혁</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/-"><img src="https://avatars.githubusercontent.com/u/51802020?v=4" width="100px" alt=""/><br /><sub><b>AI : 임지민</b></sub></a><br /></td>
+     </tr>
+  </tbody>
+</table>
 
 > 🙌 중앙대학교 소프트웨어학부 2025 캡스톤 프로젝트
 
