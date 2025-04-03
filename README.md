@@ -6,6 +6,14 @@
 프론트엔드 및 백엔드는 별도 레포로 분리되어 있습니다.
 
 ---
+## 실행 방법
+
+```bash
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8001
+
+```
+
 
 ## 🧠 What’s inside
 
