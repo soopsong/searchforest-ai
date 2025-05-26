@@ -39,7 +39,7 @@ jobs:
           context: ./graph_service
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/graph-service:latest
+            ghcr.io/soopsong/graph-service:latest
 
       - name: Build & push Papers Service image
         uses: docker/build-push-action@v4
@@ -47,7 +47,7 @@ jobs:
           context: ./papers_service
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/papers-service:latest
+            ghcr.io/soopsong/papers-service:latest
 
       - name: Build & push Summ Service image
         uses: docker/build-push-action@v4
@@ -55,4 +55,4 @@ jobs:
           context: ./sum_service
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/sum-service:latest
+            ghcr.io/soopsong/sum-service:latest
