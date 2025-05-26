@@ -7,7 +7,7 @@ on:
       - 'graph_service/**'
       - 'papers_service/**'
       - 'sum_service/**'
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   build-and-push:
@@ -33,20 +33,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
       - name: Log in to GHCR via PAT
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: hyun_hyang
+          username: hyun_hyang       # PAT 생성한 개인 계정
           password: ${{ secrets.GHCR_PAT }}
 
       - name: Build & push ${{ matrix.repo }} image
         uses: docker/build-push-action@v4
         with:
           context: ./${{ matrix.dir }}
-          file: ./${{ matrix.dir }}/Dockerfile
-          push: true
-          tags: ghcr.io/soopsong/${{ matrix.repo }}:latest
+          file:    ./${{ matrix.dir }}/Dockerfile
+          push:    true
+          tags:    ${{ env.REGISTRY }}/${{ matrix.repo }}:latest
