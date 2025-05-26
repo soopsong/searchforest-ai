@@ -1,5 +1,3 @@
-# graph_service/dummy_data.py
-
 def get_dummy_tree(root: str, top1: int = 5, top2: int = 3):
     """
     root 키워드 + top1, top2 파라미터를 반영한 더미 radial‐tree 반환
