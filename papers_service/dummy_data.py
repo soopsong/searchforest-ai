@@ -10,7 +10,7 @@ def get_dummy_papers():
             "title":          "Dummy Paper A",
             "abstract":       "This is the abstract of dummy paper A.",
             "authors":        ["Alice"],
-            "year":           2021,
+            "year":           2023,
             "citation_count": 5,
             "sim_score":      0.90,
             "summary":        "이 논문은 A에 대해 간략히 설명합니다."
