@@ -37,7 +37,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Log in to GHCR via PAT (manual)
-        run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u hyun_hyang --password-stdin
+        run: echo "${{ secrets.PASSWORD }}" | docker login ghcr.io -u hyun_hyang --password-stdin
 
       - name: Build & push ${{ matrix.repo }} image
         uses: docker/build-push-action@v4
