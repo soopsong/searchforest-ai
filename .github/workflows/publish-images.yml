@@ -15,7 +15,7 @@ jobs:
       contents: read       # checkout
       packages: write      # GHCR push
     env:
-      REGISTRY: ghcr.io/${{ github.repository_owner }}
+      REGISTRY: ghcr.io/soopsong
 
     strategy:
       matrix:
@@ -35,10 +35,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build & push ${{ matrix.service }}-service image
+      - name: Build & push ${{ matrix.service }} image
         uses: docker/build-push-action@v4
         with:
           context: ./${{ matrix.service }}
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ matrix.service }}-service:latest
+            ${{ env.REGISTRY }}/${{ matrix.service }}:latest
