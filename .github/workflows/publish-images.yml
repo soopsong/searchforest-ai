@@ -40,8 +40,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: hyun_hyang       # PAT 생성한 개인 계정
-          password: ${{ secrets.GHCR_PAT }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build & push ${{ matrix.repo }} image
         uses: docker/build-push-action@v4
