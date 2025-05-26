@@ -2,8 +2,7 @@ name: Publish Docker images to GHCR
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - 'graph_service/**'
       - 'papers_service/**'
@@ -13,15 +12,18 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
-      contents: read          # for checkout
-      packages: write         # for GHCR push
+      contents: read       # checkout
+      packages: write      # GHCR push
+    env:
+      REGISTRY: ghcr.io/${{ github.repository_owner }}
+
+    strategy:
+      matrix:
+        service: [graph, papers, sum]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -33,26 +35,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build & push Graph Service image
+      - name: Build & push ${{ matrix.service }}-service image
         uses: docker/build-push-action@v4
         with:
-          context: ./graph_service
+          context: ./${{ matrix.service }}_service
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/graph-service:latest
-
-      - name: Build & push Papers Service image
-        uses: docker/build-push-action@v4
-        with:
-          context: ./papers_service
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/papers-service:latest
-
-      - name: Build & push Summ Service image
-        uses: docker/build-push-action@v4
-        with:
-          context: ./sum_service
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/sum-service:latest
+            ${{ env.REGISTRY }}/${{ matrix.service }}-service:latest
