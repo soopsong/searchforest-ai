@@ -19,17 +19,20 @@ jobs:
 
     strategy:
       matrix:
-        # 서비스 디렉터리 및 이미지 이름
-        service:
-          - graph_service
-          - papers_service
-          - sum_service
+        # 디렉터리 vs 리포지터리 이름을 명시적으로 매핑
+        include:
+          - dir: graph_service
+            repo: graph-service
+          - dir: papers_service
+            repo: papers-service
+          - dir: sum_service
+            repo: sum-service
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
+      - name: Set up Buildx
         uses: docker/setup-buildx-action@v2
 
       - name: Log in to GHCR via PAT
@@ -39,11 +42,10 @@ jobs:
           username: hyun_hyang
           password: ${{ secrets.GHCR_PAT }}
 
-      - name: Build & push ${{ matrix.service }} image
+      - name: Build & push ${{ matrix.repo }} image
         uses: docker/build-push-action@v4
         with:
-          context: ./
-          file: ${{ matrix.service }}/Dockerfile
+          context: ./${{ matrix.dir }}
+          file: ./${{ matrix.dir }}/Dockerfile
           push: true
-          tags: |
-            ${{ env.REGISTRY }}/${{ matrix.service }}:latest
+          tags: ghcr.io/soopsong/${{ matrix.repo }}:latest
