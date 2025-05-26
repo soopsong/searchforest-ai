@@ -19,7 +19,11 @@ jobs:
 
     strategy:
       matrix:
-        service: [graph, papers, sum]
+        # 서비스 디렉터리 및 이미지 이름
+        service:
+          - graph_service
+          - papers_service
+          - sum_service
 
     steps:
       - name: Checkout repository
@@ -38,7 +42,8 @@ jobs:
       - name: Build & push ${{ matrix.service }} image
         uses: docker/build-push-action@v4
         with:
-          context: ./${{ matrix.service }}
+          context: ./
+          file: ${{ matrix.service }}/Dockerfile
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ matrix.service }}:latest
