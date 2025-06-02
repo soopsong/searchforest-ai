@@ -13,7 +13,9 @@ def get_dummy_papers():
             "year":           2023,
             "citation_count": 5,
             "sim_score":      0.90,
-            "summary":        "이 논문은 A에 대해 간략히 설명합니다."
+            "summary":        "이 논문은 A에 대해 간략히 설명합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         },
         {
             "paper_id":       "p2",
@@ -23,7 +25,9 @@ def get_dummy_papers():
             "year":           2020,
             "citation_count": 3,
             "sim_score":      0.85,
-            "summary":        "이 논문은 B의 주요 기여를 요약합니다."
+            "summary":        "이 논문은 B의 주요 기여를 요약합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         },
         {
             "paper_id":       "p3",
@@ -33,7 +37,9 @@ def get_dummy_papers():
             "year":           2022,
             "citation_count": 7,
             "sim_score":      0.80,
-            "summary":        "이 논문에서는 C를 제안하고 실험 결과를 제공합니다."
+            "summary":        "이 논문에서는 C를 제안하고 실험 결과를 제공합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain": "Mathematic"
         },
         {
             "paper_id":       "p4",
@@ -43,7 +49,9 @@ def get_dummy_papers():
             "year":           2021,
             "citation_count": 10,
             "sim_score":      0.75,
-            "summary":        "이 논문은 D 기법의 유효성을 평가합니다."
+            "summary":        "이 논문은 D 기법의 유효성을 평가합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         },
         {
             "paper_id":       "p5",
@@ -53,7 +61,9 @@ def get_dummy_papers():
             "year":           2019,
             "citation_count": 12,
             "sim_score":      0.70,
-            "summary":        "이 논문에서는 E 알고리즘을 제안합니다."
+            "summary":        "이 논문에서는 E 알고리즘을 제안합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         },
         {
             "paper_id":       "p6",
@@ -63,7 +73,9 @@ def get_dummy_papers():
             "year":           2020,
             "citation_count": 8,
             "sim_score":      0.65,
-            "summary":        "이 논문은 F 시스템의 성능을 분석합니다."
+            "summary":        "이 논문은 F 시스템의 성능을 분석합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         },
         {
             "paper_id":       "p7",
@@ -73,7 +85,9 @@ def get_dummy_papers():
             "year":           2022,
             "citation_count": 6,
             "sim_score":      0.60,
-            "summary":        "이 논문에서는 G 모델을 제안하고 평가합니다."
+            "summary":        "이 논문에서는 G 모델을 제안하고 평가합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         },
         {
             "paper_id":       "p8",
@@ -83,7 +97,9 @@ def get_dummy_papers():
             "year":           2021,
             "citation_count": 9,
             "sim_score":      0.55,
-            "summary":        "이 논문은 H 프로토콜의 보안성을 검증합니다."
+            "summary":        "이 논문은 H 프로토콜의 보안성을 검증합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic",
         },
         {
             "paper_id":       "p9",
@@ -93,7 +109,9 @@ def get_dummy_papers():
             "year":           2023,
             "citation_count": 4,
             "sim_score":      0.50,
-            "summary":        "이 논문에서는 I 프레임워크를 소개합니다."
+            "summary":        "이 논문에서는 I 프레임워크를 소개합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         },
         {
             "paper_id":       "p10",
@@ -103,6 +121,8 @@ def get_dummy_papers():
             "year":           2018,
             "citation_count": 15,
             "sim_score":      0.45,
-            "summary":        "이 논문은 J 방법론의 활용 사례를 제시합니다."
+            "summary":        "이 논문은 J 방법론의 활용 사례를 제시합니다.",
+            "url":            "https://www.semanticscholar.org",
+            "domain":         "Mathematic"
         }
     ]
