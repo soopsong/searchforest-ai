@@ -22,7 +22,6 @@ RUN tar -xzf inductive_test_checkpoint_collected.tar.gz && \
 
 # 4. 코드 복사 (덮어쓰지 않도록 이후에)
 COPY kw2pids.json ./
-COPY Dockerfile ./
 COPY main.py ./
 
 # 5. 앱 실행
