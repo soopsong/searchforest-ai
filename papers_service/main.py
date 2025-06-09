@@ -70,11 +70,14 @@ class PapersResponse(BaseModel):
 #     kw2pids = json.load(f)
 
 # 1) 전역 로딩
-with open("test_checkpoint_collected.json", "r", encoding="utf-8") as f:
+BASE_DIR = os.path.dirname(__file__)
+PAPER_DATA_PATH = os.path.join(BASE_DIR, "inductive_test_checkpoint_collected.json")
+GRAPH_KEYWORD_PATH =  os.path.join(BASE_DIR, "kw2pids.json")
+with open(PAPER_DATA_PATH, "r", encoding="utf-8") as f:
     paper_db = json.load(f)
 
 # 예시: 이미 생성한 키워드 → 논문 ID 매핑
-with open("kw2pids.json", "r", encoding="utf-8") as f:
+with open(GRAPH_KEYWORD_PATH, "r", encoding="utf-8") as f:
     kw2pids = json.load(f)
 
 
