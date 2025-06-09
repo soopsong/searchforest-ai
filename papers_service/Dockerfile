@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y curl tar file
 
 # 2. gdown 설치
-RUN pip install gdown
+RUN pip install gdown beautifulsoup4
 
 # 3. Google Drive에서 파일 다운로드 (파일명은 확장자에 맞춰 수정해도 됨)
 RUN gdown --id 1tFYFjScIyu9RvAHWWWf-SGHwTs7F5866 -O inductive_test_checkpoint_collected.tar.gz
