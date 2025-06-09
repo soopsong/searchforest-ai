@@ -6,16 +6,13 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 2. curl, tar, file 설치 + Huggingface 인증용 환경변수
-ARG HUGGINGFACE_TOKEN
-ENV HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
 RUN apt-get update && apt-get install -y curl tar file
 
-# 3. 데이터 다운로드 먼저 (복사 전에!)
-# 주의: 파일이 gzip이 아니면 그냥 -o json 파일로 받고 압축 해제 생략
-RUN curl -L -H "Authorization: Bearer ${HUGGINGFACE_TOKEN}" \
-    -o inductive_test_checkpoint_collected.tar.gz \
-    https://huggingface.co/datasets/3hreetimes/searchforest-ai-dataset/resolve/main/inductive_test_checkpoint_collected.tar.gz
+# 2. gdown 설치
+RUN pip install gdown
+
+# 3. Google Drive에서 파일 다운로드 (파일명은 확장자에 맞춰 수정해도 됨)
+RUN gdown --id 1tFYFjScIyu9RvAHWWWf-SGHwTs7F5866 -O inductive_test_checkpoint_collected.tar.gz
 
 RUN tar -xzf inductive_test_checkpoint_collected.tar.gz && \
     rm inductive_test_checkpoint_collected.tar.gz
