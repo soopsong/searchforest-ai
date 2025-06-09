@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+
+papers_service/inductive_test_checkpoint_collected.json
+
 # Distribution / packaging
 .Python
 build/
