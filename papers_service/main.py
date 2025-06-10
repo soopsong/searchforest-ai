@@ -71,6 +71,50 @@ with open(GRAPH_KEYWORD_PATH, "r", encoding="utf-8") as f:
 
 
 @app.get("/papers", response_model=PapersResponse)
+def get_random_papers(
+    kw: str = Query(..., description="검색할 키워드"),
+    page: int = Query(1, ge=1),
+    page_size: int = Query(20, ge=1, le=100)
+):
+    all_pids = list(paper_db.keys())
+    sample_size = random.randint(20, 40)
+    sampled_pids = random.sample(all_pids, min(sample_size, len(all_pids)))
+
+    total = len(sampled_pids)
+    start = (page - 1) * page_size
+    end = min(start + page_size, total)
+    sliced = sampled_pids[start:end]
+
+    papers = []
+    for pid in sliced:
+        entry = paper_db[pid]
+        papers.append(Paper(
+            paper_id=pid,
+            title=entry.get("title"),
+            abstract=entry.get("abstract"),
+            url=entry.get("url"),
+            venue=entry.get("venue"),
+            year=entry.get("year"),
+            reference_count=entry.get("referenceCount"),
+            citation_count=entry.get("citationCount"),
+            influentialCitationCount=entry.get("influentialCitationCount"),
+            fieldsOfStudy=entry.get("fieldsOfStudy"),
+            tldr=entry.get("tldr", {}).get("text") if entry.get("tldr") else None,
+            authors=[Author(name=a["name"]) for a in entry.get("authors", [])],
+            citations=[Citation(**c) for c in entry.get("citations", []) if c.get("paperId")],
+            references=[Reference(**r) for r in entry.get("references", []) if r.get("paperId")],
+            sim_score=random.uniform(0, 1)
+        ))
+
+    return PapersResponse(
+        total_results=total,
+        max_display=len(sliced),
+        page=page,
+        page_size=page_size,
+        papers=papers
+    )
+
+
 def get_papers_by_keyword(
         kw: str = Query(..., description="검색할 키워드"),
         page: int = Query(1, ge=1),
@@ -87,7 +131,48 @@ def get_papers_by_keyword(
         ]
         # raise HTTPException(status_code=404, detail=f"Keyword '{kw}' not found.")
     else:
-        all_pids = kw2pids[kw]
+        deduplicated_ids = [
+            "13074624",
+            "14188576",
+            "14516333",
+            "14909482",
+            "15302646",
+            "162168808",
+            "198147940",
+            "28639198",
+            "40108038",
+            "41418788",
+            "51183683",
+            "52232173",
+            "53641451",
+            "55836730",
+            "56099032",
+            "5734610",
+            "5799960",
+            "59408549",
+            "59572248",
+            "786330",
+            "85459157",
+            "10682321",
+            "11501607",
+            "115113968",
+            "11534505",
+            "117899249",
+            "118489086",
+            "118587315",
+            "118751294",
+            "118816857",
+            "118849608",
+            "119111722",
+            "119144587",
+            "119209851",
+            "119241784",
+            "119341051",
+            "119471991",
+            "119472164"
+        ]
+        # all_pids = kw2pids[kw]
+        all_pids = random.sample(deduplicated_ids, 20)
 
     # 페이징
     total = len(all_pids)
