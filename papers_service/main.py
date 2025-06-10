@@ -193,14 +193,6 @@ def get_papers_by_keyword(
             fieldsOfStudy=entry.get("fieldsOfStudy"),
             tldr=entry.get("tldr", {}).get("text") if entry.get("tldr") else None,
             authors=[Author(name=a["name"]) for a in entry.get("authors", [])],
-            citations=[
-                Citation(**c) for c in entry.get("citations", [])
-                if c.get("paperId") is not None
-            ],
-            references=[
-                Reference(**r) for r in entry.get("references", [])
-                if r.get("paperId") is not None
-            ],
             sim_score=random.uniform(0, 1)  # Stub score
         ))
 
