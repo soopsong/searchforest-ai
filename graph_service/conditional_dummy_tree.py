@@ -35,7 +35,7 @@ def manual_tree_with_full_values(root: str, mapping: TreeMapping):
         "id": root,
         "context": root,
         "value": 1.0,
-        "example": [],
+        "example": "",
         "children": children
     }
 
