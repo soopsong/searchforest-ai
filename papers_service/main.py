@@ -44,9 +44,6 @@ class Paper(BaseModel):
     tldr: Optional[str]
     authors: List[Author]
 
-    citations: Optional[List[Citation]] = []
-    references: Optional[List[Reference]] = []
-
     sim_score: float
 
 
@@ -101,8 +98,6 @@ def get_random_papers(
             fieldsOfStudy=entry.get("fieldsOfStudy"),
             tldr=entry.get("tldr", {}).get("text") if entry.get("tldr") else None,
             authors=[Author(name=a["name"]) for a in entry.get("authors", [])],
-            citations=[Citation(**c) for c in entry.get("citations", []) if c.get("paperId")],
-            references=[Reference(**r) for r in entry.get("references", []) if r.get("paperId")],
             sim_score=random.uniform(0, 1)
         ))
 
