@@ -4,7 +4,7 @@ from typing import List, Optional
 
 # ① dummy_data 모듈에서 get_dummy_tree 함수 import
 from dummy_data import get_dummy_tree_with_context_and_example
-from graph_service.conditional_dummy_tree import manual_tree_with_full_values, IMPORTANT_TREES
+from conditional_dummy_tree import IMPORTANT_TREES
 
 app = FastAPI(title="Graph Service (Stub)")
 
