@@ -7,13 +7,14 @@ from pydantic import BaseModel
 from data_util.config import Config
 from routers.graph_loader import GraphLoader
 from routers.graph_builder import GraphBuilder
+from routers.searcher import VectorKeywordSearcher
 
 app = FastAPI(title="2-Depth 키워드 그래프 서비스")
 
 # --- 요청 모델 ---
 class GraphRequest(BaseModel):
-    root_pid: str       # 논문 ID를 직접 받거나
-    root_kw: str        # 또는 키워드를 받아도 됩니다
+    root_pid: Optional[str] = None   # 논문 ID를 직접 받거나
+    root_kw: Optional[str] = None    # 또는 키워드를 받아도 됩니다
     top1: int = 5
     top2: int = 3
 
@@ -41,11 +42,32 @@ paths = {
 graph_dict, paper_meta = loader.load_graph_and_meta(paths)
 builder = GraphBuilder()
 
+# 3) 검색기 초기화
+searcher = VectorKeywordSearcher(
+    hf_model_name="moka-ai/m3e-base",
+    index_path="indices/paper_ivf.index",
+    id_map_path="indices/paper_ids.txt"
+)
+
 # --- 엔드포인트: dummy_data 사용 ---
 @app.post("/graph", response_model=GraphResponse)
 def build_graph(req: GraphRequest):
+    
+    
+    # 0) root_pid가 없으면 키워드 검색
+    root_pid = req.root_pid
+    if not root_pid:
+        if not req.root_kw:
+            raise HTTPException(400, "root_pid or root_kw required")
+        candidates = searcher.search(req.root_kw, topk=1)
+        if not candidates:
+            raise HTTPException(404, "No paper found for keyword")
+        root_pid = candidates[0]
+
+
+
     # 1) 루트 논문 ID 유효성 검사
-    if req.root_pid not in graph_dict:
+    if root_pid not in graph_dict:
         raise HTTPException(status_code=404, detail="Root paper_id not found")
 
     # 2) k1, k2 업데이트
@@ -54,8 +76,8 @@ def build_graph(req: GraphRequest):
 
     # 3) 2-Depth 그래프 생성
     graph_json, kw2pids = builder.build(
-        root_kw     = req.root_kw or req.root_pid,
-        root_pids   = [req.root_pid],
+        root_kw     = req.root_kw or root_pid,
+        root_pids   = [root_pid],
         graph_dict  = graph_dict,
         paper_meta  = paper_meta
     )
