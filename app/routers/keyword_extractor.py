@@ -28,7 +28,7 @@ class TFIDFExtractor(KeywordExtractor):
         # max_df: 전체 문서의 80% 이상에 등장하는 단어는 무시
         # min_df=1: 최소 1개 문서에만 등장해도 어휘에 포함
         # stop_words=None: 기본 불용어만 사용
-        self.vectorizer = TfidfVectorizer(max_df=0.8, min_df=1, stop_words=None)
+        self.vectorizer = TfidfVectorizer(max_df=0.8, min_df=1, stop_words='english')
 
     def extract_bulk(self, texts: List[str], top_n: int = 5) -> Dict[str, List[tuple]]:
         """
