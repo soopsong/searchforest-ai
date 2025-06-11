@@ -34,94 +34,94 @@ def manual_tree_with_full_values(root: str, mapping: TreeMapping):
         "children": children
     }
 
-# # --- 수작업 예시 사전 ---
-# IMPORTANT_TREES = {
-#     "AI": manual_tree_with_full_values("AI", {
-#         "ML": {
-#             "value": 0.9,
-#             "children": [
-#                 {"id": "Supervised", "value": 0.87},
-#                 {"id": "Unsupervised", "value": 0.83},
-#                 {"id": "Self-Supervised", "value": 0.78}
-#             ]
-#         },
-#         "NLP": {
-#             "value": 0.8,
-#             "children": [
-#                 {"id": "BERT", "value": 0.76},
-#                 {"id": "GPT", "value": 0.75},
-#                 {"id": "Translation", "value": 0.72}
-#             ]
-#         },
-#         "CV": {
-#             "value": 0.7,
-#             "children": [
-#                 {"id": "ImageNet", "value": 0.74},
-#                 {"id": "ObjectDetection", "value": 0.71},
-#                 {"id": "Segmentation", "value": 0.68}
-#             ]
-#         },
-#         "RL": {
-#             "value": 0.6,
-#             "children": [
-#                 {"id": "Q-Learning", "value": 0.73},
-#                 {"id": "Policy Gradient", "value": 0.70},
-#                 {"id": "Actor Critic", "value": 0.67}
-#             ]
-#         },
-#         "AGI": {
-#             "value": 0.5,
-#             "children": [
-#                 {"id": "Symbolic", "value": 0.69},
-#                 {"id": "Neural", "value": 0.66},
-#                 {"id": "Hybrid", "value": 0.63}
-#             ]
-#         }
-#     }),
+# --- 수작업 예시 사전 ---
+IMPORTANT_TREES = {
+    "AI": manual_tree_with_full_values("AI", {
+        "ML": {
+            "value": 0.9,
+            "children": [
+                {"id": "Supervised", "value": 0.87},
+                {"id": "Unsupervised", "value": 0.83},
+                {"id": "Self-Supervised", "value": 0.78}
+            ]
+        },
+        "NLP": {
+            "value": 0.8,
+            "children": [
+                {"id": "BERT", "value": 0.76},
+                {"id": "GPT", "value": 0.75},
+                {"id": "Translation", "value": 0.72}
+            ]
+        },
+        "CV": {
+            "value": 0.7,
+            "children": [
+                {"id": "ImageNet", "value": 0.74},
+                {"id": "ObjectDetection", "value": 0.71},
+                {"id": "Segmentation", "value": 0.68}
+            ]
+        },
+        "RL": {
+            "value": 0.6,
+            "children": [
+                {"id": "Q-Learning", "value": 0.73},
+                {"id": "Policy Gradient", "value": 0.70},
+                {"id": "Actor Critic", "value": 0.67}
+            ]
+        },
+        "AGI": {
+            "value": 0.5,
+            "children": [
+                {"id": "Symbolic", "value": 0.69},
+                {"id": "Neural", "value": 0.66},
+                {"id": "Hybrid", "value": 0.63}
+            ]
+        }
+    }),
 
-
-#     "robotics": manual_tree_with_full_values("robotics", {
-#         "SLAM": {
-#             "value": 0.9,
-#             "children": [
-#                 {"id": "2D", "value": 0.87},
-#                 {"id": "3D", "value": 0.83},
-#                 {"id": "Visual", "value": 0.78}
-#             ]
-#         },
-#         "Control": {
-#             "value": 0.8,
-#             "children": [
-#                 {"id": "PID", "value": 0.76},
-#                 {"id": "ModelPredictive", "value": 0.73},
-#                 {"id": "Adaptive", "value": 0.70}
-#             ]
-#         },
-#         "Actuators": {
-#             "value": 0.7,
-#             "children": [
-#                 {"id": "Servo", "value": 0.74},
-#                 {"id": "Stepper", "value": 0.71},
-#                 {"id": "Hydraulic", "value": 0.68}
-#             ]
-#         },
-#         "Sensors": {
-#             "value": 0.6,
-#             "children": [
-#                 {"id": "Lidar", "value": 0.73},
-#                 {"id": "IMU", "value": 0.70},
-#                 {"id": "Camera", "value": 0.67}
-#             ]
-#         },
-#         "Planning": {
-#             "value": 0.5,
-#             "children": [
-#                 {"id": "A*", "value": 0.69},
-#                 {"id": "Dijkstra", "value": 0.66},
-#                 {"id": "RRT", "value": 0.63}
-#             ]
-#         }
-#     }),
+    "robotics": manual_tree_with_full_values("robotics", {
+        "SLAM": {
+            "value": 0.9,
+            "children": [
+                {"id": "2D", "value": 0.87},
+                {"id": "3D", "value": 0.83},
+                {"id": "Visual", "value": 0.78}
+            ]
+        },
+        "Control": {
+            "value": 0.8,
+            "children": [
+                {"id": "PID", "value": 0.76},
+                {"id": "ModelPredictive", "value": 0.73},
+                {"id": "Adaptive", "value": 0.70}
+            ]
+        },
+        "Actuators": {
+            "value": 0.7,
+            "children": [
+                {"id": "Servo", "value": 0.74},
+                {"id": "Stepper", "value": 0.71},
+                {"id": "Hydraulic", "value": 0.68}
+            ]
+        },
+        "Sensors": {
+            "value": 0.6,
+            "children": [
+                {"id": "Lidar", "value": 0.73},
+                {"id": "IMU", "value": 0.70},
+                {"id": "Camera", "value": 0.67}
+            ]
+        },
+        "Planning": {
+            "value": 0.5,
+            "children": [
+                {"id": "A*", "value": 0.69},
+                {"id": "Dijkstra", "value": 0.66},
+                {"id": "RRT", "value": 0.63}
+            ]
+        }
+    })
+}
 
 
 #     "software engineering": manual_tree_with_full_values("software engineering", {

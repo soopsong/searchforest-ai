@@ -27,6 +27,7 @@ class GraphBuilder:
               graph_dict: Dict[str, Dict],
               paper_meta: Dict[str, Dict]
               ) -> Tuple[Dict, Dict[str, Set[str]]]:
+        
         # 1) hop1 / hop2 논문 ID 수집
         hop1 = []
         for pid in root_pids:
@@ -43,10 +44,24 @@ class GraphBuilder:
         # 2) abstract 텍스트 수집
         hop1_texts = [paper_meta[pid]["abstract"] for pid in hop1 if pid in paper_meta]
         hop2_texts = [paper_meta[pid]["abstract"] for pid in hop2 if pid in paper_meta]
+        
+        # 빈 문자열 및 공백-only 문서는 제외
+        hop1_valid = [t for t in hop1_texts if t and t.strip()]
+        hop2_valid = [t for t in hop2_texts if t and t.strip()]
+
 
         # 3) 키워드 추출 (TF-IDF)
-        hop1_kw_map = self.extractor.extract_bulk(hop1_texts, top_n=self.k1)
-        hop2_kw_map = self.extractor.extract_bulk(hop2_texts, top_n=self.k2)
+        # hop1_kw_map = self.extractor.extract_bulk(hop1_texts, top_n=self.k1)
+        # hop2_kw_map = self.extractor.extract_bulk(hop2_texts, top_n=self.k2)
+        if hop1_valid:
+            hop1_kw_map = self.extractor.extract_bulk(hop1_valid, top_n=self.k1)
+        else:
+            hop1_kw_map = {}
+        
+        if hop2_valid:
+            hop2_kw_map = self.extractor.extract_bulk(hop2_valid, top_n=self.k2)
+        else:
+            hop2_kw_map = {}
 
         # 4) 그래프 JSON 및 kw2pids 매핑 생성
         nodes = []
