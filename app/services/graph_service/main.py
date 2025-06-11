@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 # ① dummy_data 모듈에서 get_dummy_tree 함수 import
-from dummy_data import get_dummy_tree_with_context_and_example
+from dummy_data import get_dummy_tree_with_context
 from conditional_dummy_tree import IMPORTANT_TREES
 
 app = FastAPI(title="Graph Service (Stub)")
@@ -18,7 +18,7 @@ class GraphRequest(BaseModel):
 class KeywordNode(BaseModel):
     id: str
     value: float
-    example: Optional[str]
+    # example: Optional[str]
     children: List["KeywordNode"]
 KeywordNode.update_forward_refs()
 
@@ -32,5 +32,5 @@ def build_graph(req: GraphRequest):
     if req.root in IMPORTANT_TREES:
         tree = IMPORTANT_TREES[req.root]
     else:
-        tree = get_dummy_tree_with_context_and_example(req.root, req.top1, req.top2)
+        tree = get_dummy_tree_with_context(req.root, req.top1, req.top2)
     return {"keyword_tree": tree}
