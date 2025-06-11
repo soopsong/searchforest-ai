@@ -5,8 +5,8 @@ import time
 import numpy as np
 import torch
 
-from app.data_util.logging import logger
-from app.data_util.utils import calc_running_avg_loss
+from .logging import logger
+from .utils import calc_running_avg_loss
 from fastNLP.core.callback import Callback, EarlyStopError
 
 

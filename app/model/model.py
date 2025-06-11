@@ -176,7 +176,9 @@ class Encoder(nn.Module):
         seq_lens = enc_lens
         # encode the input text
         embedded = self.embedding(enc_input)
-        encoder_outputs, hidden = self.lstm(embedded, seq_lens)
+        seq_lens_cpu = seq_lens.to('cpu').long()
+        encoder_outputs, hidden = self.lstm(embedded, seq_lens_cpu)
+        # encoder_outputs, hidden = self.lstm(embedded, seq_lens)
         encoder_outputs = encoder_outputs.contiguous()  # B x t_k x 2*hidden_dim
 
         h_cnode_batch, _ = hidden
@@ -194,9 +196,14 @@ class Encoder(nn.Module):
             node_embed = self.embedding(node_batch)
 
             if config.share_encoder:
-                outputs, (h, c) = self.lstm(node_embed, len_batch)  # h =>2x batch x hidden_dim
+                # outputs, (h, c) = self.lstm(node_embed, len_batch)  # h =>2x batch x hidden_dim
+                # lengths는 CPU int64 타입이어야 합니다.
+                len_batch_cpu = len_batch.to('cpu').long()
+                outputs, (h, c) = self.graph_feature_lstm(node_embed, len_batch_cpu)
             else:
-                outputs, (h, c) = self.graph_feature_lstm(node_embed, len_batch)
+                # outputs, (h, c) = self.graph_feature_lstm(node_embed, len_batch)
+                len_batch_cpu = len_batch.to('cpu').long()
+                outputs, (h, c) = self.graph_feature_lstm(node_embed, len_batch_cpu)
 
             h_in = h.transpose(0, 1).contiguous().view(-1, config.hidden_dim * 2)
             node_features.append(self.pooling(h_in, outputs))

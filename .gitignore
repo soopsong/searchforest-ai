@@ -11,15 +11,26 @@ app/data/extracted/*
 app/data/preprocessed/*
 app/tools/*
 app/model/model_save/*
-
 *.tar.gz
 **/inductive_test_checkpoint_collected.json
+
+#logs
+app/scripts/logs
+app/scripts/pyrouge_root
+app/scripts/running_logs
+
+#etc
+app/etc/*
+
+#output
+app/output
+
 
 # Distribution / packaging
 .Python
 build/
 develop-eggs/
-dist/
+dist
 downloads/
 eggs/
 .eggs/

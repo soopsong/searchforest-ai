@@ -3,7 +3,7 @@ from collections import deque
 import dgl
 from fastNLP import Vocabulary
 from fastNLP.io import JsonLoader
-from app.data_util.logging import logger
+from .logging import logger
 
 # <s> and </s> are used in the data files to segment the abstracts into sentences. They don't receive vocab ids.
 SENTENCE_START = '<s>'

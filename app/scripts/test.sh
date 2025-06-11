@@ -4,7 +4,7 @@
 echo "[STEP 1] Activating Conda Environment..."
 # source /home/dswang/anaconda3/etc/profile.d/conda.sh  # 시스템에 맞게 경로 조정
 source deactivate
-source activate cgsum_env
+source activate cgsum
 
 # 실행 디렉토리로 이동 (필요시)
 # cd /path/to/your/project
@@ -14,14 +14,14 @@ mkdir -p logs
 
 # 테스트 실행
 echo "[STEP 2] Running CGSum Test Script..."
-python test_CGSum.py \
+python ../tests/test_CGSum.py \
   --visible_gpu 0 \
-  --model_dir cgsum/model_save \
+  --model_dir ../model/model_save \
   --model_name CGSum_inductive_1hopNbrs.pt \
   --setting inductive \
-  --dataset_dir cgsum/data/inductive \
-  --decode_dir cgsum/decode_path \
-  --result_dir cgsum/results \
+  --dataset_dir ../data/extracted/inductive \
+  --decode_dir ../output/decode_path \
+  --result_dir ../output/results \
   --min_dec_steps 130 \
   > logs/test_$(date +%Y%m%d_%H%M%S).log 2>&1
 

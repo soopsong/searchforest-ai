@@ -3,10 +3,10 @@ from __future__ import division
 from fastNLP.core.metrics import MetricBase
 from rouge import Rouge
 
-from app.data_util.dataloader import STOP_DECODING
-from app.data_util.dataloader import outputids2words
-from app.data_util.logging import logger
-from app.data_util.utils import pyrouge_score_all, pyrouge_score_all_multi
+from data_util.dataloader import STOP_DECODING
+from data_util.dataloader import outputids2words
+from data_util.logging import logger
+from data_util.utils import pyrouge_score_all, pyrouge_score_all_multi
 
 
 def remend_score(scores_all):
