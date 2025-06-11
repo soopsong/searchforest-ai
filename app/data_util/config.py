@@ -14,6 +14,7 @@ class Config(object):
         self.test_result_path = 'pyrouge_root'
         if not os.path.exists(self.test_result_path):
             os.mkdir(self.test_result_path)
+            print(self.test_result_path)
 
         self.baseline = False
         self.pointer_gen = True

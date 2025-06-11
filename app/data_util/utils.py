@@ -58,7 +58,21 @@ def clean(x):
 
 def pyrouge_score_all(hyps_list, refer_list, config, remap=True):
     nowTime = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    PYROUGE_ROOT = os.path.join(config.test_result_path, nowTime)
+
+    print("[DEBUG] config.log_root =", config.log_root)
+    BASE = os.getcwd()               
+    BASE_PATH = os.path.join(BASE, "pyrouge_root")
+    PYROUGE_ROOT = os.path.join(BASE_PATH, nowTime)
+    print(f"[DEBUG] cwd={BASE}")
+    print(f"[DEBUG] will create BASE_PATH={BASE_PATH}")
+    print(f"[DEBUG] will create PYROUGE_ROOT={PYROUGE_ROOT}")
+
+    try:
+        os.mkdir(PYROUGE_ROOT)
+        print(f"[DEBUG] created {PYROUGE_ROOT}")
+    except Exception as e:
+        print(f"[DEBUG] error creating {PYROUGE_ROOT}: {e}")
+
     SYSTEM_PATH = os.path.join(PYROUGE_ROOT, 'gold')
     MODEL_PATH = os.path.join(PYROUGE_ROOT, 'system')
     if os.path.exists(SYSTEM_PATH):

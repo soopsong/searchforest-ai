@@ -1,12 +1,12 @@
 import os
 from collections import defaultdict
 
-from app.data_util.config import Config
-from app.data_util.dataloader import ScisummGraphLoader
+from data_util.config import Config
+from data_util.dataloader import ScisummGraphLoader
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 import argparse
-from app.data_util.logging import logger
+from data_util.logging import logger
 import json
 
 

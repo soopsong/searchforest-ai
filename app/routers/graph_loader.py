@@ -1,8 +1,8 @@
 import os
 from typing import Dict, Tuple
 
-from app.data_util.config import Config
-from app.data_util.dataloader import ScisummGraphLoader
+from data_util.config import Config
+from data_util.dataloader import ScisummGraphLoader
 
 class GraphLoader:
     """

@@ -3,8 +3,8 @@
 # 환경 활성화
 echo "[STEP 1] Activating Conda Environment..."
 # source /home/dswang/anaconda3/etc/profile.d/conda.sh  # 시스템에 맞게 경로 조정
-source deactivate
-source activate cgsum
+# conda deactivate
+# conda activate cgsum
 
 # 실행 디렉토리로 이동 (필요시)
 # cd /path/to/your/project
