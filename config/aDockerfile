@@ -1,0 +1,46 @@
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 필수 패키지 설치
+RUN apt-get update && apt-get install -y \
+    python3 python3-pip \  
+    git curl unzip perl \
+    libxml-parser-perl libxml-dom-perl \
+    build-essential \ 
+    && apt-get clean \
+    && ldconfig
+
+# pyrouge 설치
+RUN pip3 install git+https://github.com/bheinzerling/pyrouge.git
+
+# ROUGE-1.5.5 다운로드 및 설치
+WORKDIR /opt
+RUN mkdir -p /opt/pyrouge/tools && \
+    cd /opt/pyrouge/tools && \
+    git clone https://github.com/andersjo/pyrouge.git && \
+    cp -r pyrouge/tools/ROUGE-1.5.5 . && \
+    chmod +x ROUGE-1.5.5/ROUGE-1.5.5.pl && \
+    rm -rf pyrouge
+
+# WordNet 예외 DB 구축
+WORKDIR /opt/pyrouge/tools/ROUGE-1.5.5/data/WordNet-2.0-Exceptions
+RUN curl -O https://raw.githubusercontent.com/andersjo/pyrouge/master/tools/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/buildExeptionDB.pl && \
+    mkdir -p exc && \
+    curl -L -o exc/noun.exc https://raw.githubusercontent.com/bheinzerling/pyrouge/master/tools/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/exc/noun.exc && \
+    curl -L -o exc/verb.exc https://raw.githubusercontent.com/bheinzerling/pyrouge/master/tools/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/exc/verb.exc && \
+    chmod +x buildExeptionDB.pl && \
+    ./buildExeptionDB.pl . exc WordNet-2.0.exc.db && \
+    cd ../ && \
+    ln -sf WordNet-2.0-Exceptions/WordNet-2.0.exc.db WordNet-2.0.exc.db
+
+# 환경 변수 설정
+ENV PYROUGE_HOME_DIR=/opt/pyrouge/tools/ROUGE-1.5.5
+ENV PATH="$PYROUGE_HOME_DIR:$PATH"
+
+# pyrouge 경로 셋업 자동화 (선택)
+RUN echo "export PYROUGE_HOME_DIR=$PYROUGE_HOME_DIR" >> ~/.bashrc && \
+    echo "export PATH=\$PYROUGE_HOME_DIR:\$PATH" >> ~/.bashrc
+
+WORKDIR /workspace
+CMD ["/bin/bash"]

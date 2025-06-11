@@ -6,8 +6,14 @@ __pycache__/
 # C extensions
 *.so
 
+# LFS
+app/data/extracted/*
+app/data/preprocessed/*
+app/tools/*
+app/model/model_save/*
 
-papers_service/data/inductive_test_checkpoint_collected.json
+*.tar.gz
+**/inductive_test_checkpoint_collected.json
 
 # Distribution / packaging
 .Python
