@@ -1,0 +1,18 @@
+name: faiss-gpu-test
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - cudatoolkit=12.2
+  - faiss-gpu
+  - pip
+  - pip:
+    - sentence-transformers
+    - transformers
+    - fastapi
+    - "uvicorn[standard]"
+    - pydantic
+    - aioredis
+    - fastapi-utils
+    - numpy

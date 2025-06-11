@@ -14,6 +14,10 @@ app/model/model_save/*
 *.tar.gz
 **/inductive_test_checkpoint_collected.json
 
+#data
+app/services/graph_service/data/indices/paper_ivf.index
+app/services/graph_service/data/indices
+
 #logs
 app/scripts/logs
 app/scripts/pyrouge_root
