@@ -24,6 +24,7 @@ app/etc/*
 
 #output
 app/output
+app/services/papers_service/data/summarization_processed
 
 
 # Distribution / packaging

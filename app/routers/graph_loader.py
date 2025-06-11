@@ -1,14 +1,15 @@
 import os
 from typing import Dict, Tuple
-
-from data_util.config import Config
 from data_util.dataloader import ScisummGraphLoader
+from data_util.config import Config
+
 
 class GraphLoader:
     """
-    GraphLoader wraps ScisummGraphLoader to load metadata and build a citation subgraph.
+    GraphLoader wraps ScisummGraphLoader to load metadata and build a citation subgraph
+    without relying on loader.graph_strut_dict (which isn't exposed).
     """
-    def __init__(self, cfg: Config):
+    def __init__(self, config: Config):
         """
         Args:
             cfg (Config): configuration object containing:
@@ -20,42 +21,63 @@ class GraphLoader:
                 - setting: 'inductive' or 'transductive'
                 - load_vocab: whether to load or build vocabulary
         """
-        self.cfg = cfg
-        self.loader = ScisummGraphLoader(setting=cfg.setting)
+        self.config = config
+        self.loader = ScisummGraphLoader(setting=config.setting)
 
-    def load_meta(self) -> Tuple[object, object]:
+    def load_graph_and_meta(self, paths: Dict[str, str]) -> Tuple[Dict[str, dict], Dict[str, dict]]:
         """
-        Load train/test JSONL files and prepare metadata and vocabulary.
+        Load citation graph and paper metadata from given paths.
 
-        Returns:
-            datainfo: object containing paper_meta and other dataset info
-            vocab: vocabulary object (if load_vocab=True)
+        :param paths: Dict with keys like 'train', 'val', 'test' and their JSONL file paths.
+        :return: Tuple of (graph_dict, paper_meta)
+            - graph_dict: { paper_id: { "references": [pid, ...] } }
+            - paper_meta: { paper_id: { "title": str, "abstract": str } }
         """
-        paths = {
-            "train": os.path.join(self.cfg.train_path, self.cfg.train_file),
-            "test":  os.path.join(self.cfg.train_path, self.cfg.test_file)
-        }
-        datainfo, vocab = self.loader.process(paths, self.cfg, self.cfg.load_vocab)
-        return datainfo, vocab
+        # 1) process datasets: load and tokenize, add graph_struct etc.
+        datainfo, vocab = self.loader.process(paths, self.config, load_vocab_file=True)
+        
+        graph_dict: Dict[str, dict] = {}
+        paper_meta: Dict[str, dict] = {}
 
-    def build_graph(self) -> Dict[str, Dict]:
-        """
-        Return the citation graph dictionary built by ScisummGraphLoader.
+        # 각 split(train/val/test)을 모두 합쳐 citation info와 메타 수집
+        for split_name, dataset in datainfo.datasets.items():
+            for ins in dataset:
+                pid = ins["paper_id"]  # Instance에서 key로 접근
+                # references 필드 접근 (없으면 빈 리스트)
+                refs = ins["references"] if "references" in ins.fields else []
+                graph_dict[pid] = {"references": refs}
 
-        Returns:
-            graph_dict: mapping from paper_id to metadata dict including 'references'
-        """
-        return self.loader.graph_strut_dict
+                # title, abstract도 동일하게
+                title = ins["title"] if "title" in ins.fields else ""
+                abstract = ins["abstract"] if "abstract" in ins.fields else ""
+                paper_meta[pid] = {
+                    "title": title,
+                    "abstract": abstract
+                }
 
-    def load_and_build(self) -> Tuple[object, object, Dict[str, Dict]]:
-        """
-        Convenience method: load metadata then build and return the citation graph.
 
-        Returns:
-            datainfo: metadata object
-            vocab: vocabulary object
-            graph_dict: citation graph dictionary
-        """
-        datainfo, vocab = self.load_meta()
-        graph_dict = self.build_graph()
-        return datainfo, vocab, graph_dict
+        return graph_dict, paper_meta
+        
+
+if __name__ == "__main__":
+    cfg = Config()
+    cfg.train_path = "data/extracted/inductive"
+    cfg.train_file = "train.jsonl"
+    cfg.test_file = "test.jsonl"
+    cfg.setting = "inductive"
+    cfg.mode = "test"
+    cfg.load_vocab = True
+
+    cfg.vocab_path = os.path.join(cfg.train_path, "vocab")
+
+    # paths에는 JSONL만 전달
+    paths = {
+        "train": os.path.join(cfg.train_path, cfg.train_file),
+        "test":  os.path.join(cfg.train_path, cfg.test_file),
+    }
+
+    loader = GraphLoader(cfg)
+    graph_dict, paper_meta = loader.load_graph_and_meta(paths)
+    print(f"Loaded {len(graph_dict)} papers")
+    some_pid = next(iter(graph_dict))
+    print(some_pid, graph_dict[some_pid], paper_meta[some_pid])

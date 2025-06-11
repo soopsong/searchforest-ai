@@ -10,7 +10,7 @@ we recommend using the following commands to install the PYROUGE environment:
 ```shell
 sudo apt-get install libxml-perl libxml-dom-perl
 pip install git+git://github.com/bheinzerling/pyrouge
-export PYROUGE_HOME_DIR=../tools/ROUGE-1.5.5
+export PYROUGE_HOME_DIR=tools/ROUGE-1.5.5
 pyrouge_set_rouge_path $PYROUGE_HOME_DIR
 chmod +x $PYROUGE_HOME_DIR/ROUGE-1.5.5.pl
 ```

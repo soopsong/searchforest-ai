@@ -111,7 +111,7 @@ def pyrouge_score_all(hyps_list, refer_list, config, remap=True):
     r.system_filename_pattern = 'Reference.(\d+).txt'
     r.model_filename_pattern = 'Model.[A-Z].#ID#.txt'
     ###### change this line to your pyrouge dir ######
-    output = r.convert_and_evaluate(rouge_args="-e /home/jimin/CGSum/tools/ROUGE-1.5.5/data -a -m -n 2 -d")
+    output = r.convert_and_evaluate(rouge_args="-e /home/bruce.kim/searchforest-ai/app/tools/ROUGE-1.5.5/data -a -m -n 2 -d")
 
     output_dict = r.output_to_dict(output)
 
