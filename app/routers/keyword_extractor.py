@@ -39,7 +39,11 @@ class TFIDFExtractor(KeywordExtractor):
         self.vectorizer.fit(texts)
         self._fitted = True
         tfidf_matrix = self.vectorizer.transform(texts)
-        feature_names = self.vectorizer.get_feature_names_out()
+         # scikit-learn 버전에 따라 호환 처리
+        try:
+            feature_names = self.vectorizer.get_feature_names_out()
+        except AttributeError:
+            feature_names = self.vectorizer.get_feature_names()
 
         result = {}
         for i, row in enumerate(tfidf_matrix):
@@ -58,9 +62,14 @@ class TFIDFExtractor(KeywordExtractor):
         if not self._fitted:
             self.vectorizer.fit([text])
             self._fitted = True
-
+            
         tfidf_matrix = self.vectorizer.transform([text])
-        feature_names = self.vectorizer.get_feature_names_out()
+
+        try:
+            feature_names = self.vectorizer.get_feature_names_out()
+        except AttributeError:
+            feature_names = self.vectorizer.get_feature_names()
+
         row = tfidf_matrix.toarray().flatten()
         top_indices = row.argsort()[::-1][:top_n]
         return [feature_names[idx] for idx in top_indices if row[idx] > 0]
