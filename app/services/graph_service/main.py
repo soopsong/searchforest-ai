@@ -1,6 +1,6 @@
 import os
 import json, hashlib
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple, Union
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import aioredis
@@ -9,8 +9,9 @@ from data_util.logging import logger
 
 from data_util.config import Config
 from routers.graph_loader import GraphLoader
-from routers.graph_builder import GraphBuilder
 from routers.searcher import VectorKeywordSearcher
+from routers.graph_builder import GraphBuilder
+from collections import defaultdict
 
 app = FastAPI(title="2-Depth 키워드 그래프 서비스")
 
@@ -18,13 +19,14 @@ app = FastAPI(title="2-Depth 키워드 그래프 서비스")
 class GraphRequest(BaseModel):
     root_pid: Optional[str] = None   # 논문 ID를 직접 받거나
     root_kw: Optional[str] = None    # 또는 키워드를 받아도 됩니다
-    top1: int = 5
+    top1: int = 10
     top2: int = 3
 
 # --- 응답 모델 ---
 class GraphResponse(BaseModel):
     graph: Dict
-    kw2pids: Dict[str, List[str]]
+    # paper_id와 score(=float)를 함께 받도록 정의
+    kw2pids: Dict[str, List[Tuple[str, float]]]
 
 # 1) Config 선언 및 paths 설정
 cfg = Config()
@@ -43,7 +45,6 @@ paths = {
     "test":  os.path.join(cfg.train_path, cfg.test_file),
 }
 graph_dict, paper_meta = loader.load_graph_and_meta(paths)
-builder = GraphBuilder()
 
 # 3) 검색기 초기화
 searcher = VectorKeywordSearcher(
@@ -52,9 +53,18 @@ searcher = VectorKeywordSearcher(
     id_map_path="indices/paper_ids.txt"
 )
 
+builder = GraphBuilder(k1=10, k2=3, pid_limit=20, searcher=searcher)
+
 # 2) Redis 클라이언트 초기화 (앱 스타트업 시)
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
 redis: Optional[aioredis.Redis] = None
+
+# — 앱 시작 시 한 번만 —
+# graph_dict: paper_id -> {"references": [...]}
+reverse_graph = defaultdict(list)
+for pid, info in graph_dict.items():
+    for ref in info.get("references", []):
+        reverse_graph[ref].append(pid)
 
 @app.on_event("startup")
 async def startup_event():
@@ -85,23 +95,38 @@ def make_cache_key(root_pid: str, root_kw: str, top1: int, top2: int) -> str:
 @app.post("/graph", response_model=GraphResponse)
 async def build_graph(req: GraphRequest):
 
-    # 1) 루트 논문 ID 결정 (req.root_pid or 키워드 검색)
-    root_pid = req.root_pid
-    if not root_pid:
-        if not req.root_kw:
-            raise HTTPException(400, "root_pid or root_kw required")
-        candidates = searcher.search(req.root_kw, topk=1)
-        if not candidates:
-            raise HTTPException(404, "No paper found for keyword")
-        root_pid = candidates[0]
+    # 1) FAISS로 topk 후보(pid, sim)를 가져온다
+    candidates: List[Tuple[str,float]] = searcher.search(req.root_kw, topk=10)
 
-    # 2) 캐시 키 생성 (root_pid가 정의된 후)
+    # 2) 그래프에 직접 있는 ID를 우선 선택
+    root_pid = None
+    for pid, sim in candidates:
+        if pid in graph_dict:
+            root_pid = pid
+            break
+
+    # 3) 없으면 그 논문을 인용한(역방향) 논문을 찾아 루트로
+    if root_pid is None:
+        for pid, sim in candidates:
+            parents = reverse_graph.get(pid, [])
+            if parents:
+                root_pid = parents[0]  # 인용한 첫 논문을 루트로
+                break
+
+
+    if root_pid is None:
+        raise HTTPException(404, "그래프에서 연결 가능한 논문을 찾지 못했습니다")
+
+
+
+    # 2) 캐시 키 생성
     cache_key = make_cache_key(root_pid, req.root_kw or root_pid, req.top1, req.top2)
 
     # 3) 캐시 확인
-    cached = await redis.get(cache_key)
-    if cached:
-        return json.loads(cached)
+    if redis:
+        cached = await redis.get(cache_key)
+        if cached:
+            return json.loads(cached)
 
     # 4) 그래프 생성
     builder.k1 = req.top1
@@ -114,9 +139,9 @@ async def build_graph(req: GraphRequest):
     )
     payload = {"graph": graph_json, "kw2pids": kw2pids}
 
-    # 4) 캐시에 저장 (TTL 1시간)
-    await redis.set(cache_key, json.dumps(payload, ensure_ascii=False), ex=3600)
-
+    # 5) 캐시에 저장 (TTL 1시간)
+    if redis:
+        await redis.set(cache_key, json.dumps(payload, ensure_ascii=False), ex=3600)
 
     return payload
 
@@ -145,3 +170,7 @@ async def build_graph(req: GraphRequest):
     # # else:
     # #     tree = get_dummy_tree_with_context(req.root, req.top1, req.top2)
     # # return {"keyword_tree": tree}
+
+
+
+    # redis-cli FLUSHALL

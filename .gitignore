@@ -18,6 +18,8 @@ app/model/model_save/*
 app/services/graph_service/data/indices/paper_ivf.index
 app/services/graph_service/data/indices
 
+app/indices
+
 #logs
 app/scripts/logs
 app/scripts/pyrouge_root

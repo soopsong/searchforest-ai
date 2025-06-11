@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import List, Dict
 from sklearn.feature_extraction.text import TfidfVectorizer
+from typing import List, Dict, Tuple
 
 
 class KeywordExtractor(ABC):
@@ -25,34 +25,41 @@ class TFIDFExtractor(KeywordExtractor):
     - 유니그램 + 바이그램 사용
     """
     def __init__(self):
-        self.vectorizer = TfidfVectorizer(
-            stop_words='english',
-            ngram_range=(1, 2),
-            max_features=5000
-        )
-        self._fitted = False
+        # max_df: 전체 문서의 80% 이상에 등장하는 단어는 무시
+        # min_df=1: 최소 1개 문서에만 등장해도 어휘에 포함
+        # stop_words=None: 기본 불용어만 사용
+        self.vectorizer = TfidfVectorizer(max_df=0.8, min_df=1, stop_words=None)
 
-    def extract_bulk(self, texts: List[str], top_n: int) -> Dict[str, List[str]]:
+    def extract_bulk(self, texts: List[str], top_n: int = 5) -> Dict[str, List[tuple]]:
         """
-        전체 텍스트 리스트를 기반으로 TF-IDF 피팅 후, 각 텍스트별 상위 키워드 추출
+        texts: hop1_texts or hop2_texts
+        반환값: { text: [(keyword, score), ...] }
         """
-        self.vectorizer.fit(texts)
-        self._fitted = True
-        tfidf_matrix = self.vectorizer.transform(texts)
-         # scikit-learn 버전에 따라 호환 처리
+        results: Dict[str, List[tuple]] = {}
+        if not texts:
+            return {t: [] for t in texts}
+
         try:
+            X = self.vectorizer.fit_transform(texts)
+        except ValueError as e:
+            # 빈 어휘집 발생 시, 모두 빈 리스트로 넘김
+            return {t: [] for t in texts}
+
+        # sklearn 버전에 따라 호출 메서드 분기
+        feature_names = None
+        if hasattr(self.vectorizer, "get_feature_names_out"):
             feature_names = self.vectorizer.get_feature_names_out()
-        except AttributeError:
+        else:
             feature_names = self.vectorizer.get_feature_names()
 
-        result = {}
-        for i, row in enumerate(tfidf_matrix):
-            row_data = row.toarray().flatten()
-            top_indices = row_data.argsort()[::-1][:top_n]
-            top_keywords = [feature_names[idx] for idx in top_indices if row_data[idx] > 0]
-            result[texts[i]] = top_keywords
+        # 각 문서마다 TF-IDF 상위 top_n 키워드 추출
+        for row_idx, vec in enumerate(X):
+            row = vec.toarray().flatten()
+            # (단어, 점수) 쌍 리스트
+            pairs = [(feature_names[i], float(row[i])) for i in row.argsort()[::-1] if row[i] > 0]
+            results[texts[row_idx]] = pairs[:top_n]
 
-        return result
+        return results
 
     def extract(self, text: str, top_n: int) -> List[str]:
         """
