@@ -3,7 +3,7 @@ import logging.handlers
 import os
 import sys
 
-from app.data_util.config import Config
+from .config import Config
 config = Config()
 logger = logging.getLogger("CGSum logger")
 

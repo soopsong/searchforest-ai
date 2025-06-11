@@ -7,8 +7,8 @@ from numpy import random
 from rouge import rouge_score
 from dgl.nn.pytorch import GATConv
 from dgl.nn.pytorch import GraphConv
-from app.data_util import dataloader
-from app.data_util.logging import logger
+from data_util import dataloader
+from data_util.logging import logger
 from fastNLP.core import seq_len_to_mask
 from fastNLP.modules import LSTM, MLP
 
