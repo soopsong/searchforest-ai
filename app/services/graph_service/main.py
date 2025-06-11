@@ -1,8 +1,11 @@
 import os
-import json
-from typing import List, Dict
+import json, hashlib
+from typing import List, Dict, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import aioredis
+from fastapi_utils.tasks import repeat_every
+from data_util.logging import logger
 
 from data_util.config import Config
 from routers.graph_loader import GraphLoader
@@ -49,12 +52,40 @@ searcher = VectorKeywordSearcher(
     id_map_path="indices/paper_ids.txt"
 )
 
+# 2) Redis 클라이언트 초기화 (앱 스타트업 시)
+REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
+redis: Optional[aioredis.Redis] = None
+
+@app.on_event("startup")
+async def startup_event():
+    global redis
+    # modern aioredis uses from_url
+    try:
+        redis = await aioredis.from_url(
+            REDIS_URL,
+            encoding="utf-8",
+            decode_responses=True,
+            max_connections=10
+        )
+        logger.info(f"✅ Connected to Redis at {REDIS_URL}")
+    except Exception as e:
+        logger.warning(f"⚠️ Redis 연결 실패, 캐시 미사용: {e}")
+        redis = None
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    await redis.close()
+
+def make_cache_key(root_pid: str, root_kw: str, top1: int, top2: int) -> str:
+    # 파라미터 조합으로 고유 키 생성
+    key_str = f"{root_pid}|{root_kw}|{top1}|{top2}"
+    return "graph:" + hashlib.sha256(key_str.encode()).hexdigest()
+
 # --- 엔드포인트: dummy_data 사용 ---
 @app.post("/graph", response_model=GraphResponse)
-def build_graph(req: GraphRequest):
-    
-    
-    # 0) root_pid가 없으면 키워드 검색
+async def build_graph(req: GraphRequest):
+
+    # 1) 루트 논문 ID 결정 (req.root_pid or 키워드 검색)
     root_pid = req.root_pid
     if not root_pid:
         if not req.root_kw:
@@ -64,29 +95,53 @@ def build_graph(req: GraphRequest):
             raise HTTPException(404, "No paper found for keyword")
         root_pid = candidates[0]
 
+    # 2) 캐시 키 생성 (root_pid가 정의된 후)
+    cache_key = make_cache_key(root_pid, req.root_kw or root_pid, req.top1, req.top2)
 
+    # 3) 캐시 확인
+    cached = await redis.get(cache_key)
+    if cached:
+        return json.loads(cached)
 
-    # 1) 루트 논문 ID 유효성 검사
-    if root_pid not in graph_dict:
-        raise HTTPException(status_code=404, detail="Root paper_id not found")
-
-    # 2) k1, k2 업데이트
+    # 4) 그래프 생성
     builder.k1 = req.top1
     builder.k2 = req.top2
-
-    # 3) 2-Depth 그래프 생성
     graph_json, kw2pids = builder.build(
-        root_kw     = req.root_kw or root_pid,
-        root_pids   = [root_pid],
-        graph_dict  = graph_dict,
-        paper_meta  = paper_meta
+        root_kw   = req.root_kw or root_pid,
+        root_pids = [root_pid],
+        graph_dict=graph_dict,
+        paper_meta=paper_meta
     )
+    payload = {"graph": graph_json, "kw2pids": kw2pids}
 
-    # 4) 반환
-    return {"graph": graph_json, "kw2pids": kw2pids}
+    # 4) 캐시에 저장 (TTL 1시간)
+    await redis.set(cache_key, json.dumps(payload, ensure_ascii=False), ex=3600)
 
-    # if req.root in IMPORTANT_TREES:
-    #     tree = IMPORTANT_TREES[req.root]
-    # else:
-    #     tree = get_dummy_tree_with_context(req.root, req.top1, req.top2)
-    # return {"keyword_tree": tree}
+
+    return payload
+
+
+    # # 1) 루트 논문 ID 유효성 검사
+    # if root_pid not in graph_dict:
+    #     raise HTTPException(status_code=404, detail="Root paper_id not found")
+
+    # # 2) k1, k2 업데이트
+    # builder.k1 = req.top1
+    # builder.k2 = req.top2
+
+    # # 3) 2-Depth 그래프 생성
+    # graph_json, kw2pids = builder.build(
+    #     root_kw     = req.root_kw or root_pid,
+    #     root_pids   = [root_pid],
+    #     graph_dict  = graph_dict,
+    #     paper_meta  = paper_meta
+    # )
+
+    # # 4) 반환
+    # return {"graph": graph_json, "kw2pids": kw2pids}
+
+    # # if req.root in IMPORTANT_TREES:
+    # #     tree = IMPORTANT_TREES[req.root]
+    # # else:
+    # #     tree = get_dummy_tree_with_context(req.root, req.top1, req.top2)
+    # # return {"keyword_tree": tree}

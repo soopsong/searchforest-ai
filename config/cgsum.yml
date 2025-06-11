@@ -17,5 +17,14 @@ dependencies:
     - uvicorn[standard]
     - pydantic
     - tqdm
+    - faiss-cpu==1.6.3
   - pytorch=1.1.0
   - torchvision=0.3.0
+
+
+# conda install -c conda-forge faiss-gpu cudatoolkit=10.0 -y
+# conda install -c pytorch faiss-gpu cudatoolkit=10.0 -y
+# conda install -c pytorch -c nvidia faiss-gpu=1.11.0
+
+
+#pip install faiss-cpu==1.6.3
