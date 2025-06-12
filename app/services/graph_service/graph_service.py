@@ -4,7 +4,6 @@ from typing import List, Dict, Optional, Tuple, Union
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 import aioredis
-from data_util.logging import logger
 import requests
 from tree_mapping import extract_tree_mapping
 
@@ -44,9 +43,9 @@ async def startup_event():
             decode_responses=True,
             max_connections=10
         )
-        logger.info(f"✅ Connected to Redis at {REDIS_URL}")
+        print(f"✅ Connected to Redis at {REDIS_URL}")
     except Exception as e:
-        logger.warning(f"⚠️ Redis 연결 실패, 캐시 미사용: {e}")
+        print(f"⚠️ Redis 연결 실패, 캐시 미사용: {e}")
         redis = None
 
 @app.on_event("shutdown")
