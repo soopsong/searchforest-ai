@@ -11,7 +11,7 @@ from tree_mapping import extract_tree_mapping
 app = FastAPI(title="Graph Service with AI Inference")
 
 # Redis 초기화용 글로벌
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
+REDIS_URL = os.getenv("REDIS_URL", "redis://{redis_host}:6379")
 redis: Optional[aioredis.Redis] = None
 
 # 요청 모델
