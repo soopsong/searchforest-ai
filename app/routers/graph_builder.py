@@ -1,138 +1,106 @@
-# routers/graph_builder.py
+import os
+from typing import Dict, List, Set
+import networkx as nx
 
-import json
-import numpy as np
-from typing import Dict, List, Tuple
-from sentence_transformers import SentenceTransformer
-from routers.keyword_extractor import TFIDFExtractor
-from routers.searcher import VectorKeywordSearcher
+# 1. Paper → Keyword 매핑 생성
 
+def build_paper_keyword_map(
+    summaries_dir: str,
+    searcher,
+    top_k: int = 10
+) -> Dict[str, List[str]]:
+    """
+    각 paper_id에 대해 abstract를 FAISS로 검색하여 상위 top_k 키워드를 추출한 맵 생성
+    summaries_dir: 각 paper_id.txt 파일(abstract)을 담은 디렉터리
+    returns: { paper_id: [kw1, kw2, ...], ... }
+    """
+    mapping: Dict[str, List[str]] = {}
+    for fname in sorted(os.listdir(summaries_dir)):
+        if not fname.endswith('.txt'):
+            continue
+        pid = os.path.splitext(fname)[0]
+        path = os.path.join(summaries_dir, fname)
+        with open(path, 'r', encoding='utf-8') as f:
+            text = f.read().strip()
+        if not text:
+            continue
+        results = searcher.search(text, top_k)
+        mapping[pid] = [kw for kw, _ in results]
+    return mapping
 
+# 2. Keyword → Paper 역인덱스 생성
+
+def invert_index(paper_keywords: Dict[str, List[str]]) -> Dict[str, Set[str]]:
+    """
+    역인덱스 생성: 키워드 → 해당 키워드를 가진 paper_id 집합
+    """
+    inv: Dict[str, Set[str]] = {}
+    for pid, kws in paper_keywords.items():
+        for kw in kws:
+            inv.setdefault(kw, set()).add(pid)
+    return inv
+
+# 3. GraphBuilder 리팩토링: 키워드 중심 흐름
 class GraphBuilder:
     def __init__(
         self,
-        k1: int = 10,
-        k2: int = 3,
-        pid_limit: int = 20,
-        sim_model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
-        searcher: VectorKeywordSearcher = None
+        paper_meta: Dict[str, Dict],            # { paper_id: {"abstract": ..., "references": [...]}, ... }
+        inv_index: Dict[str, Set[str]]
     ):
-        self.k1 = k1
-        self.k2 = k2
-        self.pid_limit = pid_limit
-        self.extractor = TFIDFExtractor()
-        self.sim_model = SentenceTransformer(sim_model_name)
-        self.root_vector = None
-        self.searcher = searcher
+        """
+        paper_meta: 원본 메타데이터 (abstract, references 포함)
+        inv_index: { keyword: set(paper_ids) }
+        """
+        self.paper_meta = paper_meta
+        self.inv_index = inv_index
+        self.graph = nx.DiGraph()
 
     def build(
         self,
         root_kw: str,
-        root_pids: List[str],
-        graph_dict: Dict[str, Dict],
-        paper_meta: Dict[str, Dict]
-    ) -> Tuple[Dict, Dict[str, List[Tuple[str, float]]]]:
+        root_pids: Set[str]
+    ) -> nx.DiGraph:
+        """
+        root_kw: 사용자 매칭 키워드
+        root_pids: 해당 키워드 포함 논문 ID 집합
+        1-hop: root_pids
+        2-hop: 각 1-hop 논문의 references
+        텍스트: paper_meta[pid]['abstract'] 사용
+        """
+        # 0) 루트 키워드 노드 추가
+        self.graph.add_node(root_kw, type='keyword')
 
-        # 1) 루트 키워드 벡터 저장
-        self.root_vector = self.sim_model.encode(root_kw, convert_to_numpy=True)
+        # 1) hop1 논문 노드 및 엣지 추가
+        hop1 = root_pids
+        for pid in hop1:
+            self.graph.add_node(pid, type='paper', abstract=self.paper_meta.get(pid, {}).get('abstract', ''))
+            self.graph.add_edge(root_kw, pid, depth=1)
 
-        # 2) Hop1/Hop2 논문 ID 수집
-        hop1 = []
-        for pid in root_pids:
-            hop1 += graph_dict.get(pid, {}).get("references", [])
-        hop1 = list(dict.fromkeys(hop1))
+        # 2) hop2 (references) 논문 노드 및 엣지 추가
+        hop2: Set[str] = set()
+        for pid in hop1:
+            refs = set(self.paper_meta.get(pid, {}).get('references', []))
+            hop2 |= refs
 
-        hop2 = []
-        for pid1 in hop1:
-            hop2 += graph_dict.get(pid1, {}).get("references", [])
-        hop2 = [p for p in dict.fromkeys(hop2) if p not in root_pids and p not in hop1]
+        for pid in hop2:
+            self.graph.add_node(pid, type='paper', abstract=self.paper_meta.get(pid, {}).get('abstract', ''))
+            # references 기반 방향 엣지
+            for src in hop1:
+                if pid in set(self.paper_meta.get(src, {}).get('references', [])):
+                    self.graph.add_edge(src, pid, depth=2)
+        return self.graph
 
-        # 3) Abstract 수집
-        hop1_texts = [paper_meta[pid]["abstract"] for pid in hop1 if pid in paper_meta]
-        hop2_texts = [paper_meta[pid]["abstract"] for pid in hop2 if pid in paper_meta]
+# 4. 편의 함수
 
-        # 4) TF-IDF 키워드 추출
-        hop1_kw_map = self.extractor.extract_bulk(hop1_texts, top_n=self.k1)
-        hop2_kw_map = self.extractor.extract_bulk(hop2_texts, top_n=self.k2)
-
-        # 5) pid->keywords 매핑 생성
-        hop1_pid_kws: Dict[str, List[Tuple[str, float]]] = {}
-        for pid, kws in zip(hop1, hop1_kw_map.values()):
-            hop1_pid_kws[pid] = kws
-
-        hop2_pid_kws: Dict[str, List[Tuple[str, float]]] = {}
-        for pid, kws in zip(hop2, hop2_kw_map.values()):
-            hop2_pid_kws[pid] = kws
-
-        # 6) 노드/링크 및 kw2pids 초기 생성
-        nodes, links = [], []
-        kw2pids: Dict[str, List[Tuple[str, float]]] = {}
-
-        nodes.append({"id": root_kw, "depth": 0, "sim": 1.0})
-
-        # 7) 1-Hop 처리
-        for pid, kws in hop1_pid_kws.items():
-            for kw, kw_score in kws:
-                vec = self.sim_model.encode(kw, convert_to_numpy=True)
-                sim = float((vec @ self.root_vector) / (np.linalg.norm(vec) * np.linalg.norm(self.root_vector)))
-                nodes.append({"id": kw, "depth": 1, "sim": sim})
-                links.append({"source": root_kw, "target": kw, "weight": sim})
-                kw2pids.setdefault(kw, []).append((pid, kw_score))
-
-        # 8) 2-Hop 처리 (루트→2depth 및 hop1→2depth)
-        for pid, kws in hop2_pid_kws.items():
-            for kw, kw_score in kws:
-                vec = self.sim_model.encode(kw, convert_to_numpy=True)
-                sim = float((vec @ self.root_vector) / (np.linalg.norm(vec) * np.linalg.norm(self.root_vector)))
-
-                # depth=2 노드, 루트→2depth 간선
-                nodes.append({"id": kw, "depth": 2, "sim": sim})
-                links.append({"source": root_kw, "target": kw, "weight": sim})
-
-                # hop1→2depth 간선 추가
-                for pid1 in hop1:
-                    if pid in graph_dict.get(pid1, {}).get("references", []):
-                        for kw1, _ in hop1_pid_kws.get(pid1, []):
-                            links.append({"source": kw1, "target": kw, "weight": sim})
-
-                kw2pids.setdefault(kw, []).append((pid, kw_score))
-
-        # 9) pid_limit 및 외부 보충
-        for kw, pid_list in kw2pids.items():
-            pid_list.sort(key=lambda x: x[1], reverse=True)
-            if len(pid_list) < self.pid_limit and self.searcher:
-                needed = self.pid_limit - len(pid_list)
-                extras = self.searcher.search(kw, topk=self.pid_limit)
-                for ext_pid, ext_sim in extras:
-                    if ext_pid not in {p for p, _ in pid_list}:
-                        pid_list.append((ext_pid, ext_sim))
-                    if len(pid_list) >= self.pid_limit:
-                        break
-            kw2pids[kw] = pid_list[:self.pid_limit]
-
-        print(len(hop1), len(hop2))
-
-
-        # 10) 중복 제거
-        unique_nodes = {(n['id'], n['depth']): n for n in nodes}
-        unique_links = {(l['source'], l['target']): l for l in links}
-
-        graph_json = {
-            "nodes": list(unique_nodes.values()),
-            "links": list(unique_links.values())
-        }
-
-        # 11) sim_scaled 계산 (1-Hop & 2-Hop)
-        alpha = 5.0
-        for depth in (1, 2):
-            depth_nodes = [n for n in graph_json['nodes'] if n['depth'] == depth]
-            sims = np.array([n['sim'] for n in depth_nodes], dtype=np.float32)
-            exp_sims = np.exp(sims * alpha)
-            softmax = exp_sims / exp_sims.sum()
-            for n, s in zip(depth_nodes, softmax):
-                n['sim_scaled'] = float(s)
-                for l in graph_json['links']:
-                    if l['target'] == n['id']:
-                        l['weight_scaled'] = float(s)
-
-        return graph_json, kw2pids
+def build_keyword_graph(
+    paper_meta: Dict[str, Dict],
+    root_kw: str,
+    root_pids: Set[str]
+) -> nx.DiGraph:
+    """
+    주어진 root_kw와 root_pids로부터 키워드 중심 그래프 생성
+    (abstract 키워드 맵 역인덱스는 외부에서 생성해야 함)
+    """
+    return GraphBuilder(paper_meta, inv_index=invert_index(
+        {pid: pm.get('abstract_keywords', []) for pid, pm in paper_meta.items()}
+    )).build(root_kw, root_pids)
