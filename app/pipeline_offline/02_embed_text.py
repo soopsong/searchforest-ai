@@ -11,12 +11,13 @@ from sentence_transformers import SentenceTransformer
 GRAPH_PATH = pathlib.Path("indices/graph_raw.gpickle")
 OUT_EMB    = pathlib.Path("indices/text_emb.npz")
 OUT_MAP    = pathlib.Path("indices/pid2idx.pkl")
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+MODEL_NAME = "moka-ai/m3e-base"
 BATCH      = 512                      # GPU=2-4 GB → 512; CPU → 64 추천
 
 print("🔹 load graph …")
-G = nx.read_gpickle(GRAPH_PATH)
-
+with GRAPH_PATH.open("rb") as f:      # ← 변경
+    G: nx.Graph = pickle.load(f)      # ← 변경
+    
 print("🔹 collect abstract texts …")
 pids, texts = [], []
 

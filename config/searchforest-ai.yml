@@ -1,0 +1,33 @@
+name: searchforest-ai
+channels:
+  - pytorch
+  - nvidia           # CUDA runtime
+  - conda-forge
+  - defaults
+dependencies:
+  # ───── 핵심 스택 ──────────────────────────────────
+  - python =3.10
+  - pip
+  - numpy =1.24
+  - scipy
+  - pandas
+  - scikit-learn
+  - tqdm
+  - networkx >=3
+  - python-igraph =0.11.4
+  - leidenalg =0.10.2
+  - fastapi
+  - uvicorn
+  - pydantic
+  # ───── PyTorch + CUDA 12.1 ───────────────────────
+  - pytorch        =2.2.*
+  - pytorch-cuda   =12.1          # ← CUDA 12 드라이버 호환
+  # ───── 시각화(igraph 경고 방지용) ────────────────
+  - matplotlib-base
+  # ───── pip-only 패키지 ───────────────────────────
+  - pip:
+      - faiss-gpu==1.7.4.post2       # cu12.1 wheel
+      - sentence-transformers==2.4.0
+      - "BAAI-embedding @ https://huggingface.co/BAAI/bge-m3e-base/resolve/main/embedding_whl/baai_embedding-1.0.0-py3-none-any.whl"
+      - nodevectors==0.1.23
+      - uvicorn[standard]

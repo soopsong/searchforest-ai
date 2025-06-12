@@ -3,34 +3,56 @@ from fastapi import FastAPI, Query
 from pydantic import BaseModel
 import uvicorn, json
 
-from cluster_searcher import search_clusters, cluster2pids, meta
-from graph_builder    import build_tree
+from runtime.cluster_searcher import search_clusters, cluster2pids, meta
+from runtime.graph_builder    import build_tree
 
 app = FastAPI(title="SearchForest-AI Recommend API")
 
-class RecResult(BaseModel):
-    cluster: int
-    sim:     float
-    tree:    dict
+
+class InferenceRequest(BaseModel):
+    text: str
+
+
+
+# ── Pydantic 스키마 ──────────────────────────────────────────
+class SubNode(BaseModel):
+    kw:    str
+    pids:  list[str]
+
+class ClusterNode(BaseModel):
+    kw:     str          # 클러스터 대표 키워드
+    sim:    float
+    children: list[SubNode]
 
 class RecResponse(BaseModel):
-    query: str
-    results: list[RecResult]
+    results: dict        # root 트리 전체
 
 
-@app.get("/recommend", response_model=RecResponse)
+# ── recommend ───────────────────────────────────────────────
+@app.get("/inference", response_model=RecResponse)
 def recommend(
-        query: str = Query(..., description="자유 입력 쿼리"),
-        top_k: int = Query(3, gt=0, le=10)):
+    query: str = Query(..., description="검색 쿼리"),
+    top_k: int = Query(5, gt=1, le=10)          # default 5
+):
+    # 1) 쿼리 기준 top-k 클러스터
     hits = search_clusters(query, top_k)
-    results = []
+
+    root = {"root": query, "children": []}
+
     for cid, sim in hits:
-        pids = cluster2pids.get(cid, [])
-        root_kw = meta[str(cid)]["keywords"][0] if meta[str(cid)]["keywords"] else query
-        tree = build_tree(root_kw, pids, cluster2pids)
-        results.append({"cluster": cid, "sim": sim, "tree": tree})
-    return {"query": query, "results": results}
+        kw_root = meta[str(cid)]["keywords"][0]
+        cluster_node = build_tree(kw_root, cid, depth=1) 
+        cluster_node["sim"] = round(sim, 4)
+        root["children"].append(cluster_node)
+    return {"results": root }
+
+    
 
 
+
+
+# 로컬 실행용
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8004)
+
+    # uvicorn runtime.api:app --reload --port 8004
