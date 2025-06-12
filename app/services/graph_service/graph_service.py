@@ -77,11 +77,15 @@ def fetch_keywords(query: str) -> list[str]:
 # AI 서버 호출 + 결과 캐싱
 async def fetch_from_ai_and_cache(root: str, top1: int, top2: int):
     try:
-        response = requests.get("http://searchforest-ai:8004/inference", params={"query": root, "top_k": top1})
+        #response = requests.get("http://searchforest-ai:8004/inference", params={"query": root, "top_k": top1})
+        response = requests.get("http://sum-service:8004/inference", params={"query": root, "top_k": top1})
+
         # response = requests.get("http://localhost:8004/inference", params={"query": root, "top_k": top1})
 
         response.raise_for_status()
         data = response.json()
+
+        tree_data = data["results"]["children"]
 
         # 트리 구성
         keyword_tree = {
