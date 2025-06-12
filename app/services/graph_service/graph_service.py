@@ -5,8 +5,6 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import aioredis
 from data_util.logging import logger
-
-from collections import defaultdict
 import requests
 from fastapi import Query
 from tree_mapping import extract_tree_mapping
