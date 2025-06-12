@@ -1,3 +1,3 @@
 #!/bin/bash
 
-uvicorn runtime.api:app --reload --port 8004
+uvicorn runtime.api:app --host 0.0.0.0 --port 8004 --reload
