@@ -5,7 +5,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY graph_service.py .
+
+COPY tree_mapping.py .
 
 
 # FastAPI Uvicorn 실행

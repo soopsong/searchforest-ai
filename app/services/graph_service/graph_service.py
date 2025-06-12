@@ -6,7 +6,6 @@ from pydantic import BaseModel
 import aioredis
 from data_util.logging import logger
 
-from data_util.config import Config
 from collections import defaultdict
 import requests
 from fastapi import Query

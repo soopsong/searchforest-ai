@@ -6,7 +6,7 @@ on:
     paths:
       - 'graph_service/**'
       - 'papers_service/**'
-      - 'sum_service/**'
+      # - 'sum_service/**'
   workflow_dispatch:
 
 jobs:
@@ -26,8 +26,8 @@ jobs:
             repo: graph-service
           - dir: app/services/papers_service
             repo: papers-service
-          - dir: app/services/sum_service
-            repo: sum-service
+          # - dir: app/services/sum_service
+          #   repo: sum-service
 
     steps:
       - name: Checkout repo
