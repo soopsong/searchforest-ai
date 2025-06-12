@@ -59,20 +59,20 @@ def make_cache_key( root: str, top1: int, top2: int) -> str:
     return "graph:" + hashlib.sha256(key_str.encode()).hexdigest()
 
 
-# AI 서버 호출 함수
-def fetch_keywords(query: str) -> list[str]:
-    try:
-        response = requests.get(
-            # "http://sum-service:8004/inference",
-            params={"query": query, "top_k": 5}
-        )
-        response.raise_for_status()
-        data = response.json()
-        keywords = [child["kw"] for child in data["results"]["children"]]
-        return keywords
-    except Exception as e:
-        print(f"[ERROR] AI 서버 호출 실패: {e}")
-        return []
+# # AI 서버 호출 함수
+# def fetch_keywords(query: str) -> list[str]:
+#     try:
+#         response = requests.get(
+#             # "http://sum-service:8004/inference",
+#             params={"query": query, "top_k": 5}
+#         )
+#         response.raise_for_status()
+#         data = response.json()
+#         keywords = [child["kw"] for child in data["results"]["children"]]
+#         return keywords
+#     except Exception as e:
+#         print(f"[ERROR] AI 서버 호출 실패: {e}")
+#         return []
 
 # AI 서버 호출 + 결과 캐싱
 async def fetch_from_ai_and_cache(root: str, top1: int, top2: int):
