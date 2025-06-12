@@ -63,7 +63,7 @@ def make_cache_key( root: str, top1: int, top2: int) -> str:
 def fetch_keywords(query: str) -> list[str]:
     try:
         response = requests.get(
-            "http://searchforest-ai:8004/inference",
+            "http://sum-service:8004/inference",
             params={"query": query, "top_k": 5}
         )
         response.raise_for_status()
