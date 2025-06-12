@@ -9,4 +9,4 @@ COPY . .
 
 
 # FastAPI Uvicorn 실행
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8002"]
+CMD ["uvicorn", "graph_service:app", "--host", "0.0.0.0", "--port", "8002"]

@@ -24,4 +24,4 @@ COPY data/kw2pids.json data/
 COPY papers_service.py ./
 
 # 5. 앱 실행
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "papers_service:app", "--host", "0.0.0.0", "--port", "8000"]
