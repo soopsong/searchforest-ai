@@ -1,0 +1,10 @@
+numpy
+scikit-learn
+torch
+sentence-transformers
+faiss-gpu
+networkx
+tqdm
+fastapi
+uvicorn
+pydantic

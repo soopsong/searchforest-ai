@@ -6,14 +6,43 @@ __pycache__/
 # C extensions
 *.so
 
+# LFS
+app/data/extracted/*
+app/data/preprocessed/*
+app/tools/*
+app/model/model_save/*
+*.tar.gz
+**/inductive_test_checkpoint_collected.json
 
-papers_service/data/inductive_test_checkpoint_collected.json
+#data
+app/services/graph_service/data/indices/paper_ivf.index
+app/services/graph_service/data/indices
+
+app/indices
+app/routers/previous/output/summaries_dir
+app/routers/output
+app/data
+app/routers/output/summaries_dir/*
+
+
+#logs
+app/scripts/logs
+app/scripts/pyrouge_root
+app/scripts/running_logs
+
+#etc
+app/etc/*
+
+#output
+app/output
+app/services/papers_service/data/summarization_processed
+
 
 # Distribution / packaging
 .Python
 build/
 develop-eggs/
-dist/
+dist
 downloads/
 eggs/
 .eggs/
@@ -181,3 +210,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+app/data/inductive/train.jsonl
+app/routers/output/summaries_dir/
