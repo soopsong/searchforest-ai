@@ -2,4 +2,4 @@ fastapi
 uvicorn[standard]
 pydantic
 aioredis
-data_util
+data-util
