@@ -205,3 +205,4 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 app/data/inductive/train.jsonl
+app/routers/output/summaries_dir/
