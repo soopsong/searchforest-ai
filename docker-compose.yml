@@ -9,7 +9,9 @@ services:
     restart: unless-stopped
   
   papers-service:
-    build: ./papers_service
+    build:
+      context: ./app/services/papers_service
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     depends_on:
@@ -17,7 +19,7 @@ services:
 
   graph-service:
     build:
-      context: ./graph_service
+      context: ./app/services/graph_service
       dockerfile: Dockerfile
     container_name: graph_service
     ports:
@@ -33,7 +35,7 @@ services:
   
   runtime_infer:
     build:
-      context: .
+      context: ./app/runtime
       dockerfile: app/runtime/Dockerfile
     container_name: searchforest-infer
     runtime: nvidia            # GPU 전달

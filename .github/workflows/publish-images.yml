@@ -22,11 +22,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - dir: graph_service
+          - dir: app/services/graph_service
             repo: graph-service
-          - dir: papers_service
+          - dir: app/services/papers_service
             repo: papers-service
-          - dir: sum_service
+          - dir: app/services/sum_service
             repo: sum-service
 
     steps:
