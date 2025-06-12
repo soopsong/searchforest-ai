@@ -19,14 +19,14 @@ app = FastAPI(title="2-Depth 키워드 그래프 서비스")
 class GraphRequest(BaseModel):
     root_pid: Optional[str] = None   # 논문 ID를 직접 받거나
     root_kw: Optional[str] = None    # 또는 키워드를 받아도 됩니다
-    top1: int = 10
+    top1: int = 5
     top2: int = 3
 
 # --- 응답 모델 ---
 class GraphResponse(BaseModel):
     graph: Dict
     # paper_id와 score(=float)를 함께 받도록 정의
-    kw2pids: Dict[str, List[Tuple[str, float]]]
+    # kw2pids: Dict[str, List[Tuple[str, float]]]
 
 # 1) Config 선언 및 paths 설정
 cfg = Config()
@@ -53,7 +53,7 @@ searcher = VectorKeywordSearcher(
     id_map_path="indices/paper_ids.txt"
 )
 
-builder = GraphBuilder(k1=10, k2=3, pid_limit=20, searcher=searcher)
+builder = GraphBuilder(k1=5, k2=3, pid_limit=20, searcher=searcher)
 
 # 2) Redis 클라이언트 초기화 (앱 스타트업 시)
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
@@ -137,7 +137,9 @@ async def build_graph(req: GraphRequest):
         graph_dict=graph_dict,
         paper_meta=paper_meta
     )
-    payload = {"graph": graph_json, "kw2pids": kw2pids}
+
+    print(json.dumps(graph_json, indent=2, ensure_ascii=False))
+    payload = {"graph": graph_json}
 
     # 5) 캐시에 저장 (TTL 1시간)
     if redis:
