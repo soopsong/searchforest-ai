@@ -21,20 +21,19 @@ class VectorKeywordSearcher:
             self.id_map = [line.strip() for line in f]
 
     def search(self, query: str, topk: int = 10) -> List[Tuple[str, float]]:
-        # 1) Query 임베딩 검색
-        qv = self.model.encode(query, convert_to_numpy=True).astype('float32')
-        # 2) FAISS 검색
-        D, I = self.index.search(np.array([qv]), topk)
-        distances = D[0]    # shape (topk,)
-        idxs      = I[0]    # shape (topk,)
-        results: List[Tuple[str,float]] = []
-        for dist, idx in zip(distances, idxs):
-            if idx < len(self.id_map):
-                pid = self.id_map[idx]
-                # 거리 -> 유사도로 변환 (예: sim = 1 / (1 + dist))
-                sim = float(1.0 / (1.0 + dist))
-                results.append((pid, sim))
-        return results
+            # 1) Query 임베딩
+            qv = self.model.encode(query, convert_to_numpy=True).astype('float32')
+            # 2) FAISS 검색
+            D, I = self.index.search(np.array([qv]), topk)
+            distances = D[0]
+            idxs      = I[0]
+            results: List[Tuple[str,float]] = []
+            for dist, idx in zip(distances, idxs):
+                if idx < len(self.id_map):
+                    pid = self.id_map[idx]
+                    sim = float(1.0 / (1.0 + dist))  # 거리→유사도로 변환
+                    results.append((pid, sim))
+            return results
 
 
 

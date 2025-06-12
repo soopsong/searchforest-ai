@@ -114,4 +114,24 @@ class GraphBuilder:
             "links": list(unique_links.values())
         }
 
+        # 1-Hop 노드들만 뽑아서 배열로
+        one_hop = [n for n in nodes if n["depth"] == 1]
+        sims   = np.array([n["sim"] for n in one_hop], dtype=np.float32)
+
+        # 온도 파라미터 alpha: 값이 클수록 차이 극대화
+        alpha = 5.0
+        exp_sims = np.exp(sims * alpha)
+        softmax_sims = exp_sims / exp_sims.sum()
+
+        # 다시 nodes에 반영
+        for n, s in zip(one_hop, softmax_sims):
+            n["sim_scaled"] = float(s)
+            # links 쪽도 바꾸려면:
+            for l in links:
+                if l["target"] == n["id"]:
+                    l["weight_scaled"] = float(s)
+
+
+
+
         return graph_json, kw2pids
