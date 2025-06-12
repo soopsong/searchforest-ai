@@ -1,0 +1,1 @@
+we consider the response of a nanomechanical resonator interacting with an electromagnetic cavity via a radiation pressure coupling and a cross - kerr coupling . using a mean field approach we solve the dynamics of the system , and show the different corrections coming from the radiation pressure and the cross - kerr effect to the usually considered linearized dynamics .

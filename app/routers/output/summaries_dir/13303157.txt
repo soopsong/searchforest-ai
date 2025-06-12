@@ -1,0 +1,1 @@
+in this paper , we derive the stochastic master equations for quantum systems driven by a single - photon input state which is contaminated by quantum vacuum noise . to improve estimation performance , quantum filters based on multiple - channel measurements are designed . two cases , namely diffusive plus poissonian measurements and two diffusive measurements , are considered .

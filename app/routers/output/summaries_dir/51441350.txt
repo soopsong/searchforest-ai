@@ -1,0 +1,1 @@
+we consider the representation of a continuous - time quantum walk in a graph $ x$ by the matrix $ \exp(ita(x))$. we provide necessary and sufficient criteria for distance - regular graphs and , more generally , for graphs in association schemes to have perfect state transfer . using these conditions , we provide several new examples of perfect state transfer in simple graphs .

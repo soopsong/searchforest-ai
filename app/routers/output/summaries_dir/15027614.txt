@@ -1,0 +1,1 @@
+in this paper , we study the problem of controllability of schr\"odinger equation . we prove that the system is exactly controllable in infinite time to any position . the proof is based on an inverse mapping theorem for multivalued functions . we show also that the system is not exactly controllable in finite time in lower sobolev spaces .

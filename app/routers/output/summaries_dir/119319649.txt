@@ -1,0 +1,1 @@
+we review various unitary network models used in quantum computing , spectral analysis or condensed matter physics and establish relationships between them . we show that symmetric one dimensional quantum walks are universal , as are cmv matrices . we prove spectral stability and propagation properties for general asymptotically uniform models by means of unitary mourre theory .

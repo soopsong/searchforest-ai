@@ -1,0 +1,1 @@
+we investigate whether size imposes a fundamental constraint on the efficiency of small thermal machines . we analyse in detail a model of a small self - contained refrigerator consisting of three qubits . we show analytically that this system can reach the carnot efficiency , thus demonstrating that there exists no complementarity between size and efficiency .

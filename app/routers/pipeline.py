@@ -1,13 +1,15 @@
 # routers/pipeline.py
 import networkx as nx
+from typing import Dict, Set
+
 
 from .graph_builder import (
     build_paper_keyword_map,
     invert_index,
     build_keyword_graph,
 )
-from .co_citation import build_co_citation_graph
-from .searcher import VectorKeywordSearcher  # 가정
+from co_citation import build_co_citation_graph
+from searcher import VectorKeywordSearcher  # 가정
 
 def build_full_network(
     paper_meta: Dict[str, Dict],
@@ -38,7 +40,6 @@ def build_full_network(
 
 
 if __name__ == "__main__":
-    from routers.pipeline import build_full_network
     # paper_meta 불러오기 예: {pid: {"abstract": "...", "references": [...]}, ...}
     G = build_full_network(
         paper_meta=paper_meta,

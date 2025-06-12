@@ -1,0 +1,1 @@
+we show that entanglement can be utilized to extract thermodynamic work beyond classical correlation via feedback control based on measurement on part of a composite system . the net work gain due to entanglement is determined by the change in the mutual information content between the subsystems that is accessible by the memory .

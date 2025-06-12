@@ -1,0 +1,1 @@
+we examine the performance of a nonlinear fiber gyroscope for improved signal detection beating the quantum limits of its linear counterparts . the performance is examined when the nonlinear gyroscope is illuminated by practical field states , such as coherent and quadrature squeezed states . this is compared with the case of more ideal probes such as photon - number states .

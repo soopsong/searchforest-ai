@@ -6,10 +6,11 @@ set -euo pipefail
 ########################################
 
 # 1) 논문 메타 JSON ({"P1": {"abstract": "...", "references": [...]}, ...})
-PAPER_META_JSON="app/data/extracted/SSN/papers.SSN.jsonl"
+PAPER_META_JSON="test.jsonl"
 
 # 2) abstract 폴더 (각 paper_id.txt 파일이 들어있는 디렉터리)
-ABSTRACT_DIR="app/routers/paper_ids.txt"
+ABSTRACT_DIR="output/summaries_dir"
+
 
 # 3) 사용할 SentenceTransformer 모델
 MODEL="moka-ai/m3e-base"
@@ -28,14 +29,14 @@ OUTPUT_GRAPH="full_network.graphml"
 ########################################
 
 echo "[1/4] 논문 요약 임베딩 & FAISS 인덱스 생성"
-python app/routers/embed_papers.py \
+python embed_papers.py \
      --tldr_dir "$ABSTRACT_DIR" \
      --index paper.index \
      --id_map paper_ids.txt \
      --model "$MODEL"
 
 echo "[2/4] 키워드 임베딩 & FAISS 인덱스 생성"
-python app/routers/embed_keywords.py \
+python embed_keywords.py \
      --keywords keywords.txt \
      --index keyword.index \
      --id_map keyword_ids.txt \

@@ -1,0 +1,1 @@
+low - dissipation model and the endoreversible model of heat engines are two of the most commonly studied models of machines in finite - time thermodynamics . in this paper , we compare the performance characteristics of these two models under optimal power output . we point out a basic equivalence between them , in the linear response regime .

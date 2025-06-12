@@ -1,0 +1,1 @@
+we propose an analysis of the time - optimal control of su(2 ) quantum operations . by using the pontryagin maximum principle , we show how to determine the optimal trajectory reaching a given target state . explicit analytical solutions are given for two specific examples . we discuss the role of the detuning in the construction of the optimal synthesis .

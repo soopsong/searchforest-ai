@@ -1,0 +1,1 @@
+we study the thermo - field realization of the duality between the rindler - ads higher spin theory and $ o(n)$ vector theory . the cft represents a decoupled pair of free $ o(n)$ vector field theories . it is shown how this decoupled domain cft is capable of generating the connected rindler - ads background with the full set of higher spin fields .

@@ -1,0 +1,1 @@
+classically domain theory is a rigourous mathematical structure to describe denotational semantics for programming languages and to study the computability of partial functions . recently , the application of domain theory has also been extended to the quantum setting . in this note we review these results and we present some new thoughts in this field .

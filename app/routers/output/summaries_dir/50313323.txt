@@ -1,0 +1,1 @@
+in this article we study the problem of a non - relativistic particle in the presence of a singular potential in the noncommutative plane . the potential contains a term proportional to $ 1 / r^2 $ , where $ r^2 $ is the squared distance to the origin in the noncommutative plane . we find that the spectrum of energies is non analytic in the noncommutativity parameter $ \theta$.

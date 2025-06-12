@@ -1,0 +1,1 @@
+in this article we study physical realizability for a class of nonlinear quantum stochastic differential equations ( qsdes ) . physical realizability is a property in which a qsde corresponds to the dynamics of an open quantum system . we derive a sufficient and necessary condition for a nonlinear qsde to be physically realizable .

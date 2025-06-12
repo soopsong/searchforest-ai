@@ -1,0 +1,1 @@
+the goal of this paper is to outline a general - purpose scalable implementation of shor 's period finding algorithm using fundamental quantum gates , and to act as a blueprint for linear optical implementations of shor 's algorithm for both general and specific values of n. this offers a broader view of a problem often overlooked in favour of compiled versions of the algorithm .

@@ -1,0 +1,1 @@
+in this paper is shown an application of clifford algebras to the construction of computationally universal sets of quantum gates for $ n$-qubit systems . it is based on the well - known application of lie algebras together with the especially simple commutation law for clifford algebras , which states that all basic elements either commute or anticommute .

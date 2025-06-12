@@ -1,0 +1,1 @@
+the goal of this study is to provide an exact unitary quantum cellular automata that , under discrete time steps , converges towards the generalized dirac equation ( gde ) in the continuum limit . the evolutionary rules for such a single particle walk are discussed in this paper , and it is shown that this quantum celluar automata will maintain similar properties to the gde .

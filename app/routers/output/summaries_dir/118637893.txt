@@ -1,0 +1,1 @@
+in this letter we study the negativity of one dimensional free fermions . we derive the general form of the $ \mathbb{z}_{n}$ symmetric term in moments of the partial transposed ( reduced ) density matrix , which is an algebraic function of the end points of the system . such a path integral turns out to be a convenient tool for making estimations for the negativity .

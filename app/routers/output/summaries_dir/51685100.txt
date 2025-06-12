@@ -1,0 +1,1 @@
+holographic states that have a well - defined geometric dual in ads / cft are not faithfully represented by haar - typical states in finite - dimensional models . as such , trying to apply principles and lessons from haar - random ensembles of states to holographic states can lead to apparent puzzles and contradictions . we point out a handful of these pitfalls .

@@ -1,0 +1,1 @@
+the concept of open quantum walks ( oqw ) , quantum walks exclusively driven by the interaction with the external environment , is reviewed . oqws are formulated as discrete completely positive maps on graphs . the basic properties of oqws are summarised and new examples of oqws on $ \mathbb{z}$ and their simulation by means of quantum trajectories are presented .

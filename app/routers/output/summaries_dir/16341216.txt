@@ -1,0 +1,1 @@
+bell - inequality violation and entanglement , measured by wootters ' concurrence and negativity , of two qubits initially in werner or werner - like states coupled to thermal reservoirs are analyzed within the master equation approach . it is shown how this simple decoherence process leads to generation of states manifesting the relativity of two - qubit entanglement measures .

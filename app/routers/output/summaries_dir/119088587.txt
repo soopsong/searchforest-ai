@@ -1,0 +1,1 @@
+a w state is pair - wisely entangled , belonging to the different class from greenberger , horne , and zeilinger ( ghz ) state . we show that the w state enables three variant protocols , that is , quantum key distribution between several parts , quantum secret sharing , and both of them at the same time . it is discussed how one 's cheating can be detected in each protocol .

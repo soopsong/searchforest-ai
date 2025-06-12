@@ -1,0 +1,1 @@
+we develop theoretical and numerical tools for the quantification of entanglement in systems with continuous degrees of freedom . continuous variable entanglement swapping is introduced and based on this idea we develop methods of entanglement purification for continuous variable systems . the success of these entanglement purification methods is then assessed using these tools .

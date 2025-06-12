@@ -1,0 +1,1 @@
+we make a detailed study of norm retrieval . we give several classification theorems for norm retrieval and give a large number of examples to go with the theory . one consequence is a new result about parseval frames : if a parseval frame is divided into two subsets with spans $ w_1,w_2 $ and $ w_1 \cap w_2=\{0\}$ , then $ w_1 \perp w_2$.

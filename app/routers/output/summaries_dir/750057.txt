@@ -1,0 +1,1 @@
+the support of a matrix m is the ( 0,1)-matrix with ij - th entry equal to 1 if the ij - th entry of m is non - zero , and equal to 0 , otherwise . the digraph whose adjacency matrix is the support of m is said to be the digraph of m. this paper observes some structural properties of digraphs of unitary matrices .
