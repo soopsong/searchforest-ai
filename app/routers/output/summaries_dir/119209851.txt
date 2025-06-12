@@ -1,1 +1,0 @@
-after formulating a no - go theorem for perfect quantum - classical hybrid systems , a new consistency requirement based on standard statistical considerations is noted . it is shown that such requirement is not fulfilled by the mean - field approach , nor by the statistical ensemble approach . further unusual features of the latter scheme are pointed out .

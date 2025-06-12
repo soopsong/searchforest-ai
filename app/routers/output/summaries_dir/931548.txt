@@ -1,1 +1,0 @@
-quantum optical coherence tomography ( qoct ) makes use of an entangled - photon light source to carry out dispersion - immune axial optical sectioning . we present the first experimental qoct images of a biological sample : an onion - skin tissue coated with gold nanoparticles . 3d images are presented in the form of 2d sections of different orientations .

@@ -1,1 +1,0 @@
-the phenomenon of quantum steering and probabilistic meaning of the correlations are discussed for the state of the single qudit . the method of qubit portrait of the qudit states is used to extend the known steering detection inequality to the system without subsystems . the example of the $ x$-state with $ j=3/2 $ is studied in detail .

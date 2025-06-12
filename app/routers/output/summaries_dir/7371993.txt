@@ -1,1 +1,0 @@
-this paper considers the problem of constructing a direct coupling quantum observer for a closed linear quantum system . the proposed observer is shown to be able to estimate some but not all of the plant variables in a time averaged sense . a simple example and simulations are included to illustrate the properties of the observer .

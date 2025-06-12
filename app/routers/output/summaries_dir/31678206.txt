@@ -1,1 +1,0 @@
-we consider fermionic and bosonic quantum chains where a defect separates two subsystems and compare the corresponding entanglement spectra . with these , we calculate their r\'enyi entanglement entropies and obtain analytical formulae for the continuously varying coefficient of the leading logarithmic term . for the bosonic case we also present numerical results .

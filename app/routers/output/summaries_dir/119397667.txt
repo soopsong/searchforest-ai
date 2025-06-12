@@ -1,1 +1,0 @@
-in this essay , i look at ( bemoan ) the issues surrounding simulating quantum systems in order to design quantum devices for quantum technologies . the program runs into a natural difficulty that simulating quantum systems really require a proper quantum simulator . the problem is likened to the"tyranny of numbers"that faced computer engineers in the 1960s .

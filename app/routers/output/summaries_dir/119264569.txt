@@ -1,1 +1,0 @@
-sub shot noise imaging of weak object by exploiting parametric down converted light represents a very interesting technological development . a precise characterization of pdc speckle structure in dependence of pump beam parameters is a fundamental tool for this application . in this paper we present a first set of data addressed to this purpose .

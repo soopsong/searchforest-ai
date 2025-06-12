@@ -1,1 +1,0 @@
-a resilient secret sharing scheme is supposed to generate the secret correctly even after some shares are damaged . in this paper , we show how quantum error correcting codes can be exploited to design a resilient quantum secret sharing scheme , where a quantum state is shared among more than one parties .

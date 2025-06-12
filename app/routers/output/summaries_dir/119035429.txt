@@ -1,1 +1,0 @@
-we calculate the holevo cram\'er - rao bound for estimation of the displacement experienced by one mode of an two - mode squeezed vacuum state with squeezing r and find that it is equal to 4exp(-2r ) . this equals the sum of the mean squared error obtained from a dual homodyne measurement , indicating that the bound is tight and that the dual homodyne measurement is optimal .

@@ -1,1 +1,0 @@
-the pair coherent states for a two - mode radiation field are known to belong to a family of states with non - gaussian wave function . the nature of quantum entanglement between the two modes and some features of non - classicality are studied for such states . the existing criteria for inseparability are examined in the context of pair coherent states .

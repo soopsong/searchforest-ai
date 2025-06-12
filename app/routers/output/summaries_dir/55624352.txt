@@ -1,1 +1,0 @@
-if the time evolution of an open quantum system approaches equilibrium in the time mean , then on any single trajectory of any of its unravelings the time averaged state approaches the same equilibrium state with probability 1 . in the case of multiple equilibrium states the quantum trajectory converges in the mean to a random choice from these states .

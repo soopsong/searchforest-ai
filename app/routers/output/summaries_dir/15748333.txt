@@ -1,1 +1,0 @@
-we consider the cauchy problem for the wave equation on a non - globally hyperbolic manifold of the special form ( minkowski plane with a handle ) containing closed timelike curves ( time machines ) . we prove that the classical solution of the cauchy problem exists and is unique if and only if the initial data satisfy to some set of additional conditions .

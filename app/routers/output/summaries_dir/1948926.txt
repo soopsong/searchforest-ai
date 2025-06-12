@@ -1,1 +1,0 @@
-we propose a scheme to create a macroscopic ` ` sch\"odinger cat ' ' state formed by two interacting bose condensates . in analogy with quantum optics , where the control and engineering of quantum states can be maintained to a large extend , we consider the present scheme to be an example of quantum atom optics at work .

@@ -1,1 +1,0 @@
-new entropic inequality for quantum and tomographic shannon information for system of two qubits is obtained . the inequality relating quantum information and spin - tomographic information for particle with spin j = 3=2 is found . the method to extend the obtained new entropic and information inequalities for one qudit and arbitrary composite system of qudits is suggested .

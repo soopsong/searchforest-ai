@@ -1,1 +1,0 @@
-we present a new measure of entanglement for mixed states . it can be approximately computable for every state and can be used to quantify all different types of multipartite entanglement . we show that it satisfies the usual properties of a good entanglement quantifier and derive relations between it and other entanglement measures .

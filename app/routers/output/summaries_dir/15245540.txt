@@ -1,1 +1,0 @@
-we characterize all coexistent pairs of qubit effects . this gives an exhaustive description of all pairs of events allowed , in principle , to occur in a single qubit measurement . the characterization consists of three disjoint conditions which are easy to check for a given pair of effects . known special cases are shown to follow from our general characterization theorem .

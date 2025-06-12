@@ -1,1 +1,0 @@
-we give an overview of some remarkable connections between symmetric informationally complete measurements ( sic - povms , or sics ) and algebraic number theory , in particular , a connection with hilbert 's 12th problem . the paper is meant to be intelligible to a physicist who has no prior knowledge of either galois theory or algebraic number theory .

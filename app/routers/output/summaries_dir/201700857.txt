@@ -1,1 +1,0 @@
-we propose an approach to quantum cosmology of integrable models . to analyze the models with two dynamical variables , we introduce equivalent hamiltonians in reduced phase spaces , which are obtained with the aid of the faddeev -- jackiw method . quantum dynamics of the models can be studied by using the equivalent hamiltonians with various techniques .

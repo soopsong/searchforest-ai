@@ -1,1 +1,0 @@
-the objective of this article is to complete preliminary results concerning the time - minimal control of dissipative two - level quantum systems whose dynamics is governed by lindblad equations . the extremal system is described by a 3d - hamiltonian depending upon three parameters . we combine geometric techniques with numerical simulations to deduce the optimal solutions .

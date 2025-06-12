@@ -1,1 +1,0 @@
-we examine a proposal by sherson and moelmer to generate polarization - squeezed light in terms of the quantum stochastic calculus ( qsc ) . we investigate the statistics of the output field and confirm their results using the qsc formalism . in addition , we study the atomic dynamics of the system and find that this setup can produce up to 3 db of atomic spin squeezing .

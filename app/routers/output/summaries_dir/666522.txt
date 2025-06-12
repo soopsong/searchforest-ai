@@ -1,1 +1,0 @@
-one of the crown jewels of complexity theory is valiant 's 1979 theorem that computing the permanent of an n*n matrix is # p - hard . here we show that , by using the model of linear - optical quantum computing --- and in particular , a universality theorem due to knill , laflamme , and milburn --- one can give a different and arguably more intuitive proof of this theorem .

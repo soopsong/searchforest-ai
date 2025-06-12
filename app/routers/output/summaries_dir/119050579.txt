@@ -1,1 +1,0 @@
-recently it was shown that folded strings are spontaneously created behind the horizon of the $ sl(2,\mathbb{r})_k / u(1)$ black hole . here we show that these folded strings violate the averaged null energy condition { \it macroscopically } . we discuss possible consequences of this observation on black hole physics in general , and on the information puzzle in particular .

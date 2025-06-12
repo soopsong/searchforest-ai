@@ -1,1 +1,0 @@
-we consider the energy levels of a hydrogen - like atom in the framework of $ \theta $ -modified , due to space noncommutativity , dirac equation with coulomb field . it is shown that on the noncommutative ( nc ) space the degeneracy of the levels $ 2s_{1/2 } , 2p_{1/2}$ and $ 2p_{3/2}$ is lifted completely , such that new transition channels are allowed .

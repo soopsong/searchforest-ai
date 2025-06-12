@@ -1,1 +1,0 @@
-we express the rules for forming quantum feedback networks using the stratonovich form of quantum stochastic calculus rather than the ito , or slh form . remarkably the feedback reduction rule implies that we obtain the schur complement of the matrix of stratonovich coupling operators where we short out the internal input / output coefficients .

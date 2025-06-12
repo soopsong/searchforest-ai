@@ -1,1 +1,0 @@
-by relevant modifications , the known global - fidelity limits of state - dependent cloning are extended to mixed quantum states . we assume that the ancilla contains some a priori information about the input state . as it is shown , the obtained results contribute to the stronger no - cloning theorem . an attainability of presented limits is discussed .

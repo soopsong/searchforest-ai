@@ -1,1 +1,0 @@
-entangled states of the w - class are considered as a quantum channel for teleportation or the states to be sent . the protocols have been found by unitary transformation of the schemes , based on the multiuser ghz channel . the main feature of the w - quantum channels is a set of non - local operators , that allow receivers recovering unknown state .

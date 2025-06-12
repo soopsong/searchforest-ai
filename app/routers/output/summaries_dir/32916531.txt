@@ -1,1 +1,0 @@
-in this article , we improve the strichartz estimates obtained in [ 12 ] for the schr\"odinger equation with white noise dispersion in one dimension . this allows us to prove global well posedness when a quintic critical nonlinearity is added to the equation . we finally show that the white noise dispersion is the limit of smooth random dispersion .

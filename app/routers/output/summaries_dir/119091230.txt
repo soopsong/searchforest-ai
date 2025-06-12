@@ -1,1 +1,0 @@
-we present a conjectured family of sic - povms which have an additional symmetry group whose size is growing with the dimension . the symmetry group is related to fibonacci numbers , while the dimension is related to lucas numbers . the conjecture is supported by exact solutions for dimensions d=4,8,19,48,124,323 , as well as a numerical solution for dimension d=844 .

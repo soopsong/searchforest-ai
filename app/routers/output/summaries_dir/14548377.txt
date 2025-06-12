@@ -1,1 +1,0 @@
-the paper reports on the entangled - state quantum cryptography system practical operation . the full key generation protocol was performed in real - time over a fiber bundle of 1.45 km length , installed for this experiment in the vienna sewage system . the generated quantum key was immediately handed over and used by a secure communication application of order for remittance .

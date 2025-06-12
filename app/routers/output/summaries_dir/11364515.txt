@@ -1,1 +1,0 @@
-nice error bases have been introduced by knill as a generalization of the pauli basis . these bases are shown to be projective representations of finite groups . we classify all nice error bases of small degree , and all nice error bases with abelian index groups . we show that in general an index group of a nice error basis is necessarily solvable .

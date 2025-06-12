@@ -1,1 +1,0 @@
-we study the model of quantum walks on cycles enriched by the addition of 1-step memory . we provide a formula for the probability distribution and the time - averaged limiting probability distribution of the introduced quantum walk . using the obtained results , we discuss the properties of the introduced model and the difference in comparison to the memoryless model .

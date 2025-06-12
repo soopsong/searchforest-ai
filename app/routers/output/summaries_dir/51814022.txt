@@ -1,1 +1,0 @@
-the application of the methods of quantum mechanics to game theory provides us with the ability to achieve results not otherwise possible . both linear superpositions of actions and entanglement between the players ' moves can be exploited . we provide an introduction to quantum game theory and review the current status of the subject .
