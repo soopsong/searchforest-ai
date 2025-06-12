@@ -66,7 +66,7 @@ if __name__ == "__main__":
     )
     p.add_argument(
         "--model",
-        default="sentence-transformers/all-MiniLM-L6-v2",
+        default="moka-ai/m3e-base",
         help="SentenceTransformer model name"
     )
     args = p.parse_args()
