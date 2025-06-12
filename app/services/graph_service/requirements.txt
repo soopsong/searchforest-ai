@@ -2,5 +2,4 @@ fastapi
 uvicorn[standard]
 pydantic
 aioredis
-data-util
 requests
