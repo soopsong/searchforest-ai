@@ -7,7 +7,7 @@ from sentence_transformers.util import cos_sim
 import numpy as np, tqdm
 from sentence_transformers import SentenceTransformer, util
 import torch
-from cluster_searcher import meta, cluster2pids   # ← meta 와 함께 추가로 import
+from runtime.cluster_searcher import meta, cluster2pids   # ← meta 와 함께 추가로 import
 
 
 
@@ -20,41 +20,40 @@ model = SentenceTransformer("moka-ai/m3e-base", device="cuda:0")
 def tfidf_score(kw, tfidf_dict):
     """클러스터 TF-IDF 합 딕셔너리에서 점수 조회 (없으면 0)"""
     return tfidf_dict.get(kw, 0.0)
-
-def select_kw(query_kw: str,
-              candidate_kws: list[str],
-              tfidf_dict: dict[str, float],
-              k: int = 5) -> list[str]:
+# graph_builder.py  ── 기존 select_kw 대체
+def select_kw_scored(query_kw: str,
+                     candidate_kws: list[str],
+                     tfidf_dict: dict[str, float],
+                     k: int = 5):
     """
-    query_kw      : 선택 기준 키워드 (root 또는 depth-1)
-    candidate_kws : 후보 리스트 (클러스터 keywords)
-    tfidf_dict    : {kw: cluster-TFIDF-sum}
-    k             : 최종 개수
+    반환값: [(kw, score), …]  (score는 0~1 정도의 실수)
     """
-    q_emb = model.encode([query_kw], normalize_embeddings=True)[0]
-    cand_embs = model.encode(candidate_kws, normalize_embeddings=True)
+    q_emb      = model.encode([query_kw], normalize_embeddings=True)[0]
+    cand_embs  = model.encode(candidate_kws, normalize_embeddings=True)
 
     scored = []
     for kw, e in zip(candidate_kws, cand_embs):
         sc = (α * util.cos_sim(q_emb, e).item() +
-              β * util.cos_sim(q_emb, e).item() +   # parent == query
+              β * util.cos_sim(q_emb, e).item() +     # parent==query
               γ * tfidf_score(kw, tfidf_dict))
         scored.append([sc, kw, e])
 
-    # ── MMR 다양화 ────────────────────────────────────
+    # ── MMR 다양화 ────────────────────────────────
     selected, selected_embs = [], []
     while scored and len(selected) < k:
-        scored.sort(reverse=True)
-        best = scored.pop(0)
-        selected.append(best[1])
-        selected_embs.append(best[2])
+        scored.sort(reverse=True)          # sc 내림차순
+        best_sc, best_kw, best_emb = scored.pop(0)
+        selected.append((best_kw, best_sc))
+        selected_embs.append(best_emb)
 
+        # diversity 보정
         new_scored = []
         for sc, kw, e in scored:
             div = max(util.cos_sim(e, se).item() for se in selected_embs)
-            new_scored.append([sc - MMR_LAMBDA*div, kw, e])
+            new_scored.append([sc - MMR_LAMBDA * div, kw, e])
         scored = new_scored
-    return selected
+
+    return selected            # [(kw, score), …]
 
 
 
@@ -149,33 +148,40 @@ COS_TH2 = 0.25   # hop-2 임계값
 N_LVL1 = 3      # 1-depth(kw1) 최대 5개
 
 def build_tree(root_kw: str, cid: int, depth: int = 1):
-    """
-    • root_kw : 클러스터 대표 키워드
-    • cid     : 클러스터 ID  (cluster_meta / cluster2pids 조회용)
-    """
-    c_meta      = meta[str(cid)]
-    cand        = c_meta["keywords"]           # 후보 키워드 목록
-    tfidf_dict  = dict(zip(
+    c_meta = meta[str(cid)]
+    cand   = c_meta["keywords"]
+    tfidf_dict = dict(zip(
         c_meta["keywords"],
-        c_meta.get("tfidf_sums", [])           # 없으면 0 점수
+        c_meta.get("tfidf_sums", [])
     ))
-    # ── 이 클러스터에 포함된 모든 논문 id ───────────────────
     pids_lvl0 = cluster2pids[cid]
 
-    tree = {"root": root_kw, "children": []}
+    tree = {"id": root_kw, "value": 1.0, "children": []}
 
-    # depth-1 : 최대 3개
-    for kw1 in select_kw(root_kw, cand, tfidf_dict, k=3):
+    # ── depth-1  (최대 3개) ──────────────────────
+    for kw1, sc1 in select_kw_scored(root_kw, cand, tfidf_dict, k=3):
         kw1_emb = model.encode([kw1], normalize_embeddings=True)[0]
 
-        # hop-1 : kw1 과 코사인 유사도 > COS_TH1 인 논문만
         hop1 = [
             p for p in pids_lvl0
             if (emb := get_abs_emb(p)) is not None
             and util.cos_sim(kw1_emb, emb).item() > COS_TH1
         ]
 
-        node1 = {"kw": kw1, "pids": hop1}
+        node1 = {
+            "id":      kw1,
+            "value":   round(sc1, 4),
+            "pids":    hop1,          # 필요 없으면 제거
+        }
+
+        # ── depth-2 : parent=kw1, 최대 3개 ───────
+        if depth > 1:
+            for kw2, sc2 in select_kw_scored(kw1, cand, tfidf_dict, k=3):
+                node1["children"].append({
+                    "id":    kw2,
+                    "value": round(sc2, 4),
+                })
+
         tree["children"].append(node1)
 
     return tree

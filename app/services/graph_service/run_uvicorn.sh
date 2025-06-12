@@ -4,4 +4,7 @@
 # 실행: ./run_uvicorn.sh
 
 echo "Starting FastAPI server..."
-uvicorn main:app --reload
+# uvicorn main:app --reload
+
+# 현재 위치: ~/searchforest-ai/app/services/graph_service
+PYTHONPATH=../../ uvicorn graph_service:app --reload --port 8002

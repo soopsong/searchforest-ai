@@ -3,12 +3,16 @@ from fastapi import FastAPI, Query
 from pydantic import BaseModel
 import uvicorn, json
 
-from cluster_searcher import search_clusters, cluster2pids, meta
-from graph_builder    import build_tree
-
-from graph_builder import build_tree   # ← 새 함수 import
+from runtime.cluster_searcher import search_clusters, cluster2pids, meta
+from runtime.graph_builder    import build_tree
 
 app = FastAPI(title="SearchForest-AI Recommend API")
+
+
+class InferenceRequest(BaseModel):
+    text: str
+
+
 
 # ── Pydantic 스키마 ──────────────────────────────────────────
 class SubNode(BaseModel):
@@ -21,13 +25,11 @@ class ClusterNode(BaseModel):
     children: list[SubNode]
 
 class RecResponse(BaseModel):
-    query: str
     results: dict        # root 트리 전체
 
 
-
 # ── recommend ───────────────────────────────────────────────
-@app.get("/recommend", response_model=RecResponse)
+@app.get("/inference", response_model=RecResponse)
 def recommend(
     query: str = Query(..., description="검색 쿼리"),
     top_k: int = Query(5, gt=1, le=10)          # default 5
@@ -42,8 +44,15 @@ def recommend(
         cluster_node = build_tree(kw_root, cid, depth=1) 
         cluster_node["sim"] = round(sim, 4)
         root["children"].append(cluster_node)
-    return {"query": query, "results": root}
+    return {"results": root }
+
+    
+
+
+
 
 # 로컬 실행용
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8004)
+
+    # uvicorn runtime.api:app --reload --port 8004

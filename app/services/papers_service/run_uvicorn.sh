@@ -4,4 +4,7 @@
 # 실행: ./run_uvicorn.sh
 
 echo "Starting FastAPI server..."
-uvicorn main:app --reload
+# uvicorn main:app --reload
+
+
+uvicorn papers_service:app --host 0.0.0.0 --port 8000

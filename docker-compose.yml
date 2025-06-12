@@ -7,6 +7,13 @@ services:
     ports:
       - "6379:6379"
     restart: unless-stopped
+  
+  papers-service:
+    build: ./papers_service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - searchforest-ai
 
   graph-service:
     build:
@@ -21,4 +28,26 @@ services:
       # (필요하다면) CONFIG_PATH, INDEX_PATH 등도
     depends_on:
       - redis
+      - searchforest-ai
     restart: unless-stopped
+  
+  runtime_infer:
+    build:
+      context: .
+      dockerfile: app/runtime/Dockerfile
+    container_name: searchforest-infer
+    runtime: nvidia            # GPU 전달
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./indices:/workspace/indices  # 인덱스 실시간 사용
+    ports:
+      - "8004:8004"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
