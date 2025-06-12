@@ -7,6 +7,59 @@ from sentence_transformers.util import cos_sim
 import numpy as np, tqdm
 from sentence_transformers import SentenceTransformer, util
 import torch
+from cluster_searcher import meta, cluster2pids   # ← meta 와 함께 추가로 import
+
+
+
+
+# ── 전역 설정 ───────────────────────────────────────────
+α, β, γ = 0.4, 0.4, 0.2         # (query, parentKw, TF-IDF) 가중치
+MMR_LAMBDA = 0.6
+model = SentenceTransformer("moka-ai/m3e-base", device="cuda:0")
+
+def tfidf_score(kw, tfidf_dict):
+    """클러스터 TF-IDF 합 딕셔너리에서 점수 조회 (없으면 0)"""
+    return tfidf_dict.get(kw, 0.0)
+
+def select_kw(query_kw: str,
+              candidate_kws: list[str],
+              tfidf_dict: dict[str, float],
+              k: int = 5) -> list[str]:
+    """
+    query_kw      : 선택 기준 키워드 (root 또는 depth-1)
+    candidate_kws : 후보 리스트 (클러스터 keywords)
+    tfidf_dict    : {kw: cluster-TFIDF-sum}
+    k             : 최종 개수
+    """
+    q_emb = model.encode([query_kw], normalize_embeddings=True)[0]
+    cand_embs = model.encode(candidate_kws, normalize_embeddings=True)
+
+    scored = []
+    for kw, e in zip(candidate_kws, cand_embs):
+        sc = (α * util.cos_sim(q_emb, e).item() +
+              β * util.cos_sim(q_emb, e).item() +   # parent == query
+              γ * tfidf_score(kw, tfidf_dict))
+        scored.append([sc, kw, e])
+
+    # ── MMR 다양화 ────────────────────────────────────
+    selected, selected_embs = [], []
+    while scored and len(selected) < k:
+        scored.sort(reverse=True)
+        best = scored.pop(0)
+        selected.append(best[1])
+        selected_embs.append(best[2])
+
+        new_scored = []
+        for sc, kw, e in scored:
+            div = max(util.cos_sim(e, se).item() for se in selected_embs)
+            new_scored.append([sc - MMR_LAMBDA*div, kw, e])
+        scored = new_scored
+    return selected
+
+
+
+
+
 
 # 1) citation 그래프 + abstract 로드 ------------------------------------------------
 with open("indices/graph_raw.gpickle", "rb") as f:
@@ -94,55 +147,35 @@ COS_TH1 = 0.30   # hop-1 임계값
 COS_TH2 = 0.25   # hop-2 임계값
 
 N_LVL1 = 3      # 1-depth(kw1) 최대 5개
-N_LVL2 = 0   # 더 깊이 안 내려감
 
-def build_tree(root_kw: str, pids_lvl0, cluster2pids, depth: int = 2):
+def build_tree(root_kw: str, cid: int, depth: int = 1):
     """
-    • root_kw      : 트리 루트 키워드(클러스터 대표)
-    • pids_lvl0    : 해당 클러스터 논문 ID 리스트
-    • depth        : 2(기본) → hop-1 / hop-2 생성
-    반환값         : dict(JSON-serializable)
+    • root_kw : 클러스터 대표 키워드
+    • cid     : 클러스터 ID  (cluster_meta / cluster2pids 조회용)
     """
+    c_meta      = meta[str(cid)]
+    cand        = c_meta["keywords"]           # 후보 키워드 목록
+    tfidf_dict  = dict(zip(
+        c_meta["keywords"],
+        c_meta.get("tfidf_sums", [])           # 없으면 0 점수
+    ))
+    # ── 이 클러스터에 포함된 모든 논문 id ───────────────────
+    pids_lvl0 = cluster2pids[cid]
+
     tree = {"root": root_kw, "children": []}
 
-    # 1-depth (hop-1)
-    kw1_list = safe_top_keywords(pids_lvl0, n=N_LVL1*2)[:N_LVL1]   # 후보 넉넉히 뽑고 5개 자르기
-    for kw1 in kw1_list:
-        kw1_emb = kw_model.encode([kw1], normalize_embeddings=True)[0]
+    # depth-1 : 최대 3개
+    for kw1 in select_kw(root_kw, cand, tfidf_dict, k=3):
+        kw1_emb = model.encode([kw1], normalize_embeddings=True)[0]
 
+        # hop-1 : kw1 과 코사인 유사도 > COS_TH1 인 논문만
         hop1 = [
             p for p in pids_lvl0
             if (emb := get_abs_emb(p)) is not None
             and util.cos_sim(kw1_emb, emb).item() > COS_TH1
         ]
 
-        node_lvl1 = {"kw": kw1, "pids": hop1, "children": []}
-
-        # 2-depth (hop-2)
-        if depth > 1 and hop1:
-            succ = [r for p in hop1 for r in G.successors(p)]
-            pred = [r for p in hop1 for r in G.predecessors(p)]
-            refs = [r for r in succ + pred if G.nodes[r].get("abstract")]
-            if len(refs) < 5:      # fallback
-                refs = hop1
-
-            seen = set()
-            for kw2 in safe_top_keywords(refs, n=10):
-                if kw2 == kw1 or kw2 in seen:
-                    continue
-                seen.add(kw2)
-                kw2_emb = kw_model.encode([kw2], normalize_embeddings=True)[0]
-                hop2 = [
-                    p for p in refs
-                    if (emb := get_abs_emb(p)) is not None
-                    and util.cos_sim(kw2_emb, emb).item() > COS_TH2
-                ]
-                node_lvl1["children"].append({"kw": kw2, "pids": hop2})
-                if len(node_lvl1["children"]) == N_LVL2:   # 3개까지만
-                    break
-
-        tree["children"].append(node_lvl1)
-        if len(tree["children"]) == N_LVL1:                # 5개까지만
-            break
+        node1 = {"kw": kw1, "pids": hop1}
+        tree["children"].append(node1)
 
     return tree

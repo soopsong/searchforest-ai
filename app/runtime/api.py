@@ -24,6 +24,8 @@ class RecResponse(BaseModel):
     query: str
     results: dict        # root 트리 전체
 
+
+
 # ── recommend ───────────────────────────────────────────────
 @app.get("/recommend", response_model=RecResponse)
 def recommend(
@@ -36,27 +38,10 @@ def recommend(
     root = {"root": query, "children": []}
 
     for cid, sim in hits:
-        # depth-1 : 클러스터 대표 키워드
-        kw_root = meta[str(cid)]["keywords"][0] if meta[str(cid)]["keywords"] else f"cluster{cid}"
-
-        # depth-2 : 클러스터 내부 서브 키워드 ≤ 3개 (build_tree 내부 N_LVL1=3 설정)
-        sub_tree = build_tree(
-            root_kw      = kw_root,
-            pids_lvl0    = cluster2pids[cid],
-            cluster2pids = cluster2pids,
-            depth        = 2                # 1-depth(kw_root) → 2-depth(서브키워드)
-        )
-        # build_tree 반환 형식 맞추기
-        children_lvl2 = [
-            {"kw": n["kw"], "pids": n["pids"]} for n in sub_tree["children"]
-        ]
-
-        root["children"].append({
-            "kw": kw_root,
-            "sim": round(sim, 4),
-            "children": children_lvl2
-        })
-
+        kw_root = meta[str(cid)]["keywords"][0]
+        cluster_node = build_tree(kw_root, cid, depth=1) 
+        cluster_node["sim"] = round(sim, 4)
+        root["children"].append(cluster_node)
     return {"query": query, "results": root}
 
 # 로컬 실행용
