@@ -21,7 +21,7 @@ RUN tar -xzf data/inductive_test_checkpoint_collected.tar.gz -C data/ && \
 
 # 4. 코드 복사 (덮어쓰지 않도록 이후에)
 COPY data/kw2pids.json data/
-COPY main.py ./
+COPY papers_service.py ./
 
 # 5. 앱 실행
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "papers_service:app", "--host", "0.0.0.0", "--port", "8000"]
