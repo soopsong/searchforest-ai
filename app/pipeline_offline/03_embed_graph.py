@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import pathlib, networkx as nx, joblib, numpy as np, tqdm
+import pathlib, networkx as nx, joblib, numpy as np, tqdm, pickle
 
 from node2vec import Node2Vec      # 🔸 변경 (nodevectors → node2vec)
 
@@ -7,7 +7,8 @@ GRAPH_PATH = pathlib.Path("indices/graph_raw.gpickle")
 OUT_PATH   = pathlib.Path("indices/graph_emb.pkl")
 
 print("🔹 load graph …")
-G = nx.read_gpickle(GRAPH_PATH)
+with GRAPH_PATH.open("rb") as f:      # ← 변경
+    G: nx.Graph = pickle.load(f)      # ← 변경
 print(f"  nodes={G.number_of_nodes():,}   edges={G.size():,}")
 
 # ── Node2Vec 파라미터 (node2vec 0.4.4 API) ──

@@ -60,5 +60,10 @@ if CITE_PATH.exists():
 
 # 3) 저장 및 요약 로그
 print(f"✔ graph → {G.number_of_nodes():,} nodes / {G.size():,} edges")
-nx.write_gpickle(G, OUT_PATH)
+import pickle
+OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+with OUT_PATH.open("wb") as f:
+    pickle.dump(G, f)
+
+
 print(f"✓ saved to {OUT_PATH}")

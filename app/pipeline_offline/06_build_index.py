@@ -13,6 +13,8 @@ Outputs
 """
 import numpy as np, pickle, json, faiss, pathlib, tqdm
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sentence_transformers import SentenceTransformer, util
+import itertools, re, collections
 
 EMB_PATH   = pathlib.Path("indices/paper_embed.npy")
 LABEL_PATH = pathlib.Path("indices/cluster_labels.npy")

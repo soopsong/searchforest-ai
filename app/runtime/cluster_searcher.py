@@ -3,7 +3,7 @@ import faiss, numpy as np, json, pickle, pathlib
 from sentence_transformers import SentenceTransformer
 
 IDX_DIR = pathlib.Path("indices")
-MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+MODEL_NAME = "moka-ai/m3e-base"
 
 # ── 데이터 로드 ──────────────────────────
 index  = faiss.read_index(str(IDX_DIR / "cluster.index"))
@@ -22,7 +22,7 @@ for pid, idx in pid2i.items():
 model = SentenceTransformer(MODEL_NAME, device="cuda:0")
 
 ALPHA = 1.0          # Step 04에서 사용한 비율과 동일
-def search_clusters(query: str, topk: int = 3):
+def search_clusters(query: str, topk: int = 5):
     """query → [(cid, sim), …]"""
     txt = model.encode([query], normalize_embeddings=True)[0]  # (384,)
     txt = txt.astype("float32") * ALPHA                       # 가중치
