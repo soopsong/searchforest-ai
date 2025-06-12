@@ -1,0 +1,10000 @@
+quantum
+states
+state
+entanglement
+photon
+time
+qubit
+systems
+single
+classical
+using
+non
+optical
+field
+model
+based
+information
+cavity
+phase
+control
+qubits
+results
+measurement
+coupling
+mode
+number
+dynamics
+study
+entangled
+spin
+method
+noise
+scheme
+present
+theory
+light
+different
+measurements
+used
+case
+space
+high
+problem
+coherent
+linear
+approach
+paper
+dimensional
+photons
+optimal
+order
+general
+energy
+properties
+frequency
+demonstrate
+protocol
+algorithm
+coupled
+use
+level
+work
+new
+mechanical
+gaussian
+modes
+experimental
+entropy
+large
+limit
+local
+channel
+propose
+interaction
+function
+gates
+consider
+proposed
+key
+particular
+correlations
+atoms
+quantum information
+process
+circuits
+evolution
+gate
+circuit
+models
+set
+distribution
+error
+shown
+hamiltonian
+discuss
+arbitrary
+matrix
+given
+continuous
+provide
+parameters
+effect
+communication
+regime
+channels
+network
+finite
+computation
+investigate
+fidelity
+possible
+terms
+atom
+applications
+effects
+coherence
+single photon
+equation
+temperature
+conditions
+performance
+decoherence
+atomic
+black
+wave
+open
+analysis
+strong
+bound
+physical
+probability
+quantum systems
+known
+fields
+numerical
+nonlinear
+input
+optomechanical
+simple
+rate
+result
+output
+thermal
+allows
+obtained
+stochastic
+class
+measure
+density
+unitary
+environment
+resonator
+particle
+efficiency
+way
+detection
+interactions
+random
+transition
+superconducting
+source
+operations
+photonic
+transfer
+initial
+weak
+walk
+protocols
+pure
+feedback
+structure
+networks
+parameter
+ground
+power
+long
+multi
+low
+second
+potential
+dynamical
+efficient
+device
+type
+algorithms
+computing
+operator
+devices
+methods
+recently
+derive
+design
+quantum state
+operators
+experimentally
+experiments
+equations
+form
+generation
+small
+squeezing
+range
+effective
+analyze
+functions
+current
+squeezed
+important
+point
+oscillator
+lattice
+standard
+driven
+schemes
+universal
+free
+spatial
+corresponding
+prove
+markovian
+processing
+memory
+problems
+vacuum
+hole
+graph
+laser
+estimation
+data
+provides
+walks
+transmission
+finally
+example
+signal
+introduce
+correlation
+implementation
+spectrum
+including
+controlled
+spectral
+obtain
+applied
+quantum computation
+processes
+generated
+quantum states
+technique
+higher
+magnetic
+distance
+pair
+independent
+beam
+behavior
+scale
+presented
+pairs
+microwave
+parametric
+times
+black hole
+dependent
+generalized
+symmetric
+robust
+certain
+various
+loss
+presence
+cooling
+operation
+waveguide
+computer
+polarization
+particles
+discrete
+bell
+induced
+discussed
+recent
+fundamental
+size
+ground state
+interference
+matrices
+cases
+radiation
+variable
+solution
+techniques
+bounds
+topological
+examples
+optimization
+like
+considered
+pulse
+features
+theoretical
+complex
+matter
+value
+scattering
+relation
+simulations
+optics
+complete
+application
+detectors
+symmetry
+does
+studied
+simulation
+teleportation
+practical
+codes
+framework
+exact
+experiment
+amplitude
+detector
+adiabatic
+achieved
+resonators
+compared
+group
+entangled states
+positive
+bipartite
+condition
+required
+useful
+near
+heat
+addition
+body
+associated
+physics
+described
+trap
+interacting
+sources
+chain
+previous
+driving
+strength
+average
+transport
+momentum
+furthermore
+decay
+critical
+probe
+hybrid
+lower
+construct
+resonance
+direct
+related
+quantum computing
+called
+resource
+necessary
+derived
+achieve
+master
+approximation
+dissipative
+mechanics
+harmonic
+quantum communication
+mixed
+ensemble
+learning
+rates
+values
+errors
+ghz
+measures
+multiple
+pulses
+information processing
+boundary
+implement
+apply
+emission
+inequality
+perform
+surface
+zero
+principle
+basis
+fluctuations
+analytical
+dimension
+ion
+specific
+open quantum
+resonant
+conversion
+excitation
+realization
+electron
+solutions
+role
+cavities
+reduced
+elements
+mean
+observed
+horizon
+strongly
+degree
+measured
+quantum walk
+spontaneous
+relevant
+qkd
+graphs
+freedom
+self
+introduced
+phys
+leads
+multipartite
+continuous variable
+quantum walks
+correction
+highly
+procedure
+coherent states
+nm
+defined
+implemented
+nature
+observables
+step
+trapped
+external
+real
+resulting
+limited
+novel
+generate
+key distribution
+additional
+relative
+motion
+quantum key
+develop
+phonon
+requires
+tomography
+fast
+scaling
+al
+product
+respect
+theorem
+bath
+completely
+technology
+10
+steady
+computational
+formalism
+et
+cost
+factor
+transitions
+means
+quantum computer
+et al
+region
+equilibrium
+degrees
+capacity
+fully
+future
+resources
+allow
+efficiently
+quantum mechanics
+gravity
+preparation
+possibility
+position
+sufficient
+infinite
+realistic
+demonstrated
+constant
+uncertainty
+shows
+security
+hilbert
+similar
+complexity
+statistics
+explicit
+developed
+advantage
+hamiltonians
+sampling
+collective
+code
+dimensions
+oscillators
+context
+quantum correlations
+fiber
+non markovian
+photon number
+perfect
+representation
+losses
+determine
+report
+setup
+single qubit
+fixed
+integrated
+machine
+negativity
+existence
+rev
+gain
+action
+sensitivity
+phys rev
+dephasing
+line
+master equation
+law
+precision
+bosonic
+larger
+search
+regimes
+nonclassical
+computers
+minimum
+description
+secret
+excited
+suitable
+construction
+total
+engineering
+special
+dot
+spins
+flux
+distributions
+maximum
+observe
+contrast
+damping
+extended
+characterization
+upper
+numerically
+superposition
+pump
+realized
+geometric
+entangled state
+theoretically
+characterize
+leading
+calculate
+performed
+dissipation
+steady state
+degrees freedom
+path
+threshold
+homodyne
+interesting
+entanglement entropy
+available
+quantum circuits
+term
+maximally
+scalar
+compare
+architecture
+crystal
+depth
+variables
+relations
+close
+target
+main
+robustness
+test
+approaches
+technologies
+quadratic
+hawking
+significant
+single mode
+length
+cluster
+enhanced
+nonclassicality
+realize
+illustrate
+enables
+directly
+temporal
+review
+specifically
+based quantum
+charge
+mass
+rydberg
+minimal
+frequencies
+gravitational
+explore
+identify
+phases
+speed
+stability
+error correction
+geometry
+proof
+modulation
+noisy
+address
+existing
+secure
+asymptotic
+bit
+criteria
+gaussian states
+increase
+structures
+account
+correlated
+extend
+compute
+significantly
+points
+numbers
+trajectories
+question
+sets
+equivalent
+exponential
+invariant
+global
+boson
+partial
+magnetic field
+analyzed
+determined
+double
+make
+electromagnetic
+photon pairs
+rabi
+components
+far
+sub
+explicitly
+joint
+ideal
+dependence
+reversible
+map
+phenomena
+provided
+criterion
+response
+statistical
+respectively
+investigated
+noncommutative
+reservoir
+einstein
+mathcal
+solve
+differential
+tensor
+improve
+subject
+mirror
+ions
+fact
+lead
+previously
+qed
+theories
+common
+distributed
+uses
+intensity
+require
+wavelength
+shift
+propagation
+closed
+stationary
+force
+estimate
+exhibit
+interferometer
+internal
+conventional
+markov
+better
+constraints
+bandwidth
+logic
+discord
+analytically
+decomposition
+wide
+quality
+short
+levels
+unknown
+individual
+fault
+family
+quantum dot
+showing
+property
+version
+inequalities
+chip
+kerr
+bulk
+able
+maximal
+heisenberg
+angular
+hilbert space
+conditional
+single photons
+parties
+encoded
+central
+disorder
+bose
+establish
+time dependent
+purity
+types
+classes
+time evolution
+quantum computers
+proposal
+promising
+filtering
+tunable
+wigner
+reduction
+connection
+transformation
+good
+generating
+array
+holes
+approximate
+detailed
+natural
+consisting
+quantum optics
+square
+concept
+formula
+negative
+involving
+waveguides
+scalable
+define
+parity
+quantum channel
+orthogonal
+calculations
+fock
+quasi
+final
+depends
+scenario
+density matrix
+need
+silicon
+band
+makes
+ii
+time quantum
+constructed
+expression
+configuration
+quantum circuit
+deterministic
+focus
+feasible
+basic
+electronic
+steering
+phase space
+reach
+chains
+transverse
+cross
+creation
+mixing
+subspace
+strategy
+allowing
+implementations
+encoding
+black holes
+success
+synthesis
+coin
+underlying
+appropriate
+expected
+trivial
+simulate
+limits
+tool
+quantum channels
+ensembles
+analytic
+behaviour
+trace
+area
+typical
+stable
+task
+expansion
+dipole
+dual
+mechanism
+considering
+signals
+crucial
+exchange
+understanding
+connected
+polynomial
+thermodynamics
+metric
+increasing
+include
+thermodynamic
+end
+characterized
+platform
+population
+periodic
+initial state
+oscillations
+pi
+numerical simulations
+non gaussian
+phenomenon
+article
+schr
+comparison
+agreement
+gap
+second order
+temperatures
+subsystems
+exactly
+transformations
+reduce
+norm
+state transfer
+concurrence
+measuring
+gives
+discrete time
+high fidelity
+quantum mechanical
+notion
+quantify
+quantum error
+holographic
+cold
+influence
+separability
+setting
+storage
+alternative
+solid
+separable
+engine
+produce
+generic
+finding
+optimal control
+quantum entanglement
+improved
+memristor
+amplification
+equal
+nodes
+bounded
+access
+development
+maps
+absorption
+strong coupling
+entropies
+vector
+macroscopic
+ability
+suggest
+bases
+remains
+su
+simultaneously
+change
+generalization
+nonlinearity
+variety
+entangling
+expressions
+making
+tools
+compact
+spectra
+observable
+medium
+prepared
+rangle
+describing
+pure states
+conjecture
+performing
+neural
+controller
+regions
+spacetime
+convergence
+increases
+heralded
+produced
+designed
+classical quantum
+consistent
+desired
+party
+original
+excitations
+providing
+dispersion
+field theory
+qudit
+sense
+applying
+dots
+quantum stochastic
+relaxation
+multimode
+studies
+trapping
+exist
+ones
+optimized
+consists
+phase transition
+sensitive
+db
+lattices
+quantum gates
+depending
+background
+coupling strength
+quantum algorithms
+quantum coherence
+logical
+examine
+magnitude
+direction
+established
+convex
+combination
+quadrature
+post
+initially
+exhibits
+counting
+semi
+composed
+universal quantum
+implementing
+relative entropy
+metrology
+uniform
+enable
+amplifier
+difference
+enhancement
+works
+angular momentum
+odinger
+needed
+dark
+quantum classical
+probabilities
+research
+extension
+readout
+lower bound
+cycle
+sensing
+delta
+classically
+unique
+coherent state
+schr odinger
+rank
+bits
+passive
+parametric conversion
+taking
+filter
+hard
+gas
+observer
+qubit states
+controllable
+create
+loop
+hardware
+sharing
+lindblad
+domain
+requirements
+dirac
+sequence
+building
+center
+interpretation
+tolerant
+exponentially
+solving
+quantities
+sum
+generalize
+identical
+lett
+modified
+conformal
+accuracy
+harmonic oscillator
+formation
+mutual
+characteristics
+edge
+synchronization
+tasks
+active
+spaces
+quantum networks
+machine learning
+coupling regime
+idea
+coefficients
+best
+restricted
+probabilistic
+smaller
+maximally entangled
+ising
+inside
+simulated
+analog
+violation
+forms
+sequences
+picture
+usually
+alpha
+exploiting
+algebra
+scales
+exists
+detuning
+employing
+non trivial
+binary
+mutually
+electric
+calculation
+entangled photon
+long range
+feature
+artificial
+achievable
+degenerate
+drive
+improvement
+art
+relativistic
+input output
+bloch
+configurations
+yields
+material
+beams
+purpose
+static
+rev lett
+fisher
+diffusion
+mathematical
+waves
+distinct
+ratio
+epr
+fourier
+semiclassical
+state art
+manipulation
+steps
+generally
+having
+feasibility
+hermitian
+splitting
+systematic
+membrane
+relies
+paradox
+fault tolerant
+solid state
+quantum discord
+block
+asymmetric
+especially
+selection
+quantum dots
+typically
+fermionic
+starting
+occur
+log
+superpositions
+subsystem
+projective
+algebraic
+collapse
+perturbation
+orders
+varying
+assisted
+gauge
+quantum memory
+linear quantum
+blockade
+large scale
+instead
+state quantum
+applications quantum
+josephson
+evidence
+argue
+dynamic
+intermediate
+transform
+covariance
+feedback control
+purification
+scenarios
+element
+localization
+non classical
+help
+following
+detect
+pure state
+logarithmic
+created
+site
+intrinsic
+clifford
+unbiased
+architectures
+higher order
+essential
+tests
+mu
+choice
+parallel
+genuine
+light matter
+randomness
+advantages
+squeezed vacuum
+boson sampling
+calculated
+tuning
+component
+lambda
+rotating
+combined
+studying
+knowledge
+partially
+nonlocal
+100
+trajectory
+flow
+naturally
+emitted
+allowed
+science
+frames
+support
+observation
+quantum teleportation
+chosen
+factors
+faster
+couplings
+shared
+shape
+operational
+dimensional quantum
+anti
+electrodynamics
+slow
+acceleration
+strategies
+characteristic
+gradient
+necessary sufficient
+implies
+coding
+changes
+acting
+formulation
+environments
+rotation
+quantum optical
+series
+optimize
+cavity field
+space time
+vectors
+preserving
+fermions
+cloning
+quantum control
+amplitudes
+literature
+accurate
+variable quantum
+classification
+groups
+spontaneous emission
+unruh
+imperfections
+reconstruction
+resolution
+cnot
+plane
+sqrt
+contains
+offers
+usual
+quantum dynamics
+moving
+tripartite
+arbitrarily
+applicable
+particularly
+according
+easily
+continuous time
+ancilla
+separated
+presents
+pressure
+theta
+fisher information
+demonstration
+quantum phase
+linear optics
+quantum field
+quantum technologies
+valid
+qubit gates
+identification
+accessible
+evaluate
+lie
+detected
+long distance
+quantity
+linear optical
+quantum algorithm
+potentially
+hand
+prepare
+mapping
+weakly
+moments
+canonical
+employed
+imaging
+dicke
+difficult
+bose einstein
+forward
+scalar field
+adaptive
+shot
+emitters
+traps
+velocity
+semiconductor
+homodyne detection
+emitter
+absence
+distances
+localized
+microscopic
+decoupling
+classical communication
+receiver
+upper bound
+communications
+beam splitter
+splitter
+situation
+compatible
+topology
+attention
+attack
+state preparation
+propagating
+mhz
+displacement
+resolved
+predicted
+importance
+alice
+sideband
+sphere
+working
+normal
+neumann
+quantum electrodynamics
+nearest
+ring
+capable
+materials
+opens
+precise
+qudits
+represented
+suggested
+molecules
+using quantum
+true
+50
+nuclear
+perturbations
+operating
+proposals
+measurement based
+stabilizer
+definition
+breaking
+taken
+expressed
+asymptotically
+increased
+impact
+cat
+challenge
+employ
+wide range
+identified
+orbital
+powerful
+composite
+vertices
+formulated
+arrays
+tunneling
+rise
+effectively
+mechanical resonator
+sufficiently
+issue
+optical cavity
+predictions
+tight
+mutually unbiased
+introducing
+occurs
+involves
+twin
+telecom
+link
+despite
+reservoirs
+quantum random
+condensate
+omega
+regular
+expectation
+switching
+2d
+reveal
+voltage
+limitations
+constructing
+quantum theory
+verify
+verification
+von
+multi qubit
+incoherent
+view
+sudden
+combining
+reveals
+investigation
+ultracold
+testing
+corrections
+spectroscopy
+fidelities
+concepts
+integral
+equivalence
+physically
+ultra
+level quantum
+controlling
+volume
+mechanisms
+hubbard
+consensus
+qutrit
+embedded
+auxiliary
+satisfy
+unit
+matching
+separation
+witnesses
+walker
+differential equations
+squeezed states
+connections
+dispersive
+eigenvalues
+averaged
+free space
+motivated
+appears
+controls
+bob
+super
+von neumann
+assumption
+computations
+differences
+locally
+periodically
+visibility
+multi photon
+pauli
+controllability
+cavity mode
+appear
+witness
+suppressed
+interface
+includes
+schmidt
+sample
+added
+functional
+kind
+depend
+offer
+ads
+qubit quantum
+superconducting qubits
+reduces
+qubit state
+half
+correct
+spatially
+past
+memristors
+governed
+assumptions
+implications
+analyse
+fabrication
+state tomography
+photon pair
+arises
+exploit
+monogamy
+device independent
+high dimensional
+wave mixing
+illustrated
+copies
+delay
+passage
+majorana
+lyapunov
+attacks
+perturbative
+challenging
+purely
+represent
+quantum interference
+consequence
+study quantum
+machines
+heating
+junction
+raman
+mixed states
+ground states
+carry
+extract
+mutual information
+requirement
+transparency
+play
+achieving
+simulating
+mathbb
+secret sharing
+pulsed
+currently
+quantitative
+forces
+realizing
+quantum network
+trade
+nonlocality
+inverse
+wigner function
+indicate
+memories
+pt
+takes
+mathrm
+digital
+multipartite entanglement
+ibm
+designs
+crystals
+flip
+just
+frame
+grover
+widely
+generator
+phi
+remote
+information theory
+describes
+molecular
+plays
+goal
+hidden
+orbit
+hawking radiation
+broad
+reflection
+bosons
+atmospheric
+baths
+world
+level atom
+correcting
+stochastic differential
+reported
+singular
+approximately
+horne
+distant
+spontaneous parametric
+initial states
+subtraction
+paper study
+success probability
+density matrices
+demonstrating
+mixed state
+paths
+wave function
+angle
+micro
+relationship
+numerical results
+cummings
+programming
+enhance
+inputs
+excited state
+recently proposed
+amplitude damping
+number qubits
+bell inequality
+circuit qed
+counter
+outcomes
+index
+transmission line
+represents
+partite
+symplectic
+origin
+subset
+mean field
+bh
+coefficient
+integration
+mediated
+dielectric
+20
+indistinguishable
+inhomogeneous
+integer
+symmetries
+treatment
+nanomechanical
+mode squeezed
+left
+cryptography
+geometries
+additionally
+vertex
+permutation
+optomechanics
+principles
+enabling
+confined
+blocks
+states light
+correspondence
+caused
+yield
+povm
+photon states
+al phys
+accelerated
+extremely
+dynamics quantum
+pm
+major
+photonic crystal
+easy
+quantum metrology
+overall
+pattern
+contribution
+predict
+rho
+corresponds
+hybrid quantum
+bias
+casimir
+quantum feedback
+entanglement quantum
+objects
+relatively
+swapping
+finite dimensional
+built
+simultaneous
+entropic
+epsilon
+proved
+massive
+odd
+versions
+object
+representations
+great
+transmitted
+greater
+pumping
+ordered
+estimates
+situations
+solved
+discrimination
+secret key
+arise
+boundary conditions
+software
+propose scheme
+cv
+realizations
+addressed
+level systems
+sim
+derivation
+production
+formed
+simulator
+sufficient conditions
+years
+nonreciprocal
+theoretic
+quantum operations
+families
+clear
+marked
+holds
+computed
+linearly
+turns
+jaynes
+outputs
+cft
+neighbor
+estimated
+entire
+conclude
+analogous
+aim
+multi mode
+random walk
+constraint
+chaotic
+99
+environmental
+discussion
+interplay
+variational
+extra
+homogeneous
+asymmetry
+model quantum
+photonic quantum
+shor
+engineered
+reliable
+tuned
+cluster state
+variance
+rm
+non local
+cluster states
+reference
+scalability
+contributions
+jaynes cummings
+theory quantum
+non linear
+probability distribution
+mandel
+inspired
+nearly
+earlier
+directions
+curvature
+right
+narrow
+exciton
+ultrastrong
+ideas
+issues
+disordered
+platforms
+weak coupling
+analyzing
+aspects
+explain
+instance
+interferometric
+ways
+swap
+arising
+radius
+optomechanical coupling
+diagonal
+cosmological
+finite time
+detuned
+suppression
+affect
+longer
+subspaces
+comparable
+text
+eigenstates
+limiting
+satellite
+implementation quantum
+elementary
+containing
+demonstrates
+perspective
+sites
+findings
+completely positive
+node
+renyi
+hadamard
+phonons
+perfectly
+correlation functions
+proportional
+annealing
+switch
+opposite
+fluorescence
+memristive
+progress
+events
+training
+long time
+exploited
+seen
+emerging
+scale quantum
+hat
+quantum simulation
+paradigm
+build
+quantum measurement
+manner
+quantum devices
+nv
+insight
+count
+massless
+links
+adiabatic passage
+frac
+optical quantum
+emergence
+kappa
+invariants
+correlation function
+closely
+program
+echo
+upper bounds
+approximations
+sensors
+necessarily
+quite
+areas
+phase transitions
+utilizing
+zeilinger
+thermal noise
+quantum effects
+input states
+smooth
+stabilization
+ancillary
+greatly
+couple
+random walks
+protected
+wavelengths
+analogue
+brillouin
+rabi model
+stronger
+interferometry
+universality
+repeater
+prior
+formulate
+additive
+photon source
+unbiased bases
+width
+chiral
+calculating
+projection
+nearest neighbor
+transmon
+engines
+cavity quantum
+independently
+settings
+spin chain
+potentials
+valued
+objective
+electromagnetic field
+liquid
+infty
+evaluation
+local operations
+bang
+plant
+previous work
+overcome
+confirm
+algebras
+paper present
+lines
+zeno
+turn
+string
+trapped ions
+correspond
+detecting
+quantized
+box
+suggests
+variation
+coherently
+fermion
+inversion
+operate
+distance quantum
+eigenvalue
+ghz state
+involved
+insulator
+radiation pressure
+causal
+oscillation
+separate
+eit
+gaussian state
+molecule
+quantum correlation
+imperfect
+characterizing
+shifts
+phase shift
+modulated
+definite
+quantum trajectories
+estimating
+lower bounds
+optically
+fluctuation
+precisely
+photon sources
+noises
+quantum gate
+resonances
+comparing
+procedures
+phase estimation
+character
+virtual
+strengths
+quantum limit
+vacuum state
+determining
+generators
+check
+sequential
+non equilibrium
+deviations
+sigma
+optical parametric
+constrained
+parameter estimation
+quantum process
+understood
+input state
+extends
+fock states
+leakage
+biological
+simplest
+unlike
+rotations
+nmr
+evaporation
+relate
+1d
+universe
+general quantum
+traditional
+surfaces
+jump
+bus
+observers
+efficiencies
+energy transfer
+arxiv
+bayesian
+poissonian
+multiplexing
+impurity
+laws
+orders magnitude
+demand
+acoustic
+overhead
+advanced
+deep
+quantization
+diamond
+blue
+neural network
+amplifiers
+induce
+extending
+quantum body
+transient
+states quantum
+single particle
+benchmarking
+star
+bell states
+mirrors
+quantum secret
+experimental results
+engineer
+variations
+introduction
+taking account
+photon counting
+interferometers
+broadband
+degree freedom
+dressed
+revealed
+changing
+turbulence
+povms
+shot noise
+mechanical oscillator
+observations
+obtaining
+weyl
+profile
+ghz states
+challenges
+stokes
+questions
+creating
+centers
+consequently
+produces
+stored
+superconducting circuits
+does require
+selective
+modeling
+pre
+deformed
+assume
+giving
+extremal
+noiseless
+quantum noise
+master equations
+horne zeilinger
+nano
+entropy entanglement
+real time
+dense
+focusing
+note
+inter
+affected
+randomized
+distinguish
+assumed
+language
+bright
+internet
+beta
+carried
+fabricated
+bipartite entanglement
+formulas
+greenberger
+greenberger horne
+outside
+retrieval
+non hermitian
+superconducting quantum
+evolution operator
+quantum non
+effectiveness
+explored
+induced transparency
+class quantum
+place
+likely
+interior
+coherent quantum
+negligible
+duality
+harmonic oscillators
+substantially
+special case
+details
+counterpart
+experimental data
+mapped
+speedup
+preparing
+straightforward
+defect
+proper
+parts
+coherent feedback
+use quantum
+condensates
+rapid
+indicates
+positions
+polariton
+core
+cryptographic
+photon detectors
+deformation
+chaos
+contain
+practice
+successfully
+nonequilibrium
+sign
+near term
+physical systems
+electron spin
+weighted
+ph
+thermal equilibrium
+rigorous
+bell state
+spatial mode
+commonly
+media
+counts
+qubit systems
+cavity qed
+rely
+quantum rabi
+process tomography
+_2
+motional
+body systems
+standard quantum
+placed
+methodology
+instances
+unified
+experimentally demonstrate
+modular
+interact
+interval
+km
+polarization entangled
+manifold
+stimulated
+orbital angular
+understand
+preserve
+ordering
+concentration
+quantum fisher
+conditioned
+assuming
+commuting
+period
+counterparts
+multiplexed
+resolving
+analogy
+decoding
+fibre
+diffusive
+lossy
+pdc
+act
+concerning
+probing
+bec
+singlet
+lowest
+quantum regime
+evaluated
+argument
+iii
+inertial
+earth
+image
+finite temperature
+pumped
+products
+performs
+squid
+distribution qkd
+quant
+quantified
+level atoms
+processor
+room
+attractive
+ion trap
+optical elements
+growth
+current technology
+users
+eavesdropper
+control quantum
+remarkably
+induces
+backaction
+ultimate
+classical information
+topologically
+hold
+vibrational
+complementary
+sic
+emph
+reaction
+optomechanical systems
+commutative
+electrons
+informationally
+notions
+assess
+followed
+rb
+tested
+filters
+neumann entropy
+si
+unitaries
+optimally
+vacancy
+remarkable
+antibunching
+layer
+neural networks
+reasonable
+verified
+acts
+quanta
+flat
+regarding
+error correcting
+locality
+dynamical decoupling
+subjected
+target state
+independent quantum
+oam
+bound states
+green
+extensions
+multiplicative
+developments
+weight
+game
+incident
+designing
+tolerant quantum
+hierarchy
+alice bob
+informationally complete
+rules
+horizons
+energies
+proposed scheme
+isolated
+estimator
+photon subtraction
+deviation
+diagram
+fermi
+critical point
+oscillatory
+manipulate
+state entanglement
+reduced density
+cycles
+away
+defining
+entangled photons
+squeezed light
+carnot
+briefly
+optimality
+unity
+cooled
+scheme based
+planar
+technological
+quantum spin
+carlo
+monte
+monte carlo
+ranging
+simplified
+quality factor
+12
+specified
+quantum memories
+optic
+outcome
+evolutions
+heralded single
+arguments
+combinatorial
+photon blockade
+present quantum
+polarized
+quantum harmonic
+linewidth
+ordinary
+broken
+probability distributions
+solvable
+written
+stage
+adapted
+quantum master
+entanglement swapping
+potential applications
+em
+setups
+locc
+post selection
+study entanglement
+quantum capacity
+electro
+problem quantum
+toffoli
+higher dimensional
+semi classical
+cyclic
+entanglement purification
+non zero
+mechanical resonators
+capabilities
+cat states
+essentially
+polynomial time
+boolean
+currents
+continuously
+run
+route
+distillation
+edges
+room temperature
+control problem
+event
+chi
+improves
+grows
+experimental realization
+circuit quantum
+good agreement
+readily
+scattered
+structural
+imposed
+cavity modes
+error rate
+coarse
+emerges
+quantum annealing
+converted
+shortcuts
+heat engine
+reconstruct
+nanowire
+states using
+applies
+repeaters
+propose quantum
+validity
+occupation
+collision
+metrics
+examined
+serve
+covariance matrix
+reducing
+superconducting qubit
+distinguishable
+sufficient condition
+manipulating
+uncertainties
+fibers
+theorems
+large number
+rich
+optimizing
+results obtained
+modeled
+candidate
+odinger equation
+proven
+quantum communications
+copy
+suitably
+schwarzschild
+satisfies
+modification
+reversal
+white
+field quantum
+axis
+violations
+circular
+dominant
+mainly
+state space
+entanglement formation
+werner
+simpler
+collection
+abelian
+intuitive
+hong
+duration
+laboratory
+accurately
+cryogenic
+quantum repeater
+capability
+decreases
+markov chains
+lifetime
+instantaneous
+conformal field
+shaped
+trapped ion
+point view
+achieves
+paper propose
+fractional
+quant ph
+meaning
+infinity
+possibilities
+area law
+method based
+squared
+surprisingly
+relevance
+invariance
+quantum zeno
+encode
+cal
+approximated
+different types
+16
+selected
+viewed
+interpreted
+repeated
+thermalization
+psi
+ultrastrong coupling
+hopping
+fabry
+realizable
+location
+signature
+subsequently
+fourier transform
+refrigerator
+gravitational wave
+benchmark
+range interactions
+key rate
+leq
+cut
+quantum gravity
+curves
+unitary operations
+consequences
+principal
+ou
+optical lattice
+uncertainty relation
+adding
+extent
+perfect state
+present new
+treated
+semidefinite
+sender
+infinite dimensional
+oscillating
+signatures
+processors
+patterns
+einstein condensate
+integrable
+consider quantum
+ingredient
+monitoring
+excellent
+nanoscale
+complementarity
+markovianity
+non markovianity
+private
+remain
+rule
+moment
+limitation
+poled
+bin
+condensed
+signal noise
+hong ou
+ou mandel
+quantum cryptography
+pseudo
+cloud
+combinations
+11
+hyperfine
+reached
+concrete
+included
+cross kerr
+distinguishability
+kitaev
+additivity
+proving
+superradiant
+quench
+spin systems
+nitrogen
+present scheme
+kinds
+3d
+follows
+interacts
+actual
+applicability
+density operator
+structured
+supported
+highly entangled
+packet
+sharp
+samples
+high quality
+chsh
+evanescent
+optical lattices
+cold atoms
+scalable quantum
+photon interference
+sensor
+hypothesis
+comment
+finally discuss
+properties quantum
+coincidence
+intervals
+taken account
+balanced
+quantum internet
+finesse
+sitter
+improving
+squeezed state
+numerical simulation
+nontrivial
+bunching
+quantum physics
+generates
+insights
+respective
+photonics
+gamma
+anisotropic
+differential equation
+entanglement generation
+introduce new
+extracted
+magnetic resonance
+fluid
+renormalization
+partition
+way quantum
+multiphoton
+complicated
+transpose
+violate
+continuous wave
+nitrogen vacancy
+decoherence free
+bipartite quantum
+simply
+silica
+electric field
+shorter
+states used
+clock
+mach
+computationally
+neutral
+cmos
+powers
+involve
+decay rate
+covariant
+insensitive
+zero temperature
+product states
+second law
+strongly coupled
+appearance
+perturbation theory
+peak
+continuum
+guided
+special cases
+emerge
+tls
+probe field
+pairwise
+vortex
+fusion
+parametric amplifier
+partial transpose
+advances
+15
+death
+quantum measurements
+decompositions
+coupled single
+periodically poled
+successful
+elastic
+port
+significance
+cause
+quantum simulator
+outline
+extraction
+double quantum
+heralding
+considers
+producing
+low energy
+mechanical oscillators
+eigenstate
+strictly
+excited states
+consideration
+cascade
+unitary evolution
+ansatz
+likelihood
+idler
+decrease
+determination
+share
+dynamically
+coherence time
+mechanical modes
+optomechanical cavity
+proofs
+cutoff
+atomic ensemble
+entanglement measures
+reflected
+decision
+root
+frequency conversion
+modern
+rapidly
+behaviors
+used quantum
+geometrical
+counterfactual
+local quantum
+separable states
+mach zehnder
+zehnder
+practical applications
+arbitrary quantum
+supremacy
+polynomials
+mode gaussian
+calculus
+otimes
+contact
+improvements
+saturation
+look
+hz
+performance quantum
+experimental implementation
+corrected
+fraction
+bose hubbard
+quasiprobability
+needs
+history
+split
+stochastic systems
+charged
+ballistic
+different quantum
+kernel
+nonlinearities
+cavity optomechanical
+qd
+paper investigate
+lengths
+single atom
+fock state
+operations classical
+norms
+causes
+confirmed
+correcting codes
+information science
+running
+phase damping
+densities
+derivative
+classicality
+curved
+surface code
+impossible
+anomalous
+properly
+results demonstrate
+tau
+rydberg atoms
+coulomb
+qubit qubit
+np
+calibration
+minimize
+quantumness
+high efficiency
+affects
+mean square
+product state
+firewall
+apparatus
+entanglement measure
+evolving
+information theoretic
+utilize
+developing
+choosing
+iterative
+sizes
+resistance
+connectivity
+candidates
+microcavity
+individually
+controllers
+quantum markov
+efficient quantum
+delayed
+exciting
+dissipative quantum
+extreme
+term quantum
+quantitatively
+adder
+vanishing
+2010
+normalized
+87
+2n
+boltzmann
+floquet
+th
+coherences
+twin beams
+library
+promise
+responsible
+spatial modes
+conservation
+electrical
+bi
+driving field
+coordinates
+wave packet
+tomographic
+overlap
+measurement device
+equally
+output field
+nonclassical states
+scrambling
+versatile
+spin squeezing
+quantum superposition
+recently introduced
+appropriately
+control theory
+absolute
+accompanied
+amplified
+whispering
+dc
+quantum repeaters
+time averaged
+embedding
+tolerance
+lasing
+contrary
+phase gate
+agree
+textbf
+information quantum
+ppt
+thermal states
+finite number
+substantial
+uncertainty relations
+brownian
+monotone
+optics quantum
+suppress
+agent
+van
+dynamical casimir
+drives
+quantum light
+weakly coupled
+instability
+superior
+systems quantum
+requiring
+serves
+largest
+using single
+broadening
+finite size
+shell
+recently developed
+inner
+tailored
+risk
+early
+lies
+excess
+number photons
+parameter space
+gallery
+whispering gallery
+markovian quantum
+states generated
+bf
+role quantum
+singularity
+magic
+facilitate
+time reversal
+cascaded
+cover
+field theories
+technical
+quantum search
+doped
+classical computer
+relativity
+atom cavity
+textit
+measure entanglement
+2011
+combines
+depolarizing
+evolution quantum
+satisfying
+exploring
+projective measurements
+rosen
+generalised
+lack
+highest
+hierarchical
+eventually
+clearly
+inherent
+yielding
+lithium
+interestingly
+matrix elements
+type ii
+supports
+nanophotonic
+annihilation
+nanofiber
+converges
+recurrence
+present experimental
+generalizing
+hubbard model
+propose method
+photon emission
+moderate
+damped
+aims
+adiabaticity
+niobate
+generalizes
+defects
+lorentz
+color
+rf
+fabry perot
+perot
+sparse
+cite
+rubidium
+infinitely
+highlight
+sided
+investigating
+revival
+positivity
+entanglement witnesses
+hyperentangled
+spectrally
+order correlation
+recovery
+energy levels
+photon state
+distillable
+conjugate
+modifications
+large class
+investigations
+simulators
+influences
+demolition
+investigate quantum
+quantum critical
+coupled cavity
+reciprocal
+expressed terms
+variant
+optical fiber
+consider problem
+linear systems
+checking
+evolves
+quantum logic
+radiative
+hot
+uncorrelated
+showed
+transferred
+semigroup
+directed
+er
+matrix product
+electromagnetically
+electromagnetically induced
+standing
+capture
+lasers
+numerical calculations
+fold
+red
+casimir effect
+suited
+indistinguishability
+planck
+tsallis
+markovian dynamics
+magnetization
+brightness
+images
+weak value
+realization quantum
+weights
+register
+sudden death
+efforts
+fredkin
+mdi
+quantum limited
+entanglement properties
+entanglement based
+otto
+pass
+biased
+representing
+time scale
+rao
+extensive
+date
+closely related
+junctions
+80
+equations motion
+difficulty
+qubit gate
+context quantum
+magnetic fields
+josephson junction
+makes use
+application quantum
+parametric oscillator
+logic gates
+shapes
+commutation
+subsequent
+possess
+results suggest
+concerned
+minkowski
+non demolition
+trace preserving
+measurable
+postselection
+radial
+expectation values
+metal
+states single
+rotating wave
+constructions
+uniformly
+near horizon
+flexible
+directional
+transfer function
+important role
+laplacian
+40
+deriving
+electrodes
+prime
+spherical
+curve
+dicke model
+enyi
+tune
+store
+ns
+exponent
+chemical
+differ
+weak measurement
+bragg
+connecting
+leader
+time varying
+singularities
+utilized
+open systems
+maxwell
+opto
+max
+quantum linear
+follow
+xy
+brief
+lithium niobate
+condensed matter
+entanglement negativity
+versus
+multiqubit
+unidirectional
+located
+nonlinear quantum
+present method
+considerably
+populations
+randomly
+quantum bits
+classical computers
+systematically
+perspectives
+fano
+coupler
+ket
+qualitative
+prospects
+new approach
+randomized benchmarking
+quantifies
+thought
+development quantum
+entirely
+jumps
+widely used
+answer
+phase diagram
+combine
+einstein condensates
+noncommutativity
+entanglement generated
+initialization
+partially entangled
+unruh effect
+balance
+proof principle
+graphene
+flexibility
+longitudinal
+comb
+beam splitters
+splitters
+experimental parameters
+fluctuating
+injected
+preserved
+propose new
+backward
+nonclassical properties
+driven dissipative
+bilinear
+noon
+avoided
+paves
+computational complexity
+25
+recover
+barrier
+charges
+markov chain
+kraus
+confinement
+qnd
+growing
+prediction
+terminal
+minimizing
+routing
+fundamentally
+mm
+mott
+usefulness
+transverse field
+occurring
+lossless
+remaining
+clifford group
+possibly
+kinetic
+adiabatically
+carrier
+outperform
+formal
+isotropic
+thermal state
+window
+tree
+grid
+programmable
+reproduce
+averaging
+computation quantum
+heat bath
+incompatible
+exceed
+paper consider
+various quantum
+transistor
+qubits coupled
+number resolving
+grained
+non interacting
+optimal measurement
+information loss
+rare
+ising model
+photon statistics
+entanglement witness
+paves way
+agents
+hall
+monitored
+space quantum
+relating
+cooperative
+frustration
+average fidelity
+entanglement dynamics
+carrying
+quantum fields
+theoretical model
+time bin
+capacities
+spdc
+establishing
+notably
+characterizes
+heterodyne
+constructive
+shannon
+method quantum
+contextuality
+closed form
+causality
+stochastic master
+intrinsically
+population transfer
+nonzero
+imply
+experience
+time limit
+matched
+photon photon
+quantification
+dirac equation
+coupling regimes
+local oscillator
+deterministically
+linearized
+heat engines
+dimensionality
+thermodynamic limit
+primary
+considerations
+protocol based
+circle
+ac
+disturbance
+gives rise
+argued
+outgoing
+generalizations
+geq
+mode squeezing
+biphoton
+flux qubit
+post processing
+mechanically
+mesoscopic
+output states
+operated
+logarithmic negativity
+polaritons
+decoy
+noise ratio
+exploits
+introduces
+cone
+message
+cummings model
+modify
+effective hamiltonian
+adiabatic quantum
+bloch sphere
+fidelity quantum
+variable systems
+design quantum
+coupled quantum
+gaas
+strongly correlated
+interfaces
+low temperature
+separately
+public
+treat
+expectation value
+intriguing
+locking
+entanglement distribution
+cellular
+euclidean
+ab
+commute
+dominated
+unitary transformations
+subtracted
+degradation
+utilizes
+resonance frequency
+14
+user
+boundaries
+quantum computational
+actually
+ecp
+demonstrate quantum
+bogoliubov
+approach based
+landscape
+loops
+tilde
+mw
+arithmetic
+magneto
+later
+apparent
+unitary transformation
+modal
+units
+given quantum
+quantum technology
+optical modes
+qc
+quantum emitters
+building blocks
+considerable
+exceeds
+pave
+clarify
+dimensional systems
+identifying
+gaussian channels
+center mass
+coordinate
+terms quantum
+quantum hardware
+symmetric informationally
+accomplished
+statistical properties
+density operators
+time scales
+qubit entanglement
+reconstructed
+quantum coherent
+little
+recent work
+switched
+neurons
+overview
+laser beam
+paper presents
+phase modulation
+analytical results
+benefits
+reverse
+complexes
+couples
+high finesse
+guarantee
+authors
+landau
+microwave cavity
+spin states
+recent experiments
+final state
+keys
+coupled resonator
+protect
+toy
+30
+algorithmic
+dimensional hilbert
+projections
+resource quantum
+displaced
+born
+neighboring
+operator valued
+zeno effect
+discuss possible
+crucial role
+state based
+state qubits
+set quantum
+provide new
+control fields
+energy spectrum
+addresses
+langevin
+holevo
+deal
+search algorithm
+poisson
+nuclear magnetic
+exceeding
+viable
+contribute
+arbitrary number
+diffraction
+multiparticle
+determines
+identity
+harvesting
+gases
+controlled phase
+comes
+commercial
+state dependent
+dimensional lattice
+fully quantum
+95
+masses
+effort
+energy density
+maintaining
+cnot gate
+levitated
+observing
+probes
+scientific
+quantum efficiency
+profiles
+incoming
+hyperbolic
+random number
+optical cavities
+atomic ensembles
+kerr nonlinearity
+topic
+epr steering
+letter
+wave approximation
+signal idler
+quantum computations
+cubic
+number measurements
+phase matching
+positive operator
+plus
+reaching
+falling
+restriction
+binding
+eve
+perceptron
+superfluid
+stabilized
+mixture
+general class
+destructive
+microwave photons
+sophisticated
+reconciliation
+coupling strengths
+simple model
+hilbert spaces
+2016
+qds
+quickly
+goes
+solely
+quantum resources
+shor algorithm
+quantum advantage
+diverse
+evolve
+previously known
+unital
+opo
+atom field
+mdi qkd
+electrode
+irreducible
+elimination
+quantum fluctuations
+new quantum
+focused
+cp
+probed
+parameter regimes
+quantum filtering
+utility
+single electron
+unambiguous
+strict
+zeilinger ghz
+quantum tomography
+list
+absorbing
+ferromagnetic
+purcell
+behaves
+1550
+qaoa
+power spectrum
+gauss
+classical limit
+pave way
+information protocols
+qubits quantum
+net
+current experimental
+regularized
+obey
+metallic
+systems using
+correlators
+topological quantum
+independence
+path integral
+frequently
+making use
+entanglement spectrum
+models quantum
+cell
+relativistic quantum
+photon added
+emphasis
+triplet
+functionality
+record
+displays
+proposed method
+plasmon
+telecommunication
+symmetric states
+modelled
+glauber
+nonlinear optical
+degeneracy
+exotic
+decreasing
+optimization problems
+demonstrations
+quantum filter
+decays
+costs
+qualitatively
+actions
+timing
+peaks
+strongly interacting
+state cooling
+collapsing
+photon numbers
+defines
+grating
+twin beam
+nanomechanical resonator
+1550 nm
+downconversion
+exhibiting
+entanglement concentration
+using classical
+present general
+approach quantum
+careful
+spreading
+adjacent
+study problem
+khz
+output state
+classical algorithm
+2018
+doubly
+phononic
+entanglement breaking
+shaping
+steady states
+necessary condition
+aid
+photon loss
+adjusting
+spin models
+probability density
+resolve
+fixed point
+lived
+mismatch
+graph states
+ecps
+employs
+optical mode
+times 10
+reality
+client
+qubit operations
+general method
+diagonalization
+contained
+convenient
+present work
+bell inequalities
+operates
+bar
+angles
+quantum level
+pure dephasing
+semi infinite
+indicating
+mechanical mode
+stabilize
+undergoing
+sudarshan
+equivalently
+homodyne measurement
+tensor network
+useful quantum
+conjectured
+robust quantum
+coherence times
+spin chains
+2013
+parameter regime
+optical field
+relying
+position momentum
+computable
+fashion
+near future
+superposition states
+high performance
+shifted
+middle
+permits
+number quantum
+results indicate
+state measurement
+unstable
+stationary state
+mub
+zeeman
+constitute
+tunnel
+content
+noise limit
+classical correlations
+provide explicit
+p_
+ensure
+superconductor
+qubit measurements
+green function
+uncertain
+classical simulation
+derivatives
+dipole dipole
+vacuum fluctuations
+fails
+qw
+square root
+vacuum states
+timelike
+benefit
+attainable
+results quantum
+null
+constitutes
+brillouin scattering
+atoms optical
+mechanical systems
+violating
+packets
+resonantly
+explained
+quantum supremacy
+disturbances
+friction
+short time
+experimental conditions
+classical algorithms
+unitary dynamics
+paper considers
+amplitude phase
+perform quantum
+g_
+strings
+intense
+residual
+eavesdropping
+computational power
+closed loop
+thickness
+light field
+external magnetic
+quantum simulators
+crossing
+non perturbative
+circuit depth
+rest
+infer
+photon level
+quantum nature
+encryption
+secure key
+detailed analysis
+multi party
+adversary
+functionals
+velocities
+purpose paper
+fault tolerance
+importantly
+frequency comb
+processing quantum
+multipartite entangled
+analogues
+largely
+integrals
+dagger
+spin orbit
+qfi
+conductance
+choices
+einstein podolsky
+podolsky
+podolsky rosen
+postselected
+systems subject
+optical fibers
+competition
+bit flip
+quasiprobabilities
+communication quantum
+mentioned
+2012
+converge
+90
+quantum codes
+ladder
+stress
+coupling limit
+recovered
+qip
+analytical expression
+general case
+present numerical
+pointed
+optimal quantum
+odinger cat
+vanishes
+incompatibility
+observability
+classical capacity
+cv qkd
+generalisation
+subtle
+ultimately
+originally
+attempt
+present detailed
+quantum neural
+permanent
+reversible circuits
+merit
+nisq
+using linear
+comprehensive
+multilevel
+optimization problem
+weak values
+tunability
+quantum dynamical
+presenting
+addressing
+sampled
+200
+ohmic
+species
+unbounded
+transformed
+sub poissonian
+cantilever
+clustering
+add
+haar
+13
+amounts
+distribution protocol
+non locality
+dense coding
+state qubit
+low temperatures
+polar
+genuine multipartite
+oracle
+study effect
+tends
+attempts
+study dynamics
+newton
+brane
+used generate
+scheme quantum
+variants
+restrictions
+continuous variables
+quantum device
+layers
+concatenated
+measurement scheme
+states entanglement
+antiferromagnetic
+non reciprocal
+quantum bit
+beat
+pt symmetry
+secure quantum
+analytical expressions
+microcavities
+multipartite quantum
+circulant
+quantum fourier
+tangle
+leading order
+order magnitude
+cm
+sector
+zehnder interferometer
+non commutative
+magnon
+dimer
+black box
+modelling
+weak measurements
+detection efficiency
+general framework
+bang bang
+open dynamics
+geometric measure
+bare
+iteration
+enabled
+exp
+chern
+metastable
+survival
+heuristic
+uniquely
+long lived
+key generation
+practically
+approximating
+number states
+nested
+cram
+quantum operation
+small number
+ranges
+expect
+symmetry breaking
+behave
+work provides
+messages
+satisfied
+fewer
+turbulent
+measure quantum
+led
+minimum time
+field mode
+protection
+avoid
+low loss
+bridge
+advance
+apply method
+emerged
+event horizon
+limit large
+believed
+gaussianity
+math
+bb84
+section
+inherently
+broadcast
+2006
+wavefunction
+coherent superposition
+priori
+present simple
+maximize
+consistently
+light sources
+thanks
+parameterization
+appearing
+quadratures
+atmosphere
+universal set
+fundamental quantum
+macroscopic quantum
+state state
+low power
+sent
+photon quantum
+recent years
+photonic circuits
+measurements performed
+commonly used
+mode cavity
+high level
+neutral atoms
+regarded
+qubit coupled
+counting statistics
+crossover
+regardless
+divergence
+claim
+unavoidable
+new type
+consist
+model based
+maximally mixed
+memcomputing
+intractable
+performances
+high probability
+pair generation
+quantum processor
+slowly
+expansions
+hyper
+pump power
+start
+unwanted
+vicinity
+sidebands
+cfts
+optical fields
+predicts
+random unitary
+generically
+breakdown
+owing
+transition probability
+valuable
+reversible logic
+qubit entangled
+manifolds
+traveling
+ee
+compare results
+tensor product
+preserves
+high frequency
+dark state
+quantum machine
+rigorously
+undergoes
+emissions
+regression
+general relativity
+line resonator
+nondemolition
+damping channel
+decaying
+transparent
+opens new
+concerns
+complex quantum
+smallest
+noisy quantum
+quantum jump
+quantum heat
+positive definite
+future quantum
+communication protocols
+entanglement detection
+translation
+approach allows
+electronics
+optimum
+density states
+nv centers
+theoretical experimental
+constants
+analytical solutions
+ge
+non gaussianity
+transmittance
+arbitrary qubit
+70
+xx
+similarly
+degree entanglement
+analysis shows
+modulating
+law thermodynamics
+equiangular
+evaluating
+free energy
+ultracold atoms
+attracted
+truncated
+injection
+low frequency
+cells
+membranes
+abstract
+particular case
+adopt
+address problem
+der
+van der
+compression
+stages
+nanoparticles
+coplanar
+accounting
+commutation relations
+database
+queries
+doing
+classical states
+distinguished
+choose
+measurements quantum
+parametrized
+unknown quantum
+qss
+distribution quantum
+varies
+98
+integrating
+situ
+quantum trajectory
+implemented using
+real world
+undergo
+firstly
+momenta
+regularization
+resolved sideband
+sta
+unitarity
+irreversible
+state engineering
+entangled qubits
+photosynthetic
+cnot gates
+revivals
+matches
+experimentally feasible
+dissipative dynamics
+ultrafast
+derive analytical
+distinguishing
+erasure
+hole information
+formulae
+multi level
+introduce notion
+matter interaction
+mathematically
+plate
+establishes
+photodetection
+triple
+quantum enhanced
+information paradox
+certification
+package
+2008
+glass
+state used
+implementing quantum
+2009
+non degenerate
+measurement outcomes
+multiparty
+square lattice
+field coupling
+signaling
+capacity quantum
+distributed quantum
+main result
+confidence
+sufficiently large
+quantum thermodynamics
+break
+nonlinear dynamics
+delays
+work study
+wire
+experimental demonstration
+played
+enhances
+fine
+positive maps
+corresponding quantum
+theoretically investigate
+quantum hall
+tracking
+cs
+linked
+complete set
+unless
+consistency
+energy level
+nondegenerate
+measurement results
+experimentally accessible
+continuous measurement
+joint measurement
+spin qubits
+correctly
+transforms
+simulations quantum
+noncommutative space
+alignment
+palatini
+teleported
+quantum protocols
+recent results
+paper concerned
+adopted
+fixed points
+called quantum
+similarities
+gaussian quantum
+experimental imperfections
+simulation results
+gibbs
+raw
+passing
+2017
+disjoint
+photon generation
+rao bound
+polarisation
+ramsey
+locked
+sectors
+nonlinear coherent
+feasible current
+fail
+translational
+semiconductor quantum
+memory effects
+adversarial
+definitions
+feedback loop
+mean photon
+prominent
+encodes
+reason
+intelligence
+finally consider
+exceptional
+community
+partitions
+closest
+forming
+admit
+cavity coupling
+rightarrow
+aspect
+cooper
+reachable
+mechanical motion
+control field
+diameter
+dynamical systems
+guaranteed
+bring
+attained
+theoretical results
+stochastic schr
+peculiar
+stripline
+novel approach
+obtained using
+states different
+broad range
+quantum properties
+proposed protocol
+beamsplitters
+runs
+theoretical analysis
+suggesting
+present results
+decay rates
+local unitary
+pair source
+qutrits
+unbalanced
+exploration
+swap gate
+high precision
+interpretations
+branes
+occurrence
+slightly
+dramatic
+yb
+highly efficient
+provide detailed
+recently shown
+coarse grained
+maintain
+shortcut
+atmospheric turbulence
+schroedinger
+method used
+classical counterparts
+switches
+results provide
+programs
+algorithms quantum
+dewitt
+renyi entropies
+exhibited
+know
+jointly
+refractive
+control problems
+subadditivity
+key rates
+spatially separated
+time domain
+fall
+single quantum
+trained
+believe
+intensities
+parametric amplifiers
+energy momentum
+physical qubits
+flux qubits
+triangular
+discovered
+non unitary
+lying
+coupled superconducting
+untrusted
+quantum evolution
+flows
+driven quantum
+proposes
+satellites
+walkers
+subradiant
+qubit case
+freely
+nu
+inferred
+projected
+time independent
+viewpoint
+sagnac
+extensively
+mathcal pt
+work propose
+capacitance
+parity check
+sending
+schrodinger
+excitons
+albeit
+make use
+parameterized
+non abelian
+prescribed
+cavity decay
+benchmarks
+atomic systems
+rabi oscillations
+topological phases
+local measurements
+increasingly
+reversal symmetry
+analytic expressions
+foundations
+body quantum
+quantifying
+exterior
+ion traps
+marginal
+modulator
+logical qubits
+pulse shapes
+outperforms
+implements
+intra
+particular consider
+nondestructive
+explanation
+restrict
+ads cft
+states entangled
+refrigerators
+searching
+entanglement qubits
+initially prepared
+hyperentanglement
+distinctive
+cost function
+mode quantum
+coupling quantum
+paper introduce
+authentication
+chemistry
+photon detection
+collisions
+measurement induced
+execution
+time dependence
+kerr medium
+activation
+self consistent
+quantum cost
+changed
+complement
+holonomic
+source based
+numerous
+dofs
+t_
+cool
+signal processing
+limit quantum
+reinforcement
+laguerre
+state single
+surprising
+radiation field
+return
+optomechanical interaction
+vapor
+state using
+upper lower
+preliminary
+nuclear spins
+qrng
+elliptic
+generation rate
+method applied
+realism
+stark
+electromagnetic fields
+high temperature
+imaginary
+onset
+channel capacity
+transfer quantum
+states particular
+quantum transport
+drift
+attenuation
+revealing
+interpret
+revisit
+classified
+holographic entanglement
+experiments quantum
+day
+photon systems
+dark counts
+shown quantum
+avoiding
+estimators
+meaningful
+relates
+method allows
+voltages
+risk sensitive
+referred
+alternatively
+recursive
+dynamics open
+oct
+heart
+anharmonic
+sustained
+classical stochastic
+transposition
+higher dimensions
+film
+spatial search
+suffer
+tone
+radio
+states states
+provide general
+select
+phase noise
+hilbert schmidt
+heisenberg limit
+photo
+thermally
+simplicity
+atomic spontaneous
+demanding
+shortcuts adiabaticity
+microwave resonators
+lorentzian
+renormalization group
+convert
+min
+light harvesting
+fusion frames
+measurement settings
+multipartite systems
+continuous mode
+fock space
+systems including
+movable
+desirable
+approaching
+driving fields
+unprecedented
+opening
+24
+realistic experimental
+simple quantum
+isolation
+debate
+states arbitrary
+dinger
+spiking
+spacetimes
+number steps
+bipartite states
+spread
+reproduces
+read
+possible experimental
+locations
+naive
+states non
+quantum photonic
+absent
+certain conditions
+phase shifts
+s_
+results presented
+today
+riemannian
+specification
+round
+known quantum
+quantum speed
+worst
+genuinely
+long term
+2014
+renyi entropy
+vanish
+phenomenological
+cooper pair
+shortest
+pt symmetric
+storing
+elucidate
+phase flip
+multi partite
+basic properties
+optical systems
+nominal
+hysteresis
+nitride
+frequency domain
+stirap
+thermodynamical
+enhancing
+non relativistic
+neuromorphic
+unitary operators
+n_
+magneto optical
+validation
+bound entangled
+unitary operator
+factoring
+present paper
+control pulses
+anderson
+given terms
+electro optic
+sized
+scheme allows
+using different
+szegedy
+gate set
+reflecting
+memcapacitive
+highlights
+atom photon
+strain
+inefficient
+edge states
+grover algorithm
+uncertainty principle
+spectral properties
+travel
+creates
+previous studies
+heat current
+implement quantum
+extracting
+lie group
+long coherence
+le
+networking
+compared standard
+striking
+ppktp
+metamaterials
+analysed
+gate operations
+range quantum
+infalling
+new method
+mollow
+transmitting
+staggered
+94
+atom number
+sums
+tackle
+bands
+surface plasmon
+coupled optical
+computational basis
+markovian master
+small quantum
+new class
+quantum particle
+polarization states
+states based
+similarity
+group velocity
+trace distance
+controlled quantum
+realizability
+discuss possibility
+taking advantage
+compare performance
+captures
+classifier
+uv
+dedicated
+marginals
+insulators
+charge qubit
+ubiquitous
+otocs
+newtonian
+graph state
+algorithm quantum
+experimental scheme
+adjustable
+using non
+breaks
+cw
+guide
+synthetic
+wider
+time optimal
+unentangled
+quantum features
+intracavity
+multiplication
+torus
+neuron
+drastically
+field states
+published
+state systems
+gain loss
+non classicality
+coming
+lifetimes
+visible
+dimensional waveguide
+donor
+known results
+lost
+state analysis
+reaches
+35
+quantum processors
+measurement schemes
+wigner functions
+qubit qutrit
+popular
+frequency dependent
+approach study
+ca
+classify
+states local
+entangled pairs
+quality factors
+divergent
+zener
+unruh dewitt
+state generation
+train
+coherent control
+recent experimental
+critical points
+quantum synchronization
+accordingly
+characters
+fragile
+transitionless
+investigate entanglement
+classical light
+catalysis
+coin state
+28
+divergences
+possible applications
+shimony
+kernels
+arbitrary initial
+realisation
+lambda type
+affine
+low noise
+truly
+decomposed
+coherence quantum
+time frequency
+control design
+familiar
+pump field
+noise quantum
+stochastic processes
+holographically
+collapses
+initial entanglement
+solves
+state energy
+persistent
+vice
+dynamics qubit
+geometrically
+blue detuned
+capacitively
+factorization
+direct coupling
+cauchy
+permutations
+display
+gate count
+thermal bath
+cat state
+white noise
+dipolar
+wf
+theoretical predictions
+affecting
+reconfigurable
+important step
+refractive index
+synthesized
+control scheme
+entanglement distillation
+vacancy nv
+qkd systems
+mixed quantum
+thermal baths
+practical quantum
+mott insulator
+quantum phenomena
+registers
+present novel
+externally
+assumes
+incorporates
+spp
+spectral density
+modulo
+face
+perturbed
+tight frames
+associated quantum
+laser pulses
+constituents
+systems present
+integrated quantum
+adjacency
+prevent
+gravitational field
+controlled gate
+marked vertices
+characterise
+composition
+like states
+states known
+conserved
+fenna
+olson
+tapered
+obstacle
+diagrams
+percolation
+femtosecond
+preservation
+maintained
+quantum statistical
+twist
+indirect
+quantum plant
+mubs
+information encoded
+quantum otto
+qmc
+promises
+sat
+classical random
+obeys
+optimization algorithm
+analyses
+88
+power law
+matter coupling
+immediately
+truncation
+indicator
+demonstrate method
+pagerank
+coined
+algorithm based
+87 rb
+wave packets
+trusted
+resorting
+probe states
+spacing
+decades
+draw
+entangled quantum
+lqg
+cesium
+monotonicity
+example quantum
+ensures
+modifying
+eta
+dataset
+glauber sudarshan
+lifshitz
+worst case
+integrated optical
+successive
+capacitor
+langle
+search algorithms
+wormhole
+microwave field
+currently available
+leggett
+superconducting microwave
+boost
+achieved using
+werner states
+orbits
+cross section
+fwm
+tight binding
+ports
+entanglement structure
+class states
+synthesize
+space based
+photon pulses
+double potential
+maximum likelihood
+epr entanglement
+schr dinger
+building block
+subgroups
+phase sensitive
+rb atoms
+energy gap
+generating function
+dramatically
+high speed
+differs
+send
+open problem
+tens
+open loop
+lc
+computing quantum
+state generated
+single qudit
+correlations quantum
+distillable entanglement
+thermal fluctuations
+propose simple
+solve problem
+greedy
+outlined
+mode entanglement
+counter rotating
+metrological
+physical realizability
+information tasks
+polynomially
+plasma
+exactly solvable
+dirichlet
+eigenmodes
+reliability
+realize quantum
+18
+plasmonic
+coincide
+photon fock
+violates
+gallery mode
+qubit resonator
+arranged
+photon coupling
+simulation quantum
+fmo
+distribution protocols
+reconstructing
+hamiltonian dynamics
+chapter
+frequency shift
+physical quantities
+cross phase
+states finally
+powerful tool
+prescription
+partial transposition
+mixedness
+detrimental
+features quantum
+conceptually
+circ
+css
+beamsplitter
+entanglement entropies
+necessity
+2007
+hydrogen
+power quantum
+infrared
+quadrature squeezing
+dressed states
+disconnected
+bound state
+crucially
+gained
+slocc
+equality
+weak probe
+electric fields
+drawn
+normal modes
+different temperatures
+outer
+automatic
+study effects
+coupling constant
+clauser
+clauser horne
+express
+feedback scheme
+emphasize
+near optimal
+communicate
+systems driven
+equation quantum
+travelling
+broader
+entangled pair
+based feedback
+limit cycle
+dynamics classical
+states qubit
+vibrations
+measurement quantum
+coarse graining
+graining
+work present
+systems coupled
+simplify
+wave functions
+states given
+disappears
+transparency eit
+syndrome
+light fields
+trees
+genuine quantum
+finally demonstrate
+monotonically
+general theory
+entangle
+differently
+minimized
+vary
+variable cluster
+strongest
+representation quantum
+ibm quantum
+resource states
+dqd
+conjectures
+discrete quantum
+mechanical frequency
+noon states
+state obtained
+mode optical
+knill
+shall
+decoupled
+protocol quantum
+suspended
+laser cooling
+superoperator
+stabilizer codes
+unitary matrix
+fulfilled
+relay
+qec
+single optical
+type level
+keeping
+rwa
+closed timelike
+twice
+transferring
+non adiabatic
+missing
+quantum observables
+superposed
+grow
+variable entanglement
+permit
+negativity wigner
+usage
+illustrative
+match
+based approach
+criticality
+spike
+descent
+coupling cavity
+parametric amplification
+rotational
+using method
+geodesic
+sic povms
+topological order
+paradigmatic
+quantum uncertainty
+shed
+cram er
+er rao
+derive explicit
+xxz
+atomic states
+finally present
+atom atom
+single cavity
+circumstances
+weak strong
+generation quantum
+weaker
+experimentally relevant
+polaron
+construct quantum
+relation quantum
+feynman
+languages
+closer
+di
+deep strong
+existing quantum
+artificial atoms
+characterizations
+superconducting flux
+relax
+dilation
+entropy production
+phonon number
+increasing number
+atoms trapped
+imposes
+ratios
+optical mechanical
+spin spin
+neglected
+dependent coupling
+possesses
+domains
+qubit pure
+atomic frequency
+inequivalent
+survey
+quantum simulations
+provide analytical
+obtained results
+high order
+methods used
+quantum nondemolition
+complements
+lindblad form
+elaborate
+varepsilon
+diode
+adiabatic elimination
+projective measurement
+state entangled
+fundamental mode
+difficulties
+jacobi
+accounts
+arbitrary single
+parametrically
+wavepacket
+qm
+quantum model
+photon transport
+result shows
+inference
+unknown state
+photon detector
+manipulations
+supply
+mixtures
+using optical
+butterfly
+protocols quantum
+photons generated
+branches
+phase retrieval
+remove
+clusters
+number atoms
+verifying
+photonic crystals
+globally
+2015
+mandel interference
+achieve high
+autonomous
+energy time
+fit
+monitor
+feed
+formulations
+predictive
+pure quantum
+statistical mechanics
+holt
+horne shimony
+shimony holt
+purification protocol
+axial
+periods
+ensuring
+polarization spatial
+schemes based
+accelerating
+stimulated raman
+optical networks
+automatically
+described terms
+concentrate
+lamb
+unconventional
+frustration free
+generation rates
+compatibility
+opportunities
+photon scattering
+optical phase
+integrated photonic
+expanding
+illustrates
+ingredients
+apart
+inductance
+used perform
+initial conditions
+realise
+paired
+dynamical phase
+colored
+long standing
+expanded
+flying
+opto mechanical
+purposes
+motivation
+dispersion relation
+random numbers
+future applications
+visibilities
+disentanglement
+distortion
+superposition state
+general approach
+important quantum
+entanglement sudden
+dimensional entanglement
+radio frequency
+backgrounds
+artificial intelligence
+partner
+horodecki
+approx
+torque
+versa
+vice versa
+poled lithium
+using superconducting
+systems particular
+electromechanical
+formally
+implying
+telecom wavelength
+table
+experiences
+toy model
+inseparability
+say
+actively
+versatility
+anisotropy
+explicit expressions
+accomplish
+inseparable
+dimensional space
+excellent agreement
+analytical solution
+sound
+helpful
+incorporate
+minimization
+experimental techniques
+mode state
+camera
+control law
+stratonovich
+landau zener
+receivers
+classical estimation
+transmit
+atomic transition
+atoms coupled
+advantageous
+noisy channels
+propose general
+optical response
+symmetrical
+stabilizing
+adjusted
+spontaneously
+macroscopically
+easy implement
+dynamical evolution
+doppler
+avenue
+control parameter
+states shown
+phase sensitivity
+manifests
+learn
+quantum superpositions
+particle quantum
+quantum ising
+compilation
+placing
+majorana fermions
+correlated photon
+short range
+biology
+sender receiver
+order achieve
+clean
+centre
+eliminate
+study time
+easier
+coupling rate
+klein
+low dimensional
+entanglement using
+qubit coupling
+cold atom
+quantum phases
+tr
+bidirectional
+free subspace
+simplifies
+windows
+suppresses
+berry
+analytically numerically
+eliminates
+reflectivity
+complexity quantum
+base
+provides new
+qubit oscillator
+initial final
+ground excited
+covering
+descriptions
+server
+separating
+turned
+discriminate
+study properties
+finds
+high degree
+microfabricated
+automata
+unusual
+systems arbitrary
+variances
+belief
+implementable
+emergent
+robust control
+quadratically
+monotonic
+photosynthesis
+timelike curves
+systems based
+late
+inefficiency
+investigate possibility
+integrability
+resolving detectors
+rydberg states
+quantum version
+laser driven
+does depend
+realizing quantum
+birefringent
+current quantum
+orientation
+state arbitrary
+quantum walker
+boundary condition
+report experimental
+consumption
+certified
+manifestation
+broad class
+deformations
+state fidelity
+sitter space
+integers
+era
+fiber based
+comprising
+interpolation
+nonreciprocity
+laser field
+electrodynamics qed
+sc
+linearity
+stabilizer states
+uncover
+squeezing parameter
+creation annihilation
+maser
+spaced
+compared previous
+classical field
+optical resonator
+delocalized
+detection scheme
+measurement devices
+parametric downconversion
+squares
+nonlinear interaction
+photon pulse
+spin coherent
+protocols based
+classical noise
+zeno dynamics
+kicked
+heating rate
+photon losses
+incorporated
+devices quantum
+superconducting resonators
+filtered
+prevents
+ms
+critically
+reinforcement learning
+commutativity
+ccd
+known classical
+gates quantum
+flips
+linear quadratic
+novel quantum
+statement
+collective spin
+massless scalar
+propagate
+spatial light
+faraday
+optical trap
+encodings
+agrees
+periodically driven
+proposed approach
+rosen epr
+pure mixed
+wires
+error probability
+causally
+recipe
+entangling gates
+gold
+rindler
+adjoint
+spring
+body physics
+primitive
+target states
+bistable
+characterised
+parametrization
+coupled cavities
+demonstrate high
+including quantum
+gapped
+illustration
+electrically
+schwarzschild black
+93
+garg
+leggett garg
+previous results
+efficacy
+selectively
+substrate
+85
+t_c
+reversed
+qubit interaction
+runtime
+suppressing
+time delay
+non ideal
+exact solution
+anharmonicity
+metamaterial
+states present
+isomorphism
+positive trace
+starting point
+conceptual
+admits
+surrounding
+cooling mechanical
+physics quantum
+singlet state
+write
+time continuous
+gradients
+forbidden
+scanning
+dipole interaction
+form quantum
+positive partial
+interaction strength
+triangle
+converse
+communication channels
+transmon qubits
+josephson junctions
+conducted
+assembled
+bqp
+provide examples
+superconducting transmission
+left right
+failure
+participants
+analog quantum
+dm
+sharing scheme
+states high
+feed forward
+numerical method
+2004
+nuclear spin
+discuss feasibility
+susceptible
+parity time
+lindblad equation
+propose novel
+total number
+inclusion
+interactions quantum
+spontaneous wave
+monogamy relations
+spin state
+brownian motion
+formulated terms
+fused
+present theoretical
+belonging
+overdamped
+spheres
+replaced
+using standard
+45
+birefringence
+using numerical
+subwavelength
+exact solutions
+reciprocity
+matter physics
+measurement performed
+maximizing
+derive necessary
+unitary quantum
+simulating quantum
+qubit rotations
+logarithmically
+complete measurements
+surgery
+experimental setup
+simplifying
+quantum networking
+photon wave
+purely classical
+resistive
+case quantum
+orthogonal states
+dialogue
+public key
+arbitrary dimension
+lindblad master
+open source
+00
+time ordered
+work investigate
+hitting
+method construct
+single trapped
+stationary states
+different classes
+odinger equations
+mode volume
+quantum driving
+consecutive
+reflects
+alternating
+wave detectors
+entropic uncertainty
+generalized quantum
+play important
+states qubits
+results compared
+narrow band
+range applications
+physical implementation
+lnn
+detailed study
+held
+proposed algorithm
+resources required
+quantum correlated
+quantum environment
+characterisation
+realizes
+2003
+continuity
+entanglement assisted
+state discrimination
+quantum cloning
+semigroups
+cooperativity
+termed
+prototype
+bandgap
+corresponding classical
+varied
+information technologies
+replace
+pontryagin
+np complete
+effective level
+intuition
+quasiparticle
+redfield
+behavior quantum
+remote state
+blind
+single level
+nanobeam
+critical value
+field equations
+classes quantum
+rare earth
+relaxing
+tripartite entanglement
+transfer functions
+fenna matthews
+matthews
+matthews olson
+nature quantum
+repeatedly
+analytical numerical
+bosonic fermionic
+photon absorption
+state estimation
+coins
+different approaches
+17
+properties light
+spectral filtering
+unconditional
+success probabilities
+faults
+scaled
+monolithic
+evolution time
+97
+finetti
+control systems
+state given
+ancillary qubits
+coupled common
+body states
+used demonstrate
+decompose
+rabi frequency
+bell type
+proposed quantum
+theoretically study
+vibronic
+microcanonical
+exponential decay
+mode frequency
+meta
+cayley
+corner
+couplers
+gravitational collapse
+density function
+proposed model
+forcing
+kerr effect
+pure gaussian
+belongs
+dipoles
+discovery
+state vector
+bichromatic
+majorization
+classical counterpart
+microring
+rail
+spite
+technique based
+slow light
+based protocols
+use single
+arbitrarily large
+partitioning
+ideally
+compared classical
+19
+ternary
+qkd protocol
+decoherence processes
+advanced quantum
+monogamy inequality
+stringent
+gains
+simulations demonstrate
+phase gates
+automaton
+used construct
+quantitative agreement
+photon mode
+iqp
+gate based
+using photon
+violation bell
+integrate
+maximized
+micron
+captured
+classical computation
+certify
+violated
+proves
+equipped
+narrowband
+sub shot
+qpt
+reduced state
+photodiodes
+ambiguity
+wavefunctions
+excitonic
+expense
+capacitively coupled
+noise model
+states prepared
+problems quantum
+input field
+specific example
+consensus networks
+afc
+measurement time
+gaussian measurements
+noninteracting
+measures entanglement
+cosmological constant
+forward backward
+cross correlation
+recently demonstrated
+quantum resource
+governing
+scattering matrix
+assessment
+quasi probability
+iterations
+proposed schemes
+timescale
+perot cavity
+ergodic
+solve problems
+steerability
+incorporating
+assistance
+coupled mechanical
+electron spins
+originating
+quantum statistics
+state mechanical
+figures
+framework quantum
+zone
+compensate
+population inversion
+projector
+nyi
+learning algorithm
+recognized
+poly
+amenable
+analysing
+states completely
+lyapunov control
+inside cavity
+comparative
+commercially
+photodetectors
+paper discuss
+comprises
+sideband regime
+dominate
+exploitation
+normal mode
+satellite based
+toffoli gate
+sequentially
+time step
+contraction
+ligo
+pure entangled
+artificial atom
+propose efficient
+control parameters
+neighbors
+takes place
+chsh inequality
+model provides
+frequency modes
+connect
+error rates
+dimensional case
+key role
+valley
+entropy quantum
+spin particles
+analogs
+leaving
+cavity optomechanics
+wavepackets
+initially entangled
+identical particles
+immediate
+tests quantum
+examples quantum
+shed light
+frequent
+entanglement criteria
+numerical analysis
+stochastic process
+maximal entanglement
+conversion process
+derive optimal
+discuss quantum
+insertion
+task quantum
+connects
+relevant quantum
+backflow
+single shot
+logic synthesis
+logical qubit
+photon frequency
+ir
+small scale
+methods quantum
+feedback networks
+repetition
+states finite
+hardness
+crystal cavity
+bifurcation
+ask
+coherent light
+multidimensional
+indistinguishable particles
+classical correlation
+resonator coupled
+sics
+helps
+charge noise
+networks quantum
+originates
+carefully
+parallelism
+high purity
+previous works
+multimode quantum
+equals
+unitary matrices
+virtual photons
+faithfully
+problem finding
+network size
+effect quantum
+model using
+researchers
+investigate performance
+air
+division
+communication systems
+aharonov
+reminiscent
+number gates
+quantum case
+heuristics
+coin operator
+particular demonstrate
+bohmian
+tradeoff
+class non
+sparsity
+unifying
+counter propagating
+coplanar waveguide
+classical hybrid
+opposed
+conical
+non negative
+communicating
+competitive
+large detuning
+players
+self sustained
+approach provides
+bosonic gaussian
+gradient descent
+systematic errors
+infinite number
+property quantum
+der waals
+waals
+based continuous
+work opens
+degraded
+exponents
+converting
+condensation
+limit theorem
+nonclassical features
+compensation
+class linear
+2005
+heterodyne detection
+cavity photon
+single copy
+takes account
+emission rate
+clifford gates
+entanglements
+optical frequency
+relaxed
+cold atomic
+generic quantum
+genetic
+concentrated
+steer
+micromaser
+motions
+local interactions
+omit
+minima
+sharing schemes
+coherent information
+fredkin gate
+surface codes
+quantum chaos
+temporal correlations
+quantum applications
+experiments demonstrate
+experimental setups
+emitted photons
+pulse shape
+joint spectral
+quantum thermal
+waveguide coupled
+chips
+paper develop
+immune
+obtain analytical
+detections
+expand
+laser light
+binomial
+harnessing
+conversely
+online
+large quantum
+recognition
+outstanding
+examining
+external driving
+coherent dynamics
+potential quantum
+range parameters
+controlled gates
+present day
+phase diffusion
+l_1
+demon
+waveform
+possibility using
+come
+superposition principle
+markovian open
+phonon coupling
+control strategy
+epp
+commercially available
+transitionless quantum
+sides
+router
+arguably
+scheme realize
+microwave optical
+otto cycle
+piston
+coincides
+fuzzball
+improve performance
+transmission spectrum
+adjacency matrix
+noise reduction
+quantum limits
+petz
+schur
+experimental realizations
+demands
+roughly
+obvious
+coherent classical
+atom light
+divisible
+degenerate parametric
+thermal machines
+free subspaces
+noncommuting
+direct interaction
+deduce
+majority
+mandel parameter
+huge
+leaders
+signalling
+polarization state
+wall
+roots
+certain quantum
+used implement
+gross
+semidefinite programming
+interacting quantum
+displacements
+subgroup
+81
+information transfer
+equilibrium states
+slc
+adequate
+theoretically experimentally
+bond
+dfs
+resonance fluorescence
+empirical
+superpositions coherent
+classical probability
+cosmology
+squeezed thermal
+originate
+dynamics entanglement
+orthogonality
+regard
+jordan
+excess noise
+resource theory
+patterned
+minimal number
+closed quantum
+_3
+ell
+numerical methods
+concatenation
+temperature dependent
+bosons fermions
+general form
+claims
+momentum oam
+single site
+unconditionally
+arrangement
+present explicit
+primarily
+time order
+60
+entanglement non
+equilibrium state
+vital
+propose use
+plates
+torsional
+circulators
+negative energy
+method study
+laser cooled
+barriers
+durations
+conversion efficiency
+time interval
+squashed
+squashed entanglement
+quantum steering
+dimers
+brown
+secondly
+atomic dynamics
+photon correlation
+analyze quantum
+measurement backaction
+pair box
+bell like
+arbitrary states
+_1
+propose experimental
+geometric phase
+quantum optimization
+encountered
+loqc
+quantum mechanically
+going
+apply results
+tractable
+photon subtracted
+metric palatini
+building quantum
+cz
+ancillas
+reasoning
+soliton
+pair sources
+state time
+central limit
+bipartite systems
+passive linear
+waist
+unitary operation
+subsets
+paper analyze
+foundational
+alternative approach
+exact results
+playing
+nearby
+circuit model
+study open
+quantum parameter
+cavity array
+interaction environment
+transmissivity
+shared entanglement
+case single
+000
+selecting
+state result
+intermediate scale
+exemplified
+happens
+coherent squeezed
+legitimate
+unknown parameters
+incomplete
+depolarizing channel
+bosonic channel
+evanescent field
+recent developments
+interatomic
+systems paper
+optical dipole
+track
+explicit form
+long times
+quantum gaussian
+long distances
+quantum experiments
+86
+equation approach
+gordon
+bound entanglement
+vast
+rangle rangle
+interference visibility
+quantum processes
+refined
+different physical
+bloch vector
+roles
+peres
+carriers
+illumination
+unstructured
+performance measures
+particular study
+soft
+liouville
+lo
+al nature
+free parameters
+curved spacetime
+state high
+merging
+time required
+reviewed
+holonomic quantum
+qudit states
+capacitive
+noise models
+faithful
+states including
+promising platform
+cloners
+eliminated
+spin boson
+small mass
+storage time
+toeplitz
+datasets
+fringes
+uniqueness
+polarization entanglement
+case qubit
+synchronized
+review recent
+state photon
+excitability
+quantifier
+ancillae
+recent progress
+transition frequency
+guarantees
+annihilation operators
+high fidelities
+topological insulator
+trap quantum
+semi definite
+number distribution
+arm
+interaction hamiltonian
+recall
+discover
+polarizations
+dynamics described
+compiler
+demonstrate experimentally
+retrieved
+conductivity
+twisting
+collectively
+noise channel
+correlation length
+sampling problem
+large numbers
+ongoing
+physical parameters
+eigenfunctions
+substance
+working substance
+convex set
+heisenberg model
+targeted
+generation photon
+photon correlations
+near field
+time resolved
+non commutativity
+survive
+figure
+high bandwidth
+modifies
+certain threshold
+monotones
+present efficient
+bipartition
+interaction time
+particular quantum
+bosonic quantum
+cast
+fading
+non orthogonal
+imperfection
+volatile
+report realization
+resonators coupled
+words
+shortcomings
+sought
+continuation
+reflect
+results pave
+mode mode
+gaussian operations
+reasons
+interconnected
+proximity
+monochromatic
+pa
+reliably
+non resonant
+square error
+dressing
+polaritonic
+status
+treating
+answers
+idealized
+input photons
+module
+repulsive
+systems continuous
+driven level
+convex optimization
+lagrangian
+security quantum
+efficient method
+structure quantum
+efficient classical
+deterministic quantum
+superconducting coplanar
+exact numerical
+metrology quantum
+gaussian entanglement
+speed limit
+23
+frequency generation
+interference pattern
+inefficiencies
+manipulated
+unconditionally secure
+leverage
+entanglement systems
+quantum controller
+pulse sequences
+optomechanically
+separable entangled
+prototypical
+quantum observer
+processes quantum
+states prove
+mollow triplet
+opens way
+penalty
+validate
+heat baths
+minimum number
+quantum dialogue
+hbar
+evolution open
+pathway
+general qubit
+biphoton state
+frustrated
+fidelity qubit
+minimally
+aimed
+ultra cold
+elusive
+resonant excitation
+secular
+relaxes
+calculate entanglement
+topological insulators
+aaronson
+presented paper
+thermodynamics quantum
+bistability
+energy transport
+eigenbasis
+finesse optical
+aluminium
+photon phonon
+nonclassical effects
+paper provide
+fast robust
+degeneracies
+facilitates
+schmidt number
+pairing
+function quantum
+efficiency quantum
+films
+promising approach
+work consider
+large deviation
+ln
+elegant
+notion quantum
+contrast previous
+hawking effect
+mk
+possible quantum
+hermitian operators
+dipole trap
+games
+photon qubit
+hermite
+dynamical behavior
+surface electrode
+results reveal
+band structure
+smoothly
+symmetry group
+transmission lines
+photon polarization
+derive analytic
+thermal reservoir
+physical properties
+mappings
+field modes
+factorizations
+collision model
+asymptotic behavior
+synapses
+occupation number
+feedback cooling
+data processing
+simulates
+nonadiabatic
+photon echo
+quantum cryptographic
+spatiotemporal
+dynamical quantum
+problem solved
+approach used
+01
+chirality
+ultra low
+spin wave
+marked vertex
+demonstrate effectiveness
+ancilla qubits
+qubit environment
+bosonic modes
+scheme proposed
+number modes
+laws quantum
+eigenvalue problem
+csl
+superconducting circuit
+nonadditive
+susceptibility
+conductor
+query
+quantum cellular
+qkd protocols
+matter interactions
+initialized
+inelastic
+photons emitted
+particle number
+om
+classical data
+microwave resonator
+doubly resonant
+states discuss
+spatio
+transmission distance
+used obtain
+large deviations
+aperture
+environment correlations
+qrngs
+experimental theoretical
+experimentally realistic
+noise channels
+protocol using
+number generator
+feedforward
+non linearity
+nice
+source polarization
+error corrected
+using technique
+predetermined
+implemented current
+scissors
+space dimension
+reachability
+l_
+resistors
+deviates
+moves
+kept
+gapless
+vs
+beneficial
+entangling gate
+charge qubits
+inductive
+packings
+prerequisite
+highly non
+probe state
+generated using
+big
+states photons
+gravity theory
+state scheme
+hysteretic
+separable state
+indices
+real space
+high energy
+thermal reservoirs
+shallow
+protein
+opens possibility
+complex systems
+passes
+neighbour
+heralding efficiency
+gradually
+realistic parameters
+timescales
+non commuting
+spin coherence
+case qubits
+multiplier
+states dimensional
+stray
+experimental feasibility
+trapping potential
+numerical optimization
+sobolev
+gravitationally
+bennett
+systems study
+classical dynamics
+compound
+quantum frequency
+atomic state
+loophole
+new insights
+lacking
+reproduced
+anti stokes
+decoherence quantum
+heating rates
+slab
+ito
+noisy channel
+boxes
+raman adiabatic
+linear coupling
+continuous measurements
+carries
+connection quantum
+pronounced
+bound quantum
+robust stability
+wide variety
+faraday rotation
+conjunction
+characteristic function
+non standard
+correlator
+cavity photons
+dynamics governed
+carlo simulations
+totally
+topologically ordered
+play crucial
+gf
+conclusions
+teleportation fidelity
+processing tasks
+based single
+rectangular
+spin ensembles
+drop
+rate quantum
+systems interacting
+diabatic
+solvers
+expectations
+branch
+laser power
+sends
+excite
+linear response
+transport properties
+individual quantum
+results agree
+entanglement state
+qsde
+distribute
+harness
+augmented
+present systematic
+energy eigenstates
+old
+completeness
+hole horizon
+spatial entanglement
+using simple
+internal degrees
+heavy
+geometric entanglement
+state spin
+ep
+dipole moment
+standard deviations
+noisy intermediate
+quantum emitter
+phase fluctuations
+algorithmic cooling
+sic povm
+policy
+indefinite
+figure merit
+work demonstrate
+count rate
+inaccessible
+bosonic systems
+roof
+photon excitation
+tapered optical
+optimisation
+gate fidelity
+unitarily
+using model
+quantum vacuum
+matchings
+states proposed
+deeper
+estimation algorithm
+click
+realised
+fibres
+thz
+form factor
+brief review
+influenced
+explicit examples
+critical behavior
+demonstration quantum
+exchanged
+linewidths
+current experiments
+spin dynamics
+central role
+analyze effect
+avoids
+traces
+hawking temperature
+developed quantum
+conveniently
+linear time
+tm
+completed
+rings
+sections
+given state
+manifest
+qft
+semidefinite program
+nonclassical light
+centres
+severely
+low earth
+second moments
+silicon nitride
+classical control
+slot
+gates implemented
+plane wave
+introduce general
+pulse duration
+modulate
+topological phase
+500
+obeying
+minimizes
+gauge fields
+symmetrically
+suffers
+belong
+field ising
+kerr interaction
+photon antibunching
+rydberg state
+non reciprocity
+slit
+mode states
+states class
+reduced dynamics
+atomic quantum
+summation
+time ordering
+reproducing
+gross pitaevskii
+pitaevskii
+chain coupled
+favorable
+pointer
+precision measurements
+assessing
+inverse engineering
+simeq
+rotating terms
+propose protocol
+postulate
+heisenberg uncertainty
+mode coupling
+remained
+_4
+magnetic flux
+mediate
+nodes network
+entangled qubit
+optical scheme
+finally propose
+analytic expression
+multi dimensional
+method proposed
+communication protocol
+noise level
+realm
+line resonators
+orthogonal state
+experimental evidence
+coupled dimensional
+compiled
+300
+superiority
+qubit cavity
+based superconducting
+key agreement
+conclusion
+entanglement wedge
+wedge
+detect entanglement
+robust decoherence
+bit error
+recently derived
+flip errors
+composite quantum
+necessary conditions
+topologies
+strong converse
+trans
+coupling light
+quantum signals
+optical pulses
+highlighting
+dicke states
+efficient way
+body dynamics
+unitary group
+comparisons
+analysis quantum
+particular focus
+paper proposes
+harmonic potential
+secure direct
+devoted
+study non
+fused silica
+used study
+quadrupole
+removing
+hidden variable
+entanglement multipartite
+directionality
+model non
+rayleigh
+propose demonstrate
+update
+causing
+attain
+qubit control
+trust
+optimization quantum
+coupling operators
+entanglement bipartite
+persists
+numerical solution
+electrostatic
+phenomenology
+hamiltonian identification
+backscattering
+femtosecond laser
+transfer efficiency
+giving rise
+single parameter
+duffing
+decoy state
+entangled coherent
+67
+valued measures
+obtained quantum
+photons cavity
+shortcuts adiabatic
+simple lie
+passive optical
+implementations quantum
+seven
+projectors
+hope
+strips
+lyapunov function
+wave equation
+systems discuss
+address question
+aspects quantum
+irreversibility
+quantum chemistry
+optical microwave
+optimised
+ring resonators
+poor
+memoryless
+periodicity
+periodic boundary
+generalized coherent
+state present
+scheme implement
+high vacuum
+fringe
+dark matter
+radiation fields
+thorough
+unexpected
+nanofibre
+concept quantum
+particle systems
+multi particle
+quite different
+investigate theoretically
+schemes quantum
+boson fields
+derive general
+based measurement
+brain
+experimental platforms
+decohering
+hybrid entanglement
+qudit state
+superposition coherent
+retrieve
+84
+xi
+numerical evidence
+state protocol
+based linear
+probability success
+experimental observations
+free scalar
+thermo
+canonical commutation
+quantum data
+state discuss
+lens
+key element
+perfect quantum
+markovian stochastic
+q_
+resource requirements
+induced decoherence
+inducing
+bridges
+schmidt decomposition
+weakly interacting
+competing
+echoes
+75
+efficient numerical
+qubit ghz
+antisymmetric
+continuous discrete
+st
+determine optimal
+remains open
+complete quantum
+waiting
+laser pulse
+commutator
+quadratic hamiltonians
+undirected
+time crystal
+project
+mode coherent
+dealing
+freely falling
+parthasarathy
+adds
+adiabatic processes
+markovian environment
+quantum speedup
+nanomechanical resonators
+secure communication
+spontaneous decay
+hudson
+poissonian statistics
+pr
+systems qubits
+page
+multiport
+gbps
+replica
+different methods
+financial
+removed
+associative
+provide useful
+life
+states investigate
+harmonic trap
+hardy
+ieee
+blind quantum
+quadratic optomechanical
+number particles
+avalanche
+fixed number
+shifters
+momentum tensor
+agreement theoretical
+arms
+plays important
+order nonlinear
+exemplify
+gaussian entangled
+self assembled
+toffoli gates
+computer science
+resembles
+rho_
+direct measurement
+tensors
+order coherence
+translates
+quantifiers
+bundle
+scatter
+pump beam
+linear stochastic
+million
+impossibility
+arbitrary dimensions
+squeeze
+theoretical study
+ads_3
+hom
+circuits quantum
+devices based
+time energy
+introduce concept
+parent
+hydrodynamic
+discuss general
+geometric quantum
+destructive interference
+measurement state
+variable cv
+renders
+radical
+ends
+systems dynamics
+quantum scissors
+spikes
+times10
+information applications
+nv center
+scheme generating
+evanescently
+plays crucial
+differentiation
+quantum storage
+weak convergence
+understanding quantum
+firewalls
+techniques quantum
+guided wave
+inevitable
+nonlinear optics
+initial quantum
+complete characterization
+classical theory
+partitioned
+examples including
+approximate quantum
+classical state
+fitting
+optical components
+intimately
+potassium
+maximization
+merely
+peaked
+unphysical
+states exhibit
+price
+recent advances
+inf
+direct communication
+recovering
+experimentally realizable
+presence absence
+theory gravity
+resilient
+state control
+sfwm
+disorder induced
+optical setup
+prepares
+model describing
+previous approaches
+method constructing
+spin qubit
+vogel
+contexts
+equation motion
+classical systems
+optomechanically induced
+functionalities
+specialized
+bodies
+2002
+coupling efficiency
+experimental quantum
+optomechanical interactions
+claimed
+local correlations
+gaussian boson
+propagates
+exclusion
+maxwell equations
+matter systems
+optimal synthesis
+light propagation
+class problems
+develop general
+processing using
+sensing applications
+like state
+paradigms
+equiangular tight
+original quantum
+spin flip
+operationally
+additive noise
+hubble
+stabiliser
+self adjoint
+quantum decoherence
+_5
+admissible
+crossings
+dqc1
+information stored
+paving
+paving way
+present algorithm
+amplify
+numerically study
+separability criterion
+different regimes
+best knowledge
+bin entanglement
+state demonstrate
+tensor products
+yang
+rev bf
+optomechanical devices
+thresholds
+photonic chip
+matrices graphs
+looking
+open question
+sine
+correction codes
+circumvent
+optimal performance
+photon addition
+shares
+photons single
+second harmonic
+corollary
+microscopy
+tolerate
+movable mirror
+compactness
+states approach
+interested
+transmon qubit
+conversion spdc
+classical transition
+resonator mode
+deutsch
+curved space
+party quantum
+key ingredient
+64
+apply theory
+introduce quantum
+cavity cavity
+output channels
+conversion pdc
+state finally
+momentum space
+coupling optical
+step quantum
+artificial neural
+decay time
+neuronal
+new way
+coupled qubits
+optomechanical entanglement
+light using
+execute
+heralded photon
+conducting
+study generation
+given initial
+remotely
+scatterers
+organic
+partite entanglement
+monogamous
+used estimate
+classical phase
+emulate
+spatial regions
+learning techniques
+optical communication
+class open
+cellular automata
+based schemes
+human
+thousands
+attributed
+evolution entanglement
+profound
+bounds entanglement
+laguerre gaussian
+industrial
+hitting time
+develop new
+raman transitions
+resonant frequency
+reservoir engineering
+obtains
+opa
+atomic spin
+thereof
+h_2
+heterogeneous
+particular discuss
+newly
+span
+time algorithm
+cavity driven
+addressable
+coupling single
+properties states
+near resonant
+coherent manipulation
+photon entanglement
+simulable
+bloch oscillations
+protocols using
+high accuracy
+converter
+phase insensitive
+positive map
+process fidelity
+standing wave
+paid
+evaporating
+widths
+resource theories
+function time
+refers
+generated state
+presented scheme
+renormalized
+decentralized
+size scaling
+evolutionary
+strong weak
+eps
+vertex graph
+linear nonlinear
+considers problem
+non stationary
+interaction quantum
+mode entangled
+alphabet
+state addition
+piecewise
+stochastic calculus
+atoms excited
+penrose
+availability
+universal qubit
+field cavity
+100 mhz
+consider class
+quantum open
+analysis based
+approximates
+scalings
+milestone
+bins
+traditionally
+quantum behavior
+states work
+resources quantum
+interacting particles
+provide efficient
+non inertial
+annealers
+measured using
+specific examples
+symplectic eigenvalues
+fabricate
+state non
+resilience
+procedure used
+2001
+propose implementation
+distinguishable particles
+earth orbit
+non monotonic
+relationships
+said
+entangled steady
+performed using
+determinant
+optomechanical cavities
+ensemble control
+quasi particles
+paper demonstrate
+organisms
+schatten
+coupled level
+conditional state
+interacting qubits
+state diffusion
+state remains
+cat like
+tracing
+supervised
+causally disconnected
+dephasing noise
+hybrid metric
+resource state
+clouds
+magic states
+condensate bec
+fully characterize
+states obtained
+single measurement
+type entanglement
+quasiparticles
+refrigeration
+specifically consider
+demonstrate feasibility
+characterization quantum
+resistant
+control strategies
+wide class
+digital quantum
+modulation frequency
+measurements photon
+quantum versions
+resolves
+way model
+walk graph
+birth
+pedagogical
+strong driving
+storage retrieval
+schwarzschild radius
+discrete continuous
+unambiguously
+cavity assisted
+state detection
+process quantum
+transition edge
+broadened
+revisited
+neighborhood
+states photon
+local realism
+exponential speedup
+qubit interactions
+insecure
+transfers
+model parameters
+received
+engineering quantum
+btz
+renewed
+inputs outputs
+states use
+adapt
+inhomogeneity
+arrive
+homodyne detector
+xy model
+tunnelling
+cosmic
+temperature dependence
+results using
+ion quantum
+data quantum
+indistinguishable single
+probe beam
+toric
+atom interferometry
+results allow
+hudson parthasarathy
+insufficient
+running time
+non unit
+plays role
+selectivity
+mediator
+supersymmetric
+physically realizable
+destroy
+entanglement verification
+db squeezing
+experimental implementations
+low density
+linear combination
+classical communications
+alternatives
+using methods
+nmr quantum
+steane
+logarithm
+address issue
+reach current
+evolution operators
+bistochastic
+particular present
+400
+particular cases
+lindblad operators
+low lying
+illustrating
+classical linear
+assessed
+group theory
+buffer
+restricting
+sub wavelength
+systems used
+number different
+derived using
+solver
+al arxiv
+ising chain
+denotes
+wiener
+linearities
+non linearities
+algorithms based
+nearest neighbour
+general results
+hamilton
+measurements using
+famous
+resonant cavity
+routes
+scheme robust
+avenues
+bunching antibunching
+light scattering
+single spin
+matchgates
+control qubit
+states having
+quantum noises
+manipulation quantum
+somewhat
+interference effects
+backreaction
+mechanical gain
+supporting
+number distributions
+level emitter
+stated
+mermin
+study performance
+discussing
+fidelity teleportation
+uses quantum
+decoherence time
+investigates
+hamiltonian simulation
+uniformly accelerated
+cylindrical
+li
+fidelity state
+opportunity
+exchange interactions
+gaussian channel
+senders
+presentation
+nanoparticle
+indirectly
+interaction single
+non deterministic
+temporal modes
+merlin
+possible perform
+oriented
+bipartite state
+demolition qnd
+trotter
+based spontaneous
+new algorithm
+states demonstrate
+main features
+planckian
+using recently
+tsallis entropies
+certainty
+classical channel
+using qubit
+liouvillian
+executed
+control techniques
+template
+stimulated brillouin
+different states
+oscillators coupled
+similarities differences
+lieb
+quantum probe
+dissipative systems
+probabilistically
+topologically protected
+unexplored
+level structure
+joint measurements
+level atomic
+holographic dual
+kerr nonlinearities
+computation using
+assisted quantum
+studied quantum
+limit measure
+point function
+infinitesimal
+fits
+input power
+time delayed
+class nonlinear
+variational quantum
+state environment
+fabrication process
+rendering
+string theory
+quantum amplifier
+quantum models
+overcoming
+poling
+choi
+field discuss
+field state
+quantum tunneling
+formulating
+decoherence effects
+mass transport
+scalar tensor
+coupling qubits
+amplitude amplification
+qnn
+generated spontaneous
+transfer time
+iv
+target qubit
+spatial dimensions
+destroys
+lyapunov exponent
+let
+distributing
+specify
+micromechanical
+pull
+baths different
+otoc
+selection rules
+exact expression
+microwave fields
+codes length
+spin orbital
+sagnac interferometer
+stationary measure
+obstacles
+unlimited
+geodesics
+photon flux
+spectral brightness
+rg
+nc
+gottesman
+superdense
+superdense coding
+traced
+new results
+construction quantum
+controllable quantum
+important applications
+telecom band
+trapped atoms
+treatments
+lot
+violate bell
+superradiance
+mobile
+function based
+noise effects
+inevitably
+propto
+wormholes
+sort
+scattering process
+kubo
+mode field
+lab
+exponentiation
+approach using
+qubit encoded
+subradiance
+non uniform
+red detuned
+occupied
+push
+markovian evolution
+information entanglement
+ultrahigh
+20 db
+best known
+summarize
+homodyne measurements
+environmental noise
+member
+gaussian noise
+concentrating
+figures merit
+state different
+strong optical
+entanglement qubit
+lattice sites
+kramers
+weak limit
+direct quantum
+kerr nonlinear
+devise
+coatings
+36
+practical implementations
+trying
+immersed
+cavity enhanced
+output fields
+interacting single
+conditions quantum
+algorithm using
+quantum gas
+wgm
+paper derive
+50 50
+suboptimal
+scheme presented
+perfect matchings
+order phase
+host
+coherent driving
+majorana fermion
+simulations indicate
+particular prove
+bringing
+separates
+probability theory
+family quantum
+quantum jumps
+scope
+electron phonon
+random bits
+experimentally demonstrated
+problem constructing
+conditional entropy
+decoders
+nonclassicality criteria
+ambient
+pm0
+correctness
+using techniques
+qnd measurement
+papers
+states possible
+arbitrary pure
+time intervals
+lattice model
+generative
+strong non
+optics experiments
+phonon blockade
+spectral width
+python
+exact diagonalization
+certain class
+objective function
+major challenge
+gerlach
+stern
+stern gerlach
+terminals
+finetti theorem
+decoy states
+relative phase
+hours
+computationally hard
+states considered
+states compared
+interfering
+dimensionless
+research quantum
+entanglement terms
+constructed using
+perpendicular
+point correlation
+test quantum
+architecture based
+braiding
+operation time
+study single
+recycled
+rabi oscillation
+replacing
+states second
+eigenvectors
+using continuous
+depth quantum
+interfacing
+privacy
+states spin
+rightarrow infty
+role played
+output process
+sources entangled
+solids
+illustrate results
+quenches
+results classical
+transmissions
+weak coherent
+incurred
+ignored
+linear entropy
+klein gordon
+77
+destroying
+garg inequality
+sinusoidal
+robust noise
+fields quantum
+provably
+96
+allows use
+extend analysis
+atomic motion
+network quantum
+biological systems
+spinor
+set states
+provided illustrate
+fokker
+fokker planck
+phosphate
+taper
+coherently driven
+derive effective
+vibrational modes
+refocusing
+scalar fields
+desired state
+outperform classical
+consider entanglement
+contains information
+communication computation
+nonnegative
+simulate quantum
+measurement feedback
+state information
+hundreds
+measurement basis
+entanglement cost
+time space
+high optical
+piezoelectric
+transverse magnetic
+modest
+gates single
+spin resonance
+communication channel
+gates required
+state independent
+examples discuss
+injecting
+bures
+order quantum
+states method
+non universal
+cmb
+discuss experimental
+zeilinger states
+stabilizer formalism
+develop method
+phase matched
+noise decoherence
+sequential measurements
+fmo complex
+investigate effect
+provide evidence
+error threshold
+used characterize
+quantum processing
+qkd based
+teleportation quantum
+theory experiment
+decoherent
+discriminating
+number statistics
+external fields
+classical ones
+accommodate
+boltzmann machine
+quantum analogue
+superconducting nanowire
+heisenberg picture
+eternal
+scheme does
+solution quantum
+recovers
+state maximally
+states maximally
+measures quantum
+modulations
+output entropy
+synaptic
+intensive
+states study
+mode splitting
+qubit operation
+deduced
+derived quantum
+decoherence rate
+helium
+quantum consisting
+zero point
+filtering theory
+present study
+begins
+markovian effects
+arrival
+slm
+entanglement states
+output quantum
+oscillator opo
+glick
+lipkin
+lipkin meshkov
+meshkov
+meshkov glick
+galilean
+superoperators
+experimentally observed
+spin ensemble
+ultra strong
+n00n
+strong interactions
+state set
+obtainable
+networks using
+lu
+pair creation
+paper address
+theory classical
+concrete example
+puzzle
+h2
+stations
+qubit based
+physical processes
+exponential time
+coupled systems
+time entanglement
+compensated
+realistic conditions
+effects quantum
+field interaction
+maximum entropy
+perfect fidelity
+different frequencies
+parametric gain
+diagonal states
+astrophysical
+nonorthogonal
+quantum description
+measurability
+simple way
+92
+used model
+mechanics quantum
+arrangements
+explains
+welch
+21
+inas
+arbitrary state
+analyzed using
+conventional quantum
+model systems
+quasi particle
+theory open
+space optical
+rephasing
+pair qubits
+time non
+capacity region
+given set
+available quantum
+variable states
+telecom wavelengths
+spatial correlations
+derivations
+dependent quantum
+obtain simple
+approaches quantum
+omega_c
+hamiltonian systems
+states case
+error models
+measurement data
+develop quantum
+valued measure
+circuit synthesis
+axes
+evolution state
+factoring algorithm
+random quantum
+mode matching
+hypothesis testing
+photon input
+intersection
+walks quantum
+information qfi
+far detuned
+different previous
+polarized light
+classic
+dishonest
+detection quantum
+classical machine
+vacancy center
+quantum coin
+quantum secure
+fifth
+polygamy
+offered
+single letter
+number entangled
+classical case
+ising spin
+state initial
+predicting
+dynamics single
+strong photon
+posterior
+hole complementarity
+inflationary
+feasible scheme
+set qubit
+sources detectors
+coupling atoms
+quantum monte
+controlled cnot
+bi partite
+maxwell demon
+measurement noise
+cooling power
+set gates
+minimax
+drastic
+physiological
+49
+particle states
+variety quantum
+light modulator
+arbitrarily high
+type quantum
+negativities
+recurrent
+unchanged
+rev textbf
+study photon
+model study
+matter wave
+measurement process
+platform quantum
+network topology
+organization
+vibrating
+hexagonal
+matrix quantum
+inner product
+channels quantum
+number measurement
+quantum programs
+bipartite multipartite
+directly related
+brings
+states produced
+photon processes
+bits qubits
+ll
+manuscript
+driving laser
+91
+state measurements
+breaking channels
+state output
+optical power
+anomaly
+mode approximation
+using entanglement
+radiative decay
+based gaussian
+estimate parameters
+numerical examples
+theoretically demonstrate
+dark count
+noisy environment
+field single
+proceeds
+deployment
+concrete examples
+accounted
+entanglement theory
+observed quantum
+massively
+conference
+multivariate
+dark states
+spatial temporal
+construct optimal
+results concerning
+investigate properties
+states results
+optical depth
+suddenly
+effective temperature
+define quantum
+topics
+walk dynamics
+relaxation time
+probability quantum
+failures
+optimal protocols
+implemented experimentally
+paper use
+pulse sequence
+ladders
+comparing results
+buffer gas
+transition rates
+capacitors
+perform numerical
+axioms
+mode single
+case multiple
+single spatial
+state prepared
+numbers qubits
+giant
+fabricated using
+mode continuous
+frozen
+quantum bus
+carnot bound
+heat currents
+degrades
+removes
+optical resonators
+field dynamics
+nb
+tolerable
+measurement theory
+numerical experiments
+quantum photonics
+superconducting transmon
+arbitrary size
+mild
+photons quantum
+assigned
+photonic devices
+volumes
+synthesizing
+cold bath
+shown proposed
+existing protocols
+4d
+multi layer
+study evolution
+quantum protocol
+ingaas
+disk
+assignment
+fully connected
+nonrelativistic
+work demonstrates
+demolition measurement
+spanning
+unravelings
+standard deviation
+qubit controlled
+function approach
+ring cavity
+operational meaning
+general properties
+spatial spectral
+measurement record
+zero energy
+illuminated
+lett textbf
+rotated
+hadamard matrices
+clifford algebras
+mechanical displacement
+fluxes
+new possibilities
+dielectrics
+simplification
+formulation quantum
+potassium titanyl
+titanyl
+titanyl phosphate
+viscosity
+whilst
+results applied
+equations quantum
+rubidium 87
+etching
+light source
+initial value
+consists single
+raman scattering
+used determine
+solution problem
+agreement theory
+time steps
+scattered photons
+recorded
+coated
+perturbations hamiltonian
+states terms
+unitary gates
+various applications
+oxide
+state atoms
+protecting
+derive new
+auxiliary qubits
+state cavity
+phys math
+theta sqrt
+degradable
+qubit readout
+quantify entanglement
+present analytical
+realignment
+annealer
+cesium atoms
+loopholes
+complex valued
+squids
+classical simulations
+states matter
+bellman
+uhrig
+pointing
+quantum nisq
+solitons
+equilibrium steady
+multiple qubits
+phase shifters
+quantum filters
+cavity coupled
+uncontrolled
+attenuator
+physical review
+significantly reduced
+state allows
+electric magnetic
+mps
+general conditions
+massive scalar
+assist
+qsdes
+maximizes
+quantum quench
+classical regime
+using time
+study influence
+pumps
+partition function
+frameworks
+enyi entropies
+optimizations
+sampling based
+using high
+monogamy relation
+convexity
+decoherence process
+using local
+dimensional photonic
+delivers
+better performance
+impacts
+limit weak
+ornstein
+ornstein uhlenbeck
+uhlenbeck
+imposing
+markovian regime
+state properties
+falls
+security analysis
+turbulent atmosphere
+viability
+digital analog
+1000
+thermal environment
+state density
+hawking flux
+evanescently coupled
+network model
+explore quantum
+single input
+bloch vectors
+divided
+station
+gates based
+qubit cluster
+kossakowski
+offs
+teleportation protocol
+communication networks
+ppktp crystal
+quantum signature
+larger number
+states specifically
+interaction cavity
+processing applications
+harmonic generation
+analytic solutions
+heavily
+clocks
+physical resources
+classical physics
+trapped optical
+markovian bath
+limited number
+stripline resonators
+squeezers
+indicators
+modulators
+gauge theory
+takes advantage
+com
+shuttling
+calibrated
+newton equation
+light cone
+living
+provides efficient
+diagrammatic
+mass motion
+quadratic form
+derive exact
+transition amplitude
+hydrodynamics
+excitation energy
+markedly
+weyl heisenberg
+self contained
+average photon
+illustrative example
+visualize
+motzkin
+effectiveness proposed
+state probability
+generality
+charging
+walk using
+interference experiments
+promising candidates
+linearly coupled
+state reconstruction
+entangled pure
+potential application
+cutoff frequency
+depletion
+perturbatively
+optical experiments
+lifted
+states presented
+force sensing
+minimum distance
+paper construct
+error bounds
+limit using
+entanglement used
+harvesting complexes
+postulates
+method improve
+gating
+emitted light
+modular exponentiation
+solar
+door
+high capacity
+correlations entanglement
+particular shown
+photons based
+dimensional conformal
+case study
+try
+dynamical phases
+strong subadditivity
+aside
+related quantum
+mitigate
+run time
+randomization
+great importance
+pi phase
+using photonic
+illustrate general
+starts
+scheme using
+decoherence channels
+order perturbation
+arbitrary dimensional
+biexciton
+result obtained
+protects
+raises
+theory applied
+distinction
+search problem
+various physical
+internal state
+qubits encoded
+rational
+distance measure
+chance
+photoelastic
+nanophotonics
+optical properties
+method obtain
+investigate dynamics
+maximum value
+precision quantum
+desired quantum
+detected photons
+58
+number copies
+preserving quantum
+partite entangled
+handle
+bekenstein
+modules
+systems described
+ridge
+mode optomechanical
+implication
+supercomputer
+sources quantum
+late time
+lindblad type
+regards
+identities
+flip phase
+complete graph
+energy flux
+gauge field
+coupled photonic
+provide simple
+radiance
+adders
+better understand
+extractable
+provides method
+state associated
+operations quantum
+superconductivity
+dressed state
+feature quantum
+output formalism
+ghz like
+autocorrelation
+cloning theorem
+isomorphic
+radiation emitted
+attention recent
+instabilities
+leaky
+cardinality
+toric code
+render
+optical devices
+coupled qubit
+partial trace
+gravitational waves
+780
+780 nm
+coupling superconducting
+qubit measurement
+linear equations
+controlled operations
+lie algebras
+ppln
+gem
+noncommutative corrections
+dirichlet boundary
+photon leakage
+gate operation
+singlet triplet
+achieving high
+local observables
+spherically
+spherically symmetric
+interferences
+thermometer
+performing quantum
+search space
+paul
+sorter
+threshold quantum
+ranks
+distill
+motivated recent
+circularly
+concave
+field using
+low cost
+shifting
+position space
+self trapping
+used control
+set non
+entanglement particles
+initial condition
+frequency entangled
+resonance nmr
+responses
+olson fmo
+walk model
+exposed
+technological applications
+loading
+seed
+memristor based
+particularly suited
+prospect
+covers
+filled
+quadrature squeezed
+problem using
+studied using
+entanglement spin
+transmission spectra
+particle creation
+briefly discuss
+rounds
+composite pulses
+optical states
+results good
+plasmons
+pairs qubits
+verifier
+offering
+photon modes
+fractional quantum
+discretized
+properties entanglement
+separations
+paper studies
+contour
+irrespective
+control performance
+coherent oscillations
+level tls
+linear non
+magnus
+environment interaction
+graph theory
+circuit based
+promising candidate
+spin angular
+protocol implemented
+bipartite pure
+proceed
+moving mirror
+driven single
+subtracting
+connected quantum
+auto
+class entangled
+photon optomechanical
+approach derive
+finite element
+case non
+gyrotropic
+counterexamples
+ktp
+minkowski vacuum
+collapse models
+effective coupling
+rabi frequencies
+experimental demonstrations
+leading term
+great potential
+reference frame
+quantum controlled
+ideal quantum
+splittings
+based learning
+states mechanical
+speedups
+h_
+brought
+quantum ensembles
+minutes
+collisional
+fixed frequency
+focuses
+encompasses
+infeasible
+analyze security
+case entanglement
+present analysis
+degrade
+_n
+fundamentally different
+undesired
+optimizer
+virtually
+flipping
+quantum oscillators
+used measure
+coupled microwave
+equations driven
+weak signal
+using phase
+decoherence caused
+provide quantum
+systems finite
+internal states
+nm wavelength
+access structure
+members
+shells
+types noise
+arxiv quant
+comprised
+optical nanofiber
+horizon scale
+d1
+encoded quantum
+bose gas
+quantum nodes
+hamming
+hypergraph
+large networks
+percent
+quantum refrigerator
+adaptive measurements
+preferred
+fiber coupled
+prover
+photonic phononic
+saturated
+information obtained
+control hamiltonian
+preparations
+using exact
+probability measures
+securely
+states presence
+nonlinear kerr
+finally analyze
+fine grained
+states optical
+depolarization
+reverse reconciliation
+error model
+apply approach
+derive upper
+limit strong
+atom chip
+explore possibility
+alkali
+small world
+diverges
+linear nearest
+beats
+carnot efficiency
+state rho
+based scheme
+beginning
+dynamics driven
+natural way
+coupled nonlinear
+stopping
+mean energy
+fan
+electrode ion
+interpretation quantum
+false
+decision making
+dynamics level
+scaling limit
+departure
+unify
+spacelike
+using nonlinear
+analysis reveals
+lamb shift
+combinatorial optimization
+spin squeezed
+dynamics systems
+encoded qubits
+gate using
+quantum sensing
+coating
+state light
+field optical
+mandel hom
+far field
+nm using
+expose
+use methods
+decoupling schemes
+equilibria
+representative
+ryu
+computer based
+body interactions
+plasmon polariton
+states defined
+using approach
+symmetric asymmetric
+method presented
+photonic qubits
+grover search
+economic
+exhaustive
+negativity entanglement
+programmable quantum
+jozsa
+executing
+driven external
+optimal strategy
+conversion source
+noted
+hole formation
+high spectral
+entanglement transmission
+coupled optomechanical
+superradiant phase
+description quantum
+proof concept
+systems use
+cqed
+apparatuses
+peres horodecki
+microwaves
+noon state
+polar molecules
+order parameter
+discuss implications
+theoretical framework
+cryogenic temperatures
+using proposed
+pairs generated
+evanescent wave
+special attention
+apply technique
+finite dimension
+power spectra
+logical gates
+simple analytical
+quantum world
+communication locc
+resultant
+57
+markov approximation
+soc
+equivalence principle
+neighbor interactions
+separability criteria
+centered
+estimation precision
+designing quantum
+distortions
+large time
+observe quantum
+vacancy centers
+sql
+hyperentangled bell
+turing
+coin space
+haar measure
+field coupled
+sol
+overcomes
+using set
+rm tr
+measured quantum
+quantum interface
+spectral analysis
+generations
+electromagnetic environment
+dicke state
+state proposed
+transmission quantum
+attention paid
+distribution entanglement
+nano mechanical
+high rate
+devising
+entries
+resistor
+theoretically analyze
+communication based
+edge sensors
+anticipated
+previously considered
+mention
+avalanche photodiodes
+cooling rate
+titanium
+convex roof
+partners
+initiated
+prove quantum
+noncommutative plane
+management
+directed graph
+assign
+information used
+testable
+coupled environment
+normalization
+qss schemes
+atom optics
+analyze properties
+work introduce
+quantum time
+used simulate
+computing devices
+toroidal
+detection efficiencies
+dynamic variables
+convergence rate
+integrated optics
+dark energy
+tighter
+inertial frames
+based local
+gradient echo
+scheme generate
+segmented
+continuously monitored
+entangled resource
+n00n states
+cavity cooling
+special class
+entails
+integrable models
+quantum brownian
+low high
+obtain analytic
+spectral densities
+different strategies
+ultra high
+vehicle
+general non
+swap gates
+second protocol
+evidence quantum
+sum frequency
+spatial degrees
+method calculate
+resonant optical
+qubit dynamics
+decoder
+quantum particles
+dynamical properties
+78
+dispersively
+widespread
+tools quantum
+satisfiability
+measurement problem
+quantum lattice
+concepts quantum
+highly sensitive
+limit infinite
+laplace
+based results
+high gain
+tailoring
+entanglement monotone
+physical realization
+common reservoir
+spots
+random access
+qubit single
+photonic waveguide
+study optomechanical
+present exact
+refinement
+measurements single
+undesirable
+entanglement mode
+pattern recognition
+extend results
+fair
+set mutually
+multiple quantum
+negative values
+transported
+introduce method
+contributing
+begin
+main results
+random pure
+mode photon
+unresolved
+numerically analytically
+far away
+optical trapping
+liquid state
+connected graph
+range correlations
+suitably chosen
+noise induced
+parity measurements
+esr
+method using
+key exchange
+transforming
+enyi entropy
+calibrating
+complete positivity
+placement
+supposed
+hull
+model single
+shared key
+secondary
+external control
+coupling qubit
+nanocavities
+partly
+coupling parameter
+frequency range
+silicon photonic
+aforementioned
+reviewing
+optimal feedback
+demonstrate efficient
+realising
+quantum ground
+cphase
+conduct
+based methods
+absolutely
+high resolution
+single phase
+forms quantum
+mathcal mathcal
+dynamics non
+provide additional
+paramount
+microwave cavities
+lorentz invariant
+collision models
+pose
+exact analytical
+disorder averaged
+lie algebra
+frequency entanglement
+valence
+valence bond
+method measure
+mems
+radiated
+critical temperature
+frequency detuning
+photon decay
+bipartite entangled
+family states
+pump pulse
+arithmetic operations
+attracted attention
+wootters
+jitter
+slits
+results previous
+gaps
+address quantum
+coupled thermal
+paper explore
+quantum squeezing
+free fall
+presence quantum
+winding
+fredkin gates
+classically simulated
+probability representation
+fascinating
+band gap
+exhibit quantum
+explores
+alter
+network structure
+sensitivities
+wave particle
+field gradient
+important class
+quadratic coupling
+equations derived
+preparation measurement
+meet
+theory provide
+results hold
+experimental study
+non thermal
+walks line
+cumulant
+insulator phase
+scheme requires
+circuits based
+unconstrained
+multiplicative noise
+position dependent
+optical waveguides
+drawing
+output power
+propagators
+detector tomography
+langevin equation
+discuss applications
+activity
+translationally
+superadditivity
+justified
+simple models
+gets
+scheme create
+state shown
+field vacuum
+potential energy
+transfer matrix
+examples demonstrate
+linear regression
+evaluate performance
+optically trapped
+mining
+design implementation
+quasilinear
+numerically investigate
+measurements general
+orbitals
+interconnection
+real complex
+seeded
+coherent population
+ideal case
+probe light
+optical force
+subclass
+open new
+resulting state
+esd
+semiclassical theory
+continuum limit
+squeezed coherent
+scheme fast
+single step
+silicon photonics
+optimization algorithms
+hamiltonian approach
+classical interference
+atom laser
+given time
+atom coupled
+effects non
+based simple
+slow fast
+synchronous
+laughlin
+shelf
+hamiltonian quantum
+qubits using
+posed
+temporal mode
+virtue
+variational method
+excitation regime
+best possible
+finite key
+stochastic evolution
+detuned laser
+nanodiamond
+computers quantum
+born markov
+state field
+translation invariant
+red blue
+applications ranging
+systems shown
+sideband cooling
+time evolving
+radii
+lithography
+aiming
+83
+spin operators
+fixing
+spin waves
+fano resonance
+tetrahedron
+ultimate quantum
+recent works
+properties single
+demonstrate technique
+markov process
+broadcast channel
+oscillate
+analyzer
+optical non
+efficiently using
+ago
+d2
+particularly useful
+new model
+lower upper
+vibrational mode
+idea quantum
+massively parallel
+detailed theoretical
+technique known
+blockade effect
+coherent evolution
+various types
+stack
+input light
+spirit
+recursion
+external electric
+problem formulated
+channel using
+magnetically
+signal photon
+set observables
+discontinuous
+lewis
+lewis riesenfeld
+riesenfeld
+subgraph
+diagonal elements
+interesting properties
+industry
+states occur
+results showing
+rotate
+faster classical
+systems results
+number state
+quantum annealers
+seminal
+systems work
+smoothing
+vaidman
+disturbed
+subregion
+usually considered
+regular graphs
+gate implemented
+states fixed
+guiding
+computational resources
+shannon entropy
+quasi phase
+surface plasmons
+review main
+optical microcavity
+100 km
+holography
+collective coupling
+propose experimentally
+sudarshan function
+principle quantum
+euler
+study different
+functional theory
+convergent
+graphical
+orthonormal
+genuine tripartite
+systems entanglement
+time second
+entanglement particular
+linear regime
+matching conditions
+smeared
+coherent attacks
+josephson parametric
+mode control
+basic idea
+wells
+topological states
+cryptography quantum
+dot spin
+optical network
+class uncertain
+local non
+conflict
+useless
+information scrambling
+higher spin
+constituent
+describing interaction
+quadratic exponential
+threshold value
+slight
+new protocol
+acquisition
+quantum estimation
+linear ion
+bin entangled
+plays key
+random matrix
+instanton
+asymptotic stability
+quasi static
+consumed
+herald
+conjugation
+repeater networks
+walks graphs
+microwave regime
+environment state
+global quantum
+bunch
+sheet
+field dimensional
+joint measurability
+circuit models
+field qubit
+valid arbitrary
+bandwidths
+absorptive
+oscillator frequency
+atom based
+ease
+quenching
+resonant laser
+principles quantum
+efficiently simulated
+qubits present
+using atomic
+waveforms
+central charge
+pi pulse
+different spatial
+bacteria
+non maximally
+shared parties
+harder
+elementary quantum
+physical quantum
+norm coherence
+bipartite graphs
+exploring quantum
+advantage classical
+measurement output
+quantum input
+analytic results
+information backflow
+frac sqrt
+perot cavities
+preparation quantum
+projection operators
+method enables
+chaotic dynamics
+kitaev model
+infinite time
+associate
+chain length
+experimentally investigate
+lead new
+small gain
+toolbox
+theory provides
+integrator
+ordinary differential
+garbage
+functions quantum
+fundamental limit
+decimation
+states state
+interacting common
+linear passive
+collinear
+langevin equations
+plateau
+method provides
+matrix approach
+classical problems
+large size
+damping noise
+example discuss
+transpose ppt
+using entangled
+entanglement entanglement
+tasks quantum
+signal states
+seemingly
+local control
+flowing
+systems especially
+circuits composed
+approach makes
+exchange interaction
+security proofs
+coupled mode
+used improve
+spatio temporal
+populated
+transfer rate
+efficiently classically
+measurement signal
+unknown qubit
+limiting case
+pump laser
+cavities connected
+entropy coherence
+optimal measurements
+bound concurrence
+dominates
+qed architecture
+120
+higher fidelity
+speeds
+interfere
+robust respect
+qubits cavity
+predefined
+interface quantum
+coexistence
+delta delta
+time solution
+quantum matter
+relevant parameters
+microscope
+phase locked
+10 db
+order nonclassical
+exponentially fast
+really
+applications field
+quantum optimal
+detector efficiency
+protocol requires
+realized using
+knill laflamme
+laflamme
+satisfy certain
+directly coupled
+optical processes
+data sets
+grover walk
+manifested
+intimately related
+modes coupled
+fringe visibility
+rotor
+multipartite states
+traceless
+conformally
+ultracold atomic
+detectable
+limit results
+76
+characterization photon
+enter
+matrix valued
+individual qubits
+hitherto
+goals
+afterpulsing
+compensating
+algorithm presented
+light quantum
+pulse length
+free hamiltonians
+organized
+computation time
+spin photon
+type interactions
+fibonacci
+states paper
+positive negative
+investigate role
+65
+states continuous
+10 mu
+linear algebra
+arbitrary input
+milburn
+adiabatic evolution
+arbitrarily close
+deterioration
+local noise
+realistic quantum
+subroutine
+preventing
+computational method
+field intensity
+state model
+pure loss
+vortices
+enhancement photon
+adopting
+local state
+efficiency single
+optical path
+introduced quantum
+twist fields
+coherent dissipative
+matrix decomposition
+speed quantum
+precision measurement
+electric dipole
+useful information
+single multi
+er epr
+stochastic thermodynamics
+symmetry broken
+adjust
+kalman
+fifth order
+function number
+efficient algorithm
+consider case
+tool quantum
+deviate
+ensembles quantum
+light pulses
+total angular
+systems studied
+counters
+different forms
+network states
+state spaces
+entangled separable
+bb84 protocol
+ultrastrong deep
+derive expression
+atom interactions
+mixed initial
+cosine
+loaded
+dependent hamiltonian
+demonstrate single
+zeilinger state
+coupled field
+corrupted
+previous ones
+averages
+investigate effects
+cup
+indistinguishable photons
+named
+phonon bath
+echo memory
+hopfield
+particle detector
+photon bunching
+single memristor
+symmetric antisymmetric
+quenched
+extract information
+cryostat
+scheme provides
+uniform acceleration
+states derive
+addition quantum
+distinctive features
+portion
+energetic
+gauge theories
+theoretical approach
+coherence measure
+resist
+water
+emission photon
+channel noise
+poses
+controller design
+ferromagnet
+demonstrate generation
+expensive
+denoted
+accessing
+correction code
+local measurement
+photonic structures
+concern
+channel uses
+iterative procedure
+define new
+existence bound
+time dynamics
+emit
+gg
+walk defined
+repeater protocol
+ensemble quantum
+stream
+reduction method
+state order
+work analyze
+optimal estimation
+mode resonator
+spectral bandwidth
+compiling
+work quantum
+noiseless linear
+carbon
+order obtain
+cooling scheme
+performance analysis
+discuss implementation
+inhomogeneous broadening
+positive matrices
+mechanical coupling
+completely mixed
+criterion based
+model describes
+state particular
+non convex
+dichotomy
+based generalized
+82
+space representation
+gaussian modulation
+detector model
+work develop
+diverging
+frequently used
+high photon
+noise correlations
+orbit coupling
+reversible quantum
+theory particular
+form expressions
+parameters hamiltonian
+propose analyze
+technically
+states classical
+complete problems
+greedy algorithm
+intricate
+conditional quantum
+added noise
+mimic
+attributes
+quantum relative
+point point
+normally
+maximum principle
+pontryagin maximum
+analytic solution
+stability result
+used realize
+different protocols
+service
+systems exhibit
+equation describes
+entanglement resource
+does lead
+computational problems
+tsallis entanglement
+investigate experimentally
+prism
+pi pulses
+dynamic range
+state excited
+mode driven
+electronic structure
+furthermore study
+experiments performed
+problems solved
+mass limit
+wang
+induced quantum
+frequency modulation
+pairwise entanglement
+local operators
+optical qubits
+momentum transfer
+bosonic fields
+measurement bases
+approach relies
+analyze performance
+general graphs
+primitives
+qubits used
+translations
+terms number
+open problems
+classical driving
+classical optical
+coherent spin
+generated quantum
+quantum conditional
+logic gate
+time delays
+case optimal
+met
+pair production
+estimation error
+practical implementation
+sufficient necessary
+der pol
+pol
+contributes
+phase difference
+mediated interactions
+resort
+states efficiently
+soon
+processing qip
+average value
+severe
+influence functional
+present experiments
+constructing quantum
+states gaussian
+large systems
+positivity partial
+ancillary photons
+advantage quantum
+implement universal
+tail
+states provide
+loss information
+classicality quantum
+classical measurement
+states ghz
+light generation
+study model
+develop theory
+permutation gates
+near perfect
+space entanglement
+instruments
+single ion
+particle entanglement
+bohm
+far equilibrium
+develop novel
+bennett brassard
+brassard
+entanglement shared
+model developed
+exponentially number
+question quantum
+centers diamond
+learning control
+10 10
+boundary region
+projective simulation
+resonant photon
+condition given
+asymptotics
+preferential
+confining
+optical pumping
+indicated
+position degrees
+hawking quanta
+used achieve
+means quantum
+48
+damping rate
+suitable quantum
+uncoupled
+exception
+particle entangled
+quarter
+enlarged
+xor
+eliminating
+replacement
+rydberg atom
+destroyed
+keldysh
+informative
+speed classical
+acousto
+flux noise
+quantum annealer
+37
+generate entanglement
+different initial
+unlike previous
+group delay
+operational interpretation
+mechanical model
+illustrate use
+entanglement hamiltonian
+complete bipartite
+frequency mismatch
+discussed using
+exclusively
+satisfactory
+systems governed
+coupling rates
+evaporating black
+cloner
+energy states
+beating
+particular derive
+investigate non
+thermodynamic cycle
+dof
+purified
+spot
+case discuss
+balanced homodyne
+states opposite
+background noise
+cavity output
+emission absorption
+overlaps
+hyperentangled states
+single excitation
+prove existence
+finding optimal
+addition study
+respects
+paper report
+consider general
+kinetic inductance
+sudden change
+hamiltonian non
+rangle langle
+develops
+confirmed numerical
+poled potassium
+wasserstein
+detection single
+transverse mode
+states constructed
+acquire
+ghz type
+nonstationary
+asymptotically optimal
+quantum backaction
+analytical model
+attractors
+induced decay
+transition frequencies
+range physical
+phase models
+double slit
+technique allows
+stabilizers
+vector space
+paper examine
+state nmr
+induced coupling
+discusses
+custom
+minkowski spacetime
+power output
+disciplines
+recently reported
+consider situation
+based standard
+final key
+planck equation
+paper extend
+gpu
+hint
+resonator modes
+control protocols
+dc squid
+epr paradox
+results important
+neighbours
+quantum signal
+dimensional states
+entering
+moduli
+anderson localization
+presence noise
+inside optical
+quantum evolutions
+partition functions
+quantum entropy
+dilution
+circuit elements
+scheme prepare
+circulator
+non adaptive
+phonon induced
+array coupled
+quantum variables
+non vanishing
+result holds
+kinetic energy
+employing quantum
+photon cavity
+driving strength
+reformulated
+positive feedback
+component quantum
+technique quantum
+physical phenomena
+evaluated using
+99 99
+method requires
+modes single
+optomechanical arrays
+modes optical
+greatest
+convex hull
+final states
+facts
+provide complete
+magnetometry
+husimi
+quantum hamiltonian
+optimal entanglement
+commensurate
+reversible circuit
+exact quantum
+quadratic gaussian
+direct application
+copies state
+1560
+1560 nm
+notice
+silicon vacancy
+quantum approximate
+presence decoherence
+raised
+indispensable
+sampling output
+introduce simple
+phase response
+states order
+approach results
+entanglement shown
+coulomb interaction
+entanglement pair
+ppt criterion
+decoherence suppression
+physical interpretation
+states furthermore
+scale invariant
+different sets
+simple method
+temporally
+anyon
+decide
+neumann measurements
+article study
+electromagnetic waves
+damping phase
+su interferometer
+unable
+targets
+arbitrary spin
+compared conventional
+nonetheless
+entanglement environment
+recent paper
+gravity dual
+phase preserving
+straightforwardly
+entanglement discord
+specially
+interconnects
+impose
+non negligible
+scrambling time
+teleporting
+multiparty quantum
+point contact
+quantum point
+mitigated
+field amplitude
+non analytic
+ieee trans
+report design
+using coherent
+localized states
+hollow
+statistically
+measurement processes
+guidance
+mode fiber
+imbalance
+method detect
+dimensional spin
+auxiliary qubit
+quantum gases
+prove security
+state case
+concurrent
+entanglement different
+parties share
+control qubits
+released
+algorithm designed
+89
+bohr
+qubit mixed
+approximation rwa
+symbols
+states coherent
+demonstrate potential
+positive integer
+devised
+exchanging
+circulating
+charged particle
+reformulate
+time markovian
+pauli group
+common environment
+light emitted
+apparently
+answer question
+damping errors
+scheme uses
+grover quantum
+pairs qubit
+magnus expansion
+analyze entanglement
+turning
+entanglement distributed
+free particle
+witnessing
+present design
+generalized pauli
+reduce quantum
+mixes
+matrix formalism
+impurities
+justification
+classical optimization
+portable
+transmission channel
+unfortunately
+assignments
+universal fault
+reductions
+hole bh
+spectrum quantum
+explicit construction
+quantum interfaces
+memory quantum
+gate voltage
+parity symmetry
+complex networks
+distribution cv
+based framework
+quantum setting
+optical microcavities
+latest
+strictly positive
+preliminary results
+level qubit
+size quantum
+existing results
+quantum probes
+supergravity
+states useful
+inserted
+method relies
+discuss relation
+form state
+instrument
+using direct
+influencing
+optical signals
+10 cm
+friendly
+interference device
+iteratively
+types quantum
+clifford circuits
+states particle
+trojan
+model continuous
+crossed
+states way
+entangled beams
+nonlocal correlations
+statistical physics
+recycling
+low rank
+adapting
+photons input
+scheme offers
+control laws
+bounds quantum
+qubit interacts
+process spontaneous
+shown possible
+simple efficient
+state population
+optical coherence
+measurement action
+studying quantum
+glick model
+qubit using
+poissonian photon
+purpose quantum
+manifestly
+basis quantum
+states discussed
+107
+chip scale
+historical
+number variables
+arbitrary unknown
+optical gate
+compared case
+case photon
+lowest order
+conditional dynamics
+single pass
+polariton modes
+classical signals
+qutrit states
+particle duality
+fidelity single
+unavoidably
+used develop
+generate entangled
+superconducting charge
+detection entanglement
+important implications
+new upper
+resonance frequencies
+aluminum
+investigation quantum
+vacuum rabi
+wavefront
+maxima
+resonator driven
+study provides
+use different
+applications optical
+feedback network
+anti bunching
+quantum fluctuation
+near unity
+np hard
+interference effect
+total spin
+retains
+induced dephasing
+theoretical scheme
+detectors quantum
+dual rail
+lemma
+bell measurement
+intuitively
+linking
+work shown
+nonclassicality quantum
+control model
+quantum experience
+regions parameter
+state distribution
+time integrated
+optical beams
+decreased
+related entanglement
+sets mutually
+poincar
+hole radiation
+gorini
+gorini kossakowski
+measurement strategy
+truncating
+finally apply
+hole evaporation
+observational
+presence thermal
+hubbard hamiltonian
+temporal multiplexing
+effective mass
+different modes
+new entanglement
+xxz spin
+hash
+second kind
+systems non
+level coupled
+mixing time
+using appropriate
+block decimation
+l_1 norm
+proposal provides
+interacting bosonic
+feedback protocol
+introduce novel
+unbiased measurements
+relaxation times
+computation communication
+phase reduction
+feedback law
+space arbitrary
+noncommutative parameters
+photonic band
+provide necessary
+discussed numerical
+physical constraints
+pathways
+atomic molecular
+density wave
+problem qubit
+provides promising
+launched
+bohmian mechanics
+developed theory
+relatively low
+derive set
+foundation
+nonlinear materials
+zhang
+high sensitivity
+study decoherence
+feshbach
+demonstrate possibility
+possessing
+computing paradigm
+learning quantum
+randomness generation
+state certain
+spontaneous synchronization
+algorithm uses
+proof based
+useful tool
+amplifying
+biases
+quantum shannon
+higher level
+unveil
+propose schemes
+group su
+cylinder
+haar random
+light storage
+global scale
+shortcut adiabaticity
+belavkin
+random variables
+paper aims
+optimal rates
+multiplexed quantum
+laws thermodynamics
+optical fibre
+rabi splitting
+interference different
+generated photon
+known bounds
+conduction
+briefly discussed
+systems given
+filling
+different times
+field approach
+experimental investigation
+subleading
+use entanglement
+classical channels
+idler photon
+sufficiently small
+envisioned
+networked
+quantum regimes
+pure product
+sketch
+invariant based
+quantum number
+analysis results
+171
+memory based
+equilibrium quantum
+different input
+coulomb blockade
+loss rate
+present model
+vertical
+qubits interacting
+experimental progress
+superconducting phase
+states provided
+input channel
+ball
+high visibility
+entanglement decay
+physically meaningful
+topological properties
+experiencing
+odinger newton
+erasure channel
+convolution
+transfer using
+complete povms
+transmitter
+retaining
+single phonon
+bragg reflection
+qubits circuit
+paper review
+average energy
+sin
+leads new
+depth log
+rescaled
+heisenberg limited
+offers possibility
+universal resource
+cdot
+real quantum
+scale free
+systematic error
+numerical solutions
+concentration protocol
+ingoing
+layered
+inequality quantum
+universal gate
+relaxation dynamics
+information capacity
+vacua
+state achieved
+state mixed
+line packings
+configuration space
+coexist
+micro fabricated
+derive corresponding
+converts
+pauli operators
+alternate
+demonstrate proposed
+marked state
+implemented quantum
+dependency
+covariance matrices
+algorithm used
+jackiw
+quantum domain
+depth circuits
+current state
+previously proposed
+numerically demonstrate
+braunstein
+wealth
+model allows
+identically
+basis states
+leakage errors
+walk qw
+crucial quantum
+centre mass
+stems
+bayesian analysis
+logic operations
+105
+respond
+permitting
+study dynamical
+110
+native
+accepted
+presently
+interaction light
+statements
+momentum light
+microseconds
+bosonic mode
+does change
+pre post
+states energy
+entanglement entangled
+states measurement
+birkhoff
+pure bipartite
+persist
+energy dissipation
+signal field
+correlation measures
+state paper
+surpass
+transmitted light
+art technology
+advanced ligo
+uniform distribution
+factorable
+establishment
+single qubits
+scheme used
+excited atoms
+physical principles
+model level
+states large
+measurement optimal
+log epsilon
+gallery modes

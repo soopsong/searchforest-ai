@@ -19,6 +19,11 @@ app/services/graph_service/data/indices/paper_ivf.index
 app/services/graph_service/data/indices
 
 app/indices
+app/routers/previous/output/summaries_dir
+app/routers/output
+app/data
+app/routers/output/summaries_dir/*
+
 
 #logs
 app/scripts/logs
@@ -199,3 +204,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+app/data/inductive/train.jsonl
+app/routers/output/summaries_dir/
