@@ -1,21 +1,17 @@
 import os
 import json, hashlib
 from typing import List, Dict, Optional, Tuple, Union
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 import aioredis
-from data_util.logging import logger
-
-from collections import defaultdict
 import requests
-from fastapi import Query
 from tree_mapping import extract_tree_mapping
 
 # ────────────────────────────────────────────────────────────────
 app = FastAPI(title="Graph Service with AI Inference")
 
 # Redis 초기화용 글로벌
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
+REDIS_URL = os.getenv("REDIS_URL", "redis://redis:6379")
 redis: Optional[aioredis.Redis] = None
 
 # 요청 모델
@@ -47,9 +43,9 @@ async def startup_event():
             decode_responses=True,
             max_connections=10
         )
-        logger.info(f"✅ Connected to Redis at {REDIS_URL}")
+        print(f"✅ Connected to Redis at {REDIS_URL}")
     except Exception as e:
-        logger.warning(f"⚠️ Redis 연결 실패, 캐시 미사용: {e}")
+        print(f"⚠️ Redis 연결 실패, 캐시 미사용: {e}")
         redis = None
 
 @app.on_event("shutdown")
@@ -67,7 +63,7 @@ def make_cache_key( root: str, top1: int, top2: int) -> str:
 def fetch_keywords(query: str) -> list[str]:
     try:
         response = requests.get(
-            "http://searchforest-ai:8004/inference",
+            "https://2f7a-165-194-104-91.ngrok-free.app/inference"
             params={"query": query, "top_k": 5}
         )
         response.raise_for_status()
@@ -81,33 +77,32 @@ def fetch_keywords(query: str) -> list[str]:
 # AI 서버 호출 + 결과 캐싱
 async def fetch_from_ai_and_cache(root: str, top1: int, top2: int):
     try:
-        # response = requests.get("http://searchforest-ai:8004/inference", params={"query": root, "top_k": top1})
-        response = requests.get("http://localhost:8004/inference", params={"query": root, "top_k": top1})
+        #response = requests.get("http://searchforest-ai:8004/inference", params={"query": root, "top_k": top1})
+        response = requests.get("https://2f7a-165-194-104-91.ngrok-free.app/inference", params={"query": root, "top_k": top1})
+
+        # response = requests.get("http://localhost:8004/inference", params={"query": root, "top_k": top1})
 
         response.raise_for_status()
         data = response.json()
 
-        # 트리 구성
-        keyword_tree = {
-            "id": root,
-            "value": 1.0,
-            "children": []
-        }
-        kw2pids = {}
+        tree_data = data["results"]["children"]
 
-        for cluster in data["results"]["children"]:
-            cluster_kw = cluster["kw"]
-            subnodes = cluster.get("children", [])
-            child_node = {
-                "id": cluster_kw,
-                "value": cluster["sim"],
-                "children": []
+        # 👉 트리 포맷 맞춰 변환
+        mapping = {}
+        for node in tree_data:
+            lvl1_kw = node["id"]
+            mapping[lvl1_kw] = {
+                "value": node.get("sim", 0.8),
+                "children": node.get("children", [])
             }
-            for sub in subnodes:
-                child_node["children"].append({"id": sub["kw"], "value": 0.8, "children": []})
-                kw2pids[sub["kw"]] = sub["pids"]
 
-            keyword_tree["children"].append(child_node)
+        keyword_tree = manual_tree_with_full_values(root, mapping)
+
+        # pids 추출
+        kw2pids = {}
+        for node in tree_data:
+            for child in node["children"]:
+                kw2pids[child["id"]] = child["pids"]
 
         cache_key = make_cache_key(root, top1, top2)
         if redis:

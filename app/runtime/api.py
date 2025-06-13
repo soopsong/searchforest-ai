@@ -32,7 +32,7 @@ class RecResponse(BaseModel):
 @app.get("/inference", response_model=RecResponse)
 def recommend(
     query: str = Query(..., description="검색 쿼리"),
-    top_k: int = Query(5, gt=1, le=10)          # default 5
+    top_k: int = Query(10, gt=1, le=10)          # default 10
 ):
     # 1) 쿼리 기준 top-k 클러스터
     hits = search_clusters(query, top_k)
