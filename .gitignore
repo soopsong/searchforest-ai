@@ -30,6 +30,10 @@ app/scripts/logs
 app/scripts/pyrouge_root
 app/scripts/running_logs
 
+app/services/old
+
+
+
 #etc
 app/etc/*
 
