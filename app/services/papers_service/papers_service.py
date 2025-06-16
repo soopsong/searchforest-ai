@@ -65,7 +65,7 @@ def build_paper(pid: str) -> Paper:
         citation_count        = e.get("citationCount"),
         influentialCitationCount = e.get("influentialCitationCount"),
         fieldsOfStudy         = e.get("fieldsOfStudy"),
-        tldr                  = e.get("tldr", {}).get("text") if e.get("tldr") else None,
+        tldr                  = e.get("tldr", {}).get("text"),
         authors               = [Author(name=a["name"])
                                  for a in e.get("authors", [])],
         sim_score             = random.uniform(0, 1),   # stub

@@ -102,6 +102,7 @@ async def build_graph(req: GraphRequest):
     keyword_tree, kw2pids = await fetch_from_ai_and_cache(
         req.root, req.top1, req.top2
     )
+
     
     return {"keyword_tree": keyword_tree, "kw2pids": kw2pids}   # ✨
 
