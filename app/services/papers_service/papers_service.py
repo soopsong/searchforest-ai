@@ -1,13 +1,15 @@
 # papers_service/main.py
-import os, json, random, asyncio
+import os, json, random
+import asyncio
 from typing import List, Optional, Dict
 
 from fastapi import FastAPI, Query, HTTPException
 from pydantic import BaseModel
+import httpx
 
-app = FastAPI(title="Papers Service (Stub)")
+app = FastAPI(title="Papers Service")
 
-# ────────────── Pydantic Models ──────────────
+# ───────── Pydantic Models ─────────
 class Author(BaseModel):
     name: str
 
@@ -33,87 +35,96 @@ class PapersResponse(BaseModel):
     page_size: int
     papers: List[Paper]
 
-# ────────────── Data Load ──────────────
+# ───────── Data Load ─────────
 BASE_DIR = os.path.join(os.path.dirname(__file__), "data")
 
-def safe_load(fname, default):
+def safe_load(fname):
+    path = os.path.join(BASE_DIR, fname)
     try:
-        with open(os.path.join(BASE_DIR, fname), encoding="utf-8") as f:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"⚠️ {fname} not found, using default")
-        return default
+        print(f"⚠️ {fname} not found → 빈 dict 사용")
+        return {}
 
-paper_db: Dict[str, dict] = safe_load("inductive_test_checkpoint_collected.json", {})
-kw2pids: Dict[str, List[str]] = safe_load("kw2pids.json", {})
-
-save_lock = asyncio.Lock()
+paper_db: Dict[str, dict] = safe_load("paper_db.json")   # ← 최근에 만든 DB
+kw2pids: Dict[str, List[str]] = safe_load("kw2pids.json")
+save_lock = asyncio.Lock() 
 
 # ────────────── Helper ──────────────
 def build_paper(pid: str) -> Paper:
-    entry = paper_db[pid]
+    e = paper_db[pid]
     return Paper(
-        paper_id=pid,
-        title=entry.get("title"),
-        abstract=entry.get("abstract"),
-        url=entry.get("url"),
-        venue=entry.get("venue"),
-        year=entry.get("year"),
-        reference_count=entry.get("referenceCount"),
-        citation_count=entry.get("citationCount"),
-        influentialCitationCount=entry.get("influentialCitationCount"),
-        fieldsOfStudy=entry.get("fieldsOfStudy"),
-        tldr=entry.get("tldr", {}).get("text") if entry.get("tldr") else None,
-        authors=[Author(name=a["name"]) for a in entry.get("authors", [])],
-        sim_score=random.uniform(0, 1),  # stub
+        paper_id              = pid,
+        title                 = e.get("title"),
+        abstract              = e.get("abstract"),
+        url                   = e.get("url"),
+        venue                 = e.get("venue"),
+        year                  = e.get("year"),
+        reference_count       = e.get("referenceCount"),
+        citation_count        = e.get("citationCount"),
+        influentialCitationCount = e.get("influentialCitationCount"),
+        fieldsOfStudy         = e.get("fieldsOfStudy"),
+        tldr                  = e.get("tldr", {}).get("text") if entry.get("tldr") else None,
+        authors               = [Author(name=a["name"])
+                                 for a in e.get("authors", [])],
+        sim_score             = random.uniform(0, 1),   # stub
     )
 
 def paginate(ids: List[str], page: int, page_size: int):
     total = len(ids)
-    max_page = max((total - 1) // page_size + 1, 1)
-    if page > max_page:
-        return [], total
     start = (page - 1) * page_size
-    return ids[start : start + page_size], total
+    return ids[start:start + page_size], total
 
-# ────────────── API ──────────────
+async def build_papers(ids: List[str]) -> List[Paper]:
+    papers: List[Paper] = []
+    for pid in ids:
+        if await ensure_paper(pid):
+            papers.append(build_paper(pid))
+    return papers
+
+# ───────── API ─────────
 @app.get("/papers", response_model=PapersResponse)
-def get_papers_by_keyword(
+async def get_papers_by_keyword(
     kw: str = Query(..., description="검색 키워드"),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
 ):
-    if kw not in kw2pids:
-        raise HTTPException(status_code=404, detail=f"Keyword '{kw}' not found.")
+    # ① kw2pids 확보 (없으면 Graph Service 호출)
+    ids = await ensure_kw2pids(kw)
+    if not ids:
+        raise HTTPException(404, f"Keyword '{kw}' not found.")
 
-    ids = kw2pids[kw]
+    # ② pagination
     sliced, total = paginate(ids, page, page_size)
+
+    # ③ paper_db에 있는 것만 반환
     papers = [build_paper(pid) for pid in sliced if pid in paper_db]
 
     return PapersResponse(
-        total_results=total,
-        max_display=len(papers),
-        page=page,
-        page_size=page_size,
-        papers=papers,
+        total_results = total,
+        max_display   = len(papers),
+        page          = page,
+        page_size     = page_size,
+        papers        = papers,
     )
 
 
-@app.get("/papers/random", response_model=PapersResponse)  # ✨ 
+@app.get("/papers/random", response_model=PapersResponse)
 def get_random_papers(
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
 ):
-    sample_ids = random.sample(list(paper_db.keys()), k=min(40, len(paper_db)))
+    sample_ids = random.sample(list(paper_db.keys()),
+                               k=min(40, len(paper_db)))
     sliced, total = paginate(sample_ids, page, page_size)
     return PapersResponse(
-        total_results=total,
-        max_display=len(sliced),
-        page=page,
-        page_size=page_size,
-        papers=[build_paper(pid) for pid in sliced],
+        total_results = total,
+        max_display   = len(sliced),
+        page          = page,
+        page_size     = page_size,
+        papers        = [build_paper(pid) for pid in sliced],
     )
-
 
 
 GRAPH_BASE = os.getenv("GRAPH_URL", "http://graph-service:8002")
@@ -138,3 +149,6 @@ async def ensure_kw2pids(keyword: str) -> List[str]:
             json.dump(kw2pids, f, ensure_ascii=False)
 
     return kw2pids.get(keyword, [])
+
+
+

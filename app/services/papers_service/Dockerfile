@@ -20,7 +20,7 @@ RUN tar -xzf data/inductive_test_checkpoint_collected.tar.gz -C data/ && \
     rm data/inductive_test_checkpoint_collected.tar.gz
 
 # 4. 코드 복사 (덮어쓰지 않도록 이후에)
-COPY data/kw2pids.json data/
+COPY data/paper_db.json ./
 COPY papers_service.py ./
 
 # 5. 앱 실행

@@ -17,12 +17,15 @@ app/model/model_save/*
 #data
 app/services/graph_service/data/indices/paper_ivf.index
 app/services/graph_service/data/indices
+app/services/papers_service/data
 
 app/indices
 app/routers/previous/output/summaries_dir
 app/routers/output
 app/data
 app/routers/output/summaries_dir/*
+
+
 
 
 #logs
@@ -66,7 +69,6 @@ MANIFEST
 app/data/
 app/model
 app/tools/
-app/services/papers_service/data
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -216,3 +218,4 @@ cython_debug/
 .pypirc
 app/data/inductive/train.jsonl
 app/routers/output/summaries_dir/
+app/services/papers_service/data/paper_db.json

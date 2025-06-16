@@ -59,18 +59,29 @@ async def fetch_from_ai_and_cache(root: str, top1: int, top2: int):
         resp.raise_for_status()
         data = resp.json()
 
-    mapping = {
-        n["id"]: {"value": n.get("sim", 0.8), "children": n.get("children", [])}
-        for n in data["results"]["children"][:top1]
-    }
+    # 2-1) keyword_tree
+    mapping = { n["id"]:{"value": n.get("sim",0.8),"children": n.get("children",[])}
+                for n in data["results"]["children"][:top1] }
     keyword_tree = manual_tree_with_full_values(root, mapping)
 
-    kw2pids = {
-        child["id"]: child["pids"]
-        for n in data["results"]["children"]
-        for child in n.get("children", [])
-        if "pids" in child
-    }
+    # 2-2) kw2pids  ☑ root + 1-depth + 2-depth
+    kw2pids = {}
+
+    # root → 모든 1-depth pids 합집합
+    root_pids = []
+    for n in data["results"]["children"][:top1]:
+        root_pids.extend(n.get("pids", []))
+    kw2pids[root] = root_pids
+
+    # 1-depth
+    for n in data["results"]["children"][:top1]:
+        if "pids" in n:
+            kw2pids[n["id"]] = n["pids"]
+
+        # 2-depth
+        for child in n.get("children", []):
+            if "pids" in child:
+                kw2pids[child["id"]] = child["pids"]
 
     if redis:
         await redis.set(

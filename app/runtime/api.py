@@ -46,11 +46,6 @@ def recommend(
         root["children"].append(cluster_node)
     return {"results": root }
 
-    
-
-
-
-
 # 로컬 실행용
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8004)
