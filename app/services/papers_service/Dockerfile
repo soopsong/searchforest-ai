@@ -12,12 +12,11 @@ COPY . .
 
 # 3. Google Drive에서 tar.gz 다운로드 → data/ 안에 저장·압축 해제
 RUN mkdir -p app/data && \
-    gdown --id 1ZKbW2ky1Fjz7-DFXh1wKiBsEkOI73IaX \
+    gdown --id 13KL8qntiJlyxc3ObqjB7t8NEXoRyYyXX \
           -O app/data/paper_db.tar.gz && \
     tar -xzf app/data/paper_db.tar.gz \
         -C app/data && \
     rm  app/data/paper_db.tar.gz
-
 
 # 4. 파이썬 의존성 설치
 RUN pip3 install --no-cache-dir -r requirements.txt   # 경로는 필요에 맞게
