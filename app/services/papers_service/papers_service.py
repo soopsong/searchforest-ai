@@ -105,3 +105,25 @@ def get_papers_by_keyword(
         papers=papers,
     )
  
+
+
+GRAPH_BASE = os.getenv("GRAPH_URL", "http://graph:8000")
+
+def ensure_kw2pids(keyword: str) -> List[str]:
+    """kw2pids.json 에 없으면 Graph Service 로부터 새로 가져와 저장"""
+    if keyword in kw2pids:
+        return kw2pids[keyword]
+
+    import requests
+    resp = requests.post(
+        f"{GRAPH_BASE}/graph",
+        json={"root": keyword, "top1": 5, "top2": 3},
+        timeout=15,
+    )
+    if resp.status_code != 200:
+        raise HTTPException(502, "Graph Service error")
+    data = resp.json()
+    kw2pids.update(data["kw2pids"])            # 메모리 캐시
+    with open(os.path.join(BASE_DIR, "kw2pids.json"), "w") as f:
+        json.dump(kw2pids, f, ensure_ascii=False)
+    return kw2pids.get(keyword, [])
