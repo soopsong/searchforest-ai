@@ -65,7 +65,7 @@ def build_paper(pid: str) -> Paper:
         citation_count        = e.get("citationCount"),
         influentialCitationCount = e.get("influentialCitationCount"),
         fieldsOfStudy         = e.get("fieldsOfStudy"),
-        tldr                  = e.get("tldr", {}).get("text"),
+        tldr                  = (e.get("tldr") or {}).get("text"),  # ← 수정
         authors               = [Author(name=a["name"])
                                  for a in e.get("authors", [])],
         sim_score             = random.uniform(0, 1),   # stub
@@ -119,19 +119,24 @@ async def ensure_kw2pids(root: str, keyword: str,
     async with httpx.AsyncClient() as client:
         resp = await client.post(
             f"{GRAPH_BASE}/graph",
-            json={"root": root, "top1": top1, "top2": top2},
+            json={"root": keyword, "top1": top1, "top2": top2},
             timeout=15
         )
     if resp.status_code != 200:
         raise HTTPException(502, "graph_service error")
 
-    data = resp.json()                      # {keyword_tree:…, kw2pids:{…}}
-    kw2pids.update(data["kw2pids"])         # 여러 키워드 한 번에 캐시
+    data = resp.json()
+    kw2pids.update(data["kw2pids"])
 
-    # 파일에도 저장
-    async with save_lock:
-        with open(os.path.join(BASE_DIR, "kw2pids.json"), "w") as f:
-            json.dump(kw2pids, f, ensure_ascii=False)
+    # 🔽 파일 캐시 저장 시도 → 읽기 전용이면 무시
+    try:
+        async with save_lock:
+            path = os.path.join(BASE_DIR, "kw2pids.json")
+            with open(path, "w") as f:
+                json.dump(kw2pids, f, ensure_ascii=False)
+    except OSError:
+        # read-only · 컨테이너 환경에선 무시하고 넘어감
+        pass
 
     return kw2pids.get(keyword, [])
     
