@@ -8,14 +8,24 @@ services:
       - "6379:6379"
     restart: unless-stopped
   
-  papers-service:
-    build:
-      context: ./app/services/papers_service
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    depends_on:
-      - searchforest-ai
+  # runtime_infer:
+  #   build:
+  #     context: ./app
+  #     dockerfile: runtime/Dockerfile
+  #   container_name: searchforest-infer
+  #   environment:
+  #     - NVIDIA_VISIBLE_DEVICES=all
+  #   volumes:
+  #     - ./app/indices:/app/indices:ro  # 인덱스 실시간 사용
+  #   ports:
+  #     - "8004:8004"
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             count: 1
+  #             capabilities: [gpu]
 
   graph-service:
     build:
@@ -25,31 +35,26 @@ services:
     ports:
       - "8002:8002"
     environment:
-      # Redis URL을 환경변수로 주입
-      REDIS_URL: "redis://redis:6379"
-      # (필요하다면) CONFIG_PATH, INDEX_PATH 등도
+      - REDIS_URL=redis://redis:6379
+      - INFER_URL=http://host.docker.internal:8004
     depends_on:
       - redis
-      - searchforest-ai
     restart: unless-stopped
-  
-  runtime_infer:
+
+  papers-service:
     build:
-      context: ./app/runtime
-      dockerfile: app/runtime/Dockerfile
-    container_name: searchforest-infer
-    runtime: nvidia            # GPU 전달
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-    volumes:
-      - ./indices:/workspace/indices  # 인덱스 실시간 사용
+      context: ./app/services/papers_service
+      dockerfile: Dockerfile
+    container_name: papers_service
     ports:
-      - "8004:8004"
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+      - "8000:8000"
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - GRAPH_URL=http://graph-service:8002
+    depends_on:
+      - redis
+      - graph-service
+    restart: unless-stopped
+    volumes:
+      - ./app/data:/app/data:ro
 

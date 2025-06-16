@@ -1,152 +1,113 @@
-import os
-import json, hashlib
-from typing import List, Dict, Optional, Tuple, Union
-from fastapi import FastAPI, HTTPException
+import os, json, hashlib
+from typing import List, Dict, Optional
+from fastapi import FastAPI, Query
 from pydantic import BaseModel
-import aioredis
-from data_util.logging import logger
+import aioredis, requests
+import httpx
 
-from data_util.config import Config
-from collections import defaultdict
-import requests
-from fastapi import Query
-from tree_mapping import extract_tree_mapping
+from json_to_tree_and_kw2pid import manual_tree_with_full_values
 
-# ────────────────────────────────────────────────────────────────
+# ─────────────────────────────
 app = FastAPI(title="Graph Service with AI Inference")
-
-# Redis 초기화용 글로벌
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
+REDIS_URL = os.getenv("REDIS_URL", "redis://redis:6379")
 redis: Optional[aioredis.Redis] = None
 
-# 요청 모델
+# ───────── Models ────────────
 class GraphRequest(BaseModel):
     root: str
     top1: int = 5
     top2: int = 3
 
-# 응답 트리 노드 구조
 class KeywordNode(BaseModel):
     id: str
     value: float
     children: List["KeywordNode"]
 KeywordNode.update_forward_refs()
 
-# 전체 응답 구조
-class GraphResponse(BaseModel):
+class GraphResponse(BaseModel):          # ✨
     keyword_tree: KeywordNode
-    
-# Redis 연결
+    kw2pids: Dict[str, List[str]]
+
+# ───────── Redis Events ──────
 @app.on_event("startup")
 async def startup_event():
     global redis
-    # modern aioredis uses from_url
     try:
         redis = await aioredis.from_url(
-            REDIS_URL,
-            encoding="utf-8",
-            decode_responses=True,
-            max_connections=10
+            REDIS_URL, encoding="utf-8", decode_responses=True, max_connections=10
         )
-        logger.info(f"✅ Connected to Redis at {REDIS_URL}")
+        print(f"✅ Connected to Redis at {REDIS_URL}")
     except Exception as e:
-        logger.warning(f"⚠️ Redis 연결 실패, 캐시 미사용: {e}")
+        print(f"⚠️ Redis 연결 실패, 캐시 미사용: {e}")
         redis = None
 
 @app.on_event("shutdown")
 async def shutdown_event():
-    await redis.close()
+    if redis:                            # ✨
+        await redis.close()
 
-# 캐시 키 생성 함수
-def make_cache_key( root: str, top1: int, top2: int) -> str:
-    # 파라미터 조합으로 고유 키 생성
-    key_str = f"{root}|{top1}|{top2}"
-    return "graph:" + hashlib.sha256(key_str.encode()).hexdigest()
+# ───────── Utils ────────────
+def make_cache_key(root: str, top1: int, top2: int) -> str:
+    return "graph:" + hashlib.sha256(f"{root}|{top1}|{top2}".encode()).hexdigest()
 
-
-# AI 서버 호출 함수
-def fetch_keywords(query: str) -> list[str]:
-    try:
-        response = requests.get(
-            "http://searchforest-ai:8004/inference",
-            params={"query": query, "top_k": 5}
-        )
-        response.raise_for_status()
-        data = response.json()
-        keywords = [child["kw"] for child in data["results"]["children"]]
-        return keywords
-    except Exception as e:
-        print(f"[ERROR] AI 서버 호출 실패: {e}")
-        return []
-
-# AI 서버 호출 + 결과 캐싱
 async def fetch_from_ai_and_cache(root: str, top1: int, top2: int):
-    try:
-        # response = requests.get("http://searchforest-ai:8004/inference", params={"query": root, "top_k": top1})
-        response = requests.get("http://localhost:8004/inference", params={"query": root, "top_k": top1})
+    url = "https://58b9-165-194-104-91.ngrok-free.app/inference"
+    params = {"query": root, "top_k": top1, "top2": top2}
 
-        response.raise_for_status()
-        data = response.json()
+    async with httpx.AsyncClient() as client:
+        resp = await client.get(url, params=params, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
 
-        # 트리 구성
-        keyword_tree = {
-            "id": root,
-            "value": 1.0,
-            "children": []
-        }
-        kw2pids = {}
+    # 2-1) keyword_tree
+    mapping = { n["id"]:{"value": n.get("sim",0.8),"children": n.get("children",[])}
+                for n in data["results"]["children"][:top1] }
+    keyword_tree = manual_tree_with_full_values(root, mapping)
 
-        for cluster in data["results"]["children"]:
-            cluster_kw = cluster["kw"]
-            subnodes = cluster.get("children", [])
-            child_node = {
-                "id": cluster_kw,
-                "value": cluster["sim"],
-                "children": []
-            }
-            for sub in subnodes:
-                child_node["children"].append({"id": sub["kw"], "value": 0.8, "children": []})
-                kw2pids[sub["kw"]] = sub["pids"]
+    # 2-2) kw2pids  ☑ root + 1-depth + 2-depth
+    kw2pids = {}
 
-            keyword_tree["children"].append(child_node)
+    # root → 모든 1-depth pids 합집합
+    root_pids = []
+    for n in data["results"]["children"][:top1]:
+        root_pids.extend(n.get("pids", []))
+    kw2pids[root] = root_pids
 
-        cache_key = make_cache_key(root, top1, top2)
-        if redis:
-            await redis.set(cache_key, json.dumps({"tree": keyword_tree, "kw2pids": kw2pids}), ex=3600)
+    # 1-depth
+    for n in data["results"]["children"][:top1]:
+        if "pids" in n:
+            kw2pids[n["id"]] = n["pids"]
 
-        return keyword_tree, kw2pids
+        # 2-depth
+        for child in n.get("children", []):
+            if "pids" in child:
+                kw2pids[child["id"]] = child["pids"]
 
-    except Exception as e:
-        print(f"[ERROR] AI 호출 실패: {e}")
-        raise
+    if redis:
+        await redis.set(
+            make_cache_key(root, top1, top2),
+            json.dumps({"keyword_tree": keyword_tree, "kw2pids": kw2pids}),
+            ex=3600,
+        )
+    return keyword_tree, kw2pids
 
-# /graph 엔드포인트
+# ───────── API ────────────
 @app.post("/graph", response_model=GraphResponse)
 async def build_graph(req: GraphRequest):
-
     cache_key = make_cache_key(req.root, req.top1, req.top2)
-    if redis:
-        cached = await redis.get(cache_key)
-        if cached:
-            obj = json.loads(cached)
-            return {"keyword_tree": obj["tree"], "kw2pids": obj["kw2pids"]}
+    if redis and (cached := await redis.get(cache_key)):
+        obj = json.loads(cached)
+        return obj                                  # FastAPI가 모델로 자동 직렬화
 
-    tree = await fetch_from_ai_and_cache(req.root, req.top1, req.top2)
+    keyword_tree, kw2pids = await fetch_from_ai_and_cache(
+        req.root, req.top1, req.top2
+    )
+
     
-    root, mapping = extract_tree_mapping(original_json)
-    tree = manual_tree_with_full_values(root, mapping)
-    tree_parsed = manual_tree_with_full_values(tree)
+    return {"keyword_tree": keyword_tree, "kw2pids": kw2pids}   # ✨
 
-    return {"keyword_tree": tree_parsed, "kw2pids": kw2pids}
-
-
-# /kw2pids 엔드포인트 (핑퐁용)
 @app.get("/kw2pids")
 async def get_kw2pids(query: str = Query(...), top1: int = 5, top2: int = 3):
-    cache_key = make_cache_key(query, top1, top2)
-    if redis:
-        cached = await redis.get(cache_key)
-        if cached:
-            obj = json.loads(cached)
-            return obj["kw2pids"]
+    if redis and (cached := await redis.get(make_cache_key(query, top1, top2))):
+        return json.loads(cached)["kw2pids"]
     return {"message": "No cached kw2pids available."}

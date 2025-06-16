@@ -6,6 +6,7 @@ import uvicorn, json
 from runtime.cluster_searcher import search_clusters, cluster2pids, meta
 from runtime.graph_builder    import build_tree
 
+
 app = FastAPI(title="SearchForest-AI Recommend API")
 
 
@@ -32,7 +33,7 @@ class RecResponse(BaseModel):
 @app.get("/inference", response_model=RecResponse)
 def recommend(
     query: str = Query(..., description="검색 쿼리"),
-    top_k: int = Query(5, gt=1, le=10)          # default 5
+    top_k: int = Query(10, gt=1, le=10)          # default 10
 ):
     # 1) 쿼리 기준 top-k 클러스터
     hits = search_clusters(query, top_k)
@@ -45,11 +46,6 @@ def recommend(
         cluster_node["sim"] = round(sim, 4)
         root["children"].append(cluster_node)
     return {"results": root }
-
-    
-
-
-
 
 # 로컬 실행용
 if __name__ == "__main__":
