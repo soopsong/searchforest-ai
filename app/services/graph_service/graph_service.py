@@ -3,6 +3,7 @@ from typing import List, Dict, Optional
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
 import aioredis, requests
+import httpx
 
 from json_to_tree_and_kw2pid import manual_tree_with_full_values
 
@@ -50,25 +51,31 @@ def make_cache_key(root: str, top1: int, top2: int) -> str:
     return "graph:" + hashlib.sha256(f"{root}|{top1}|{top2}".encode()).hexdigest()
 
 async def fetch_from_ai_and_cache(root: str, top1: int, top2: int):
-    url = "https://2f7a-165-194-104-91.ngrok-free.app/inference"
-    data = requests.get(url, params={"query": root, "top_k": top1}).json()
+    url = "https://58b9-165-194-104-91.ngrok-free.app/inference"
+    params = {"query": root, "top_k": top1, "top2": top2}
+
+    async with httpx.AsyncClient() as client:
+        resp = await client.get(url, params=params, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
 
     mapping = {
         n["id"]: {"value": n.get("sim", 0.8), "children": n.get("children", [])}
-        for n in data["results"]["children"]
+        for n in data["results"]["children"][:top1]
     }
     keyword_tree = manual_tree_with_full_values(root, mapping)
 
     kw2pids = {
         child["id"]: child["pids"]
         for n in data["results"]["children"]
-        for child in n["children"]
+        for child in n.get("children", [])
+        if "pids" in child
     }
 
     if redis:
         await redis.set(
             make_cache_key(root, top1, top2),
-            json.dumps({"tree": keyword_tree, "kw2pids": kw2pids}),
+            json.dumps({"keyword_tree": keyword_tree, "kw2pids": kw2pids}),
             ex=3600,
         )
     return keyword_tree, kw2pids
@@ -84,6 +91,7 @@ async def build_graph(req: GraphRequest):
     keyword_tree, kw2pids = await fetch_from_ai_and_cache(
         req.root, req.top1, req.top2
     )
+    
     return {"keyword_tree": keyword_tree, "kw2pids": kw2pids}   # ✨
 
 @app.get("/kw2pids")

@@ -2,12 +2,9 @@
 FROM python:3.9-slim
 
 WORKDIR /app
-COPY requirements.txt .
+COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY graph_service.py .
-
-COPY tree_mapping.py .
 
 
 # FastAPI Uvicorn 실행
