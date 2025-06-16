@@ -1,7 +1,7 @@
-# papers_service/main.py
-import os, json, random
-import asyncio
-from typing import List, Optional, Dict
+# papers_service/main.py 
+
+import os, json, random, asyncio
+from typing import List, Dict, Optional
 
 from fastapi import FastAPI, Query, HTTPException
 from pydantic import BaseModel
@@ -15,41 +15,41 @@ class Author(BaseModel):
 
 class Paper(BaseModel):
     paper_id: str
-    abstract: Optional[str]
-    title: Optional[str]
-    url: Optional[str]
-    venue: Optional[str]
-    year: Optional[int]
-    reference_count: Optional[int]
-    citation_count: Optional[int]
+    title:      Optional[str]
+    abstract:   Optional[str]
+    url:        Optional[str]
+    venue:      Optional[str]
+    year:       Optional[int]
+    reference_count:          Optional[int]
+    citation_count:           Optional[int]
     influentialCitationCount: Optional[int]
-    fieldsOfStudy: Optional[List[str]]
-    tldr: Optional[str]
-    authors: List[Author]
-    sim_score: float
+    fieldsOfStudy:            Optional[List[str]]
+    tldr:       Optional[str]
+    authors:    List[Author]
+    sim_score:  float
 
 class PapersResponse(BaseModel):
     total_results: int
-    max_display: int
-    page: int
-    page_size: int
-    papers: List[Paper]
+    max_display:   int
+    page:          int
+    page_size:     int
+    papers:        List[Paper]
 
 # ───────── Data Load ─────────
 BASE_DIR = os.path.join(os.path.dirname(__file__), "data")
 
-def safe_load(fname):
+def safe_load(fname: str) -> dict:
     path = os.path.join(BASE_DIR, fname)
     try:
         with open(path, encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"⚠️ {fname} not found → 빈 dict 사용")
+        print(f"⚠️  {fname} not found → 빈 dict 사용")
         return {}
 
-paper_db: Dict[str, dict] = safe_load("paper_db.json")   # ← 최근에 만든 DB
-kw2pids: Dict[str, List[str]] = safe_load("kw2pids.json")
-save_lock = asyncio.Lock() 
+paper_db: Dict[str, dict]        = safe_load("paper_db.json")
+kw2pids:   Dict[str, List[str]]  = safe_load("kw2pids.json")
+save_lock  = asyncio.Lock()                      # 파일 캐시 동시 접근 보호
 
 # ────────────── Helper ──────────────
 def build_paper(pid: str) -> Paper:
@@ -65,7 +65,7 @@ def build_paper(pid: str) -> Paper:
         citation_count        = e.get("citationCount"),
         influentialCitationCount = e.get("influentialCitationCount"),
         fieldsOfStudy         = e.get("fieldsOfStudy"),
-        tldr                  = e.get("tldr", {}).get("text") if entry.get("tldr") else None,
+        tldr                  = e.get("tldr", {}).get("text") if e.get("tldr") else None,
         authors               = [Author(name=a["name"])
                                  for a in e.get("authors", [])],
         sim_score             = random.uniform(0, 1),   # stub
@@ -85,20 +85,19 @@ async def build_papers(ids: List[str]) -> List[Paper]:
 
 # ───────── API ─────────
 @app.get("/papers", response_model=PapersResponse)
-async def get_papers_by_keyword(
-    kw: str = Query(..., description="검색 키워드"),
+async def get_papers(
+    root: str = Query(..., description="검색 루트(처음 입력)"),
+    kw:   str = Query(..., description="사용자가 선택한 키워드"),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
 ):
-    # ① kw2pids 확보 (없으면 Graph Service 호출)
-    ids = await ensure_kw2pids(kw)
+    ids = await ensure_kw2pids(root, kw)
     if not ids:
-        raise HTTPException(404, f"Keyword '{kw}' not found.")
+        raise HTTPException(404, f"Keyword '{kw}' not found")
 
-    # ② pagination
     sliced, total = paginate(ids, page, page_size)
 
-    # ③ paper_db에 있는 것만 반환
+    # paper_db 에 존재하는 PID 만 반환
     papers = [build_paper(pid) for pid in sliced if pid in paper_db]
 
     return PapersResponse(
@@ -109,46 +108,29 @@ async def get_papers_by_keyword(
         papers        = papers,
     )
 
-
-@app.get("/papers/random", response_model=PapersResponse)
-def get_random_papers(
-    page: int = Query(1, ge=1),
-    page_size: int = Query(20, ge=1, le=100),
-):
-    sample_ids = random.sample(list(paper_db.keys()),
-                               k=min(40, len(paper_db)))
-    sliced, total = paginate(sample_ids, page, page_size)
-    return PapersResponse(
-        total_results = total,
-        max_display   = len(sliced),
-        page          = page,
-        page_size     = page_size,
-        papers        = [build_paper(pid) for pid in sliced],
-    )
-
-
 GRAPH_BASE = os.getenv("GRAPH_URL", "http://graph-service:8002")
 
-async def ensure_kw2pids(keyword: str) -> List[str]:
+async def ensure_kw2pids(root: str, keyword: str,
+                         top1: int = 5, top2: int = 3) -> List[str]:
+    """keyword 가 캐시에 없으면 graph-service 를 호출해 kw2pids 갱신"""
     if keyword in kw2pids:
         return kw2pids[keyword]
 
-    import httpx
     async with httpx.AsyncClient() as client:
-        resp = await client.post(f"{GRAPH_BASE}/graph",
-                                 json={"root": keyword, "top1": 5, "top2": 3},
-                                 timeout=15)
+        resp = await client.post(
+            f"{GRAPH_BASE}/graph",
+            json={"root": root, "top1": top1, "top2": top2},
+            timeout=15
+        )
     if resp.status_code != 200:
-        raise HTTPException(502, "Graph Service error")
+        raise HTTPException(502, "graph_service error")
 
-    data = resp.json()
-    kw2pids.update(data["kw2pids"])
+    data = resp.json()                      # {keyword_tree:…, kw2pids:{…}}
+    kw2pids.update(data["kw2pids"])         # 여러 키워드 한 번에 캐시
 
+    # 파일에도 저장
     async with save_lock:
         with open(os.path.join(BASE_DIR, "kw2pids.json"), "w") as f:
             json.dump(kw2pids, f, ensure_ascii=False)
 
     return kw2pids.get(keyword, [])
-
-
-
