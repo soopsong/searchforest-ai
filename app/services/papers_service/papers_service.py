@@ -1,5 +1,5 @@
 # papers_service/main.py
-import os, json, random
+import os, json, random, asyncio
 from typing import List, Optional, Dict
 
 from fastapi import FastAPI, Query, HTTPException
@@ -35,11 +35,19 @@ class PapersResponse(BaseModel):
 
 # ────────────── Data Load ──────────────
 BASE_DIR = os.path.join(os.path.dirname(__file__), "data")
-with open(os.path.join(BASE_DIR, "inductive_test_checkpoint_collected.json"), encoding="utf-8") as f:
-    paper_db: Dict[str, dict] = json.load(f)
 
-with open(os.path.join(BASE_DIR, "kw2pids.json"), encoding="utf-8") as f:
-    kw2pids: Dict[str, List[str]] = json.load(f)
+def safe_load(fname, default):
+    try:
+        with open(os.path.join(BASE_DIR, fname), encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"⚠️ {fname} not found, using default")
+        return default
+
+paper_db: Dict[str, dict] = safe_load("inductive_test_checkpoint_collected.json", {})
+kw2pids: Dict[str, List[str]] = safe_load("kw2pids.json", {})
+
+save_lock = asyncio.Lock()
 
 # ────────────── Helper ──────────────
 def build_paper(pid: str) -> Paper:
@@ -70,21 +78,6 @@ def paginate(ids: List[str], page: int, page_size: int):
 
 # ────────────── API ──────────────
 @app.get("/papers", response_model=PapersResponse)
-def get_random_papers(
-    page: int = Query(1, ge=1),
-    page_size: int = Query(20, ge=1, le=100),
-):
-    sample_ids = random.sample(list(paper_db.keys()), k=min(40, len(paper_db)))
-    sliced, total = paginate(sample_ids, page, page_size)
-    return PapersResponse(
-        total_results=total,
-        max_display=len(sliced),
-        page=page,
-        page_size=page_size,
-        papers=[build_paper(pid) for pid in sliced],
-    )
-
-@app.get("/papers/by_keyword", response_model=PapersResponse)  # ✨
 def get_papers_by_keyword(
     kw: str = Query(..., description="검색 키워드"),
     page: int = Query(1, ge=1),
@@ -104,26 +97,44 @@ def get_papers_by_keyword(
         page_size=page_size,
         papers=papers,
     )
- 
 
 
-GRAPH_BASE = os.getenv("GRAPH_URL", "http://graph:8000")
+@app.get("/papers/random", response_model=PapersResponse)  # ✨ 
+def get_random_papers(
+    page: int = Query(1, ge=1),
+    page_size: int = Query(20, ge=1, le=100),
+):
+    sample_ids = random.sample(list(paper_db.keys()), k=min(40, len(paper_db)))
+    sliced, total = paginate(sample_ids, page, page_size)
+    return PapersResponse(
+        total_results=total,
+        max_display=len(sliced),
+        page=page,
+        page_size=page_size,
+        papers=[build_paper(pid) for pid in sliced],
+    )
 
-def ensure_kw2pids(keyword: str) -> List[str]:
-    """kw2pids.json 에 없으면 Graph Service 로부터 새로 가져와 저장"""
+
+
+GRAPH_BASE = os.getenv("GRAPH_URL", "http://graph-service:8002")
+
+async def ensure_kw2pids(keyword: str) -> List[str]:
     if keyword in kw2pids:
         return kw2pids[keyword]
 
-    import requests
-    resp = requests.post(
-        f"{GRAPH_BASE}/graph",
-        json={"root": keyword, "top1": 5, "top2": 3},
-        timeout=15,
-    )
+    import httpx
+    async with httpx.AsyncClient() as client:
+        resp = await client.post(f"{GRAPH_BASE}/graph",
+                                 json={"root": keyword, "top1": 5, "top2": 3},
+                                 timeout=15)
     if resp.status_code != 200:
         raise HTTPException(502, "Graph Service error")
+
     data = resp.json()
-    kw2pids.update(data["kw2pids"])            # 메모리 캐시
-    with open(os.path.join(BASE_DIR, "kw2pids.json"), "w") as f:
-        json.dump(kw2pids, f, ensure_ascii=False)
+    kw2pids.update(data["kw2pids"])
+
+    async with save_lock:
+        with open(os.path.join(BASE_DIR, "kw2pids.json"), "w") as f:
+            json.dump(kw2pids, f, ensure_ascii=False)
+
     return kw2pids.get(keyword, [])
