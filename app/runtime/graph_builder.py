@@ -9,7 +9,7 @@ from sentence_transformers import SentenceTransformer, util
 import torch
 from runtime.cluster_searcher import meta, cluster2pids   # ← meta 와 함께 추가로 import
 
-
+kw2pids: dict[str, list[str]] = {}     # keyword → [paper_ids]
 
 
 # ── 전역 설정 ───────────────────────────────────────────
@@ -121,6 +121,19 @@ tfidf = TfidfVectorizer(
     max_features=40_000,
 )
 
+# from sklearn.feature_extraction.text import TfidfVectorizer
+
+# # 전처리한 phrase 문서를 그대로 feeding
+# vectorizer = TfidfVectorizer(
+#     tokenizer=lambda s: s, preprocessor=lambda s: s, lowercase=False,
+#     ngram_range=(1,3), min_df=5, max_df=0.8
+# )
+# tfidf_mat = vectorizer.fit_transform(docs)           # shape (N_docs, N_terms)
+# idf   = vectorizer.idf_
+# vocab = vectorizer.vocabulary_                       # dict{phrase: idx}
+
+
+
 def top_keywords(pids, n=8):
     docs = [_as_text(G.nodes[p].get("abstract", "")).lower()
             for p in pids if G.has_node(p)]
@@ -156,7 +169,17 @@ def build_tree(root_kw: str, cid: int, depth: int = 1):
     ))
     pids_lvl0 = cluster2pids[cid]
 
-    tree = {"id": root_kw, "value": 1.0, "children": []}
+
+    # ① root 에도 pids 부여
+    tree = {
+            "id":    root_kw,
+            "value": 1.0,
+            "pids":  pids_lvl0,     # ★ 추가
+            "children": []
+        }
+
+    # kw2pids 전역 캐시에도 root 등록
+    kw2pids[root_kw] = pids_lvl0
 
     # ── depth-1  (최대 3개) ──────────────────────
     for kw1, sc1 in select_kw_scored(root_kw, cand, tfidf_dict, k=3):
@@ -172,15 +195,35 @@ def build_tree(root_kw: str, cid: int, depth: int = 1):
             "id":      kw1,
             "value":   round(sc1, 4),
             "pids":    hop1,          # 필요 없으면 제거
+            "children": []
         }
+
+        kw2pids[kw1] = hop1
 
         # ── depth-2 : parent=kw1, 최대 3개 ───────
         if depth > 1:
             for kw2, sc2 in select_kw_scored(kw1, cand, tfidf_dict, k=3):
+                # node1["children"].append({
+                #     "id":    kw2,
+                #     "value": round(sc2, 4),
+                # })
+                # hop-2 pids (root → kw1 → kw2)
+                kw2_emb = model.encode([kw2],
+                                        normalize_embeddings=True)[0]
+                hop2 = [
+                    p for p in hop1
+                    if (emb := get_abs_emb(p)) is not None
+                    and util.cos_sim(kw2_emb, emb).item() > COS_TH2
+                ]
+
                 node1["children"].append({
                     "id":    kw2,
                     "value": round(sc2, 4),
+                    "pids":  hop2,
                 })
+
+                # kw2pids에 2-depth 저장
+                kw2pids[kw2] = hop2
 
         tree["children"].append(node1)
 
